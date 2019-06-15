@@ -1730,6 +1730,17 @@ pre .javascript .function {
   height: auto;
   border: 1px solid #eee;
   opacity: 1;
+/* 头像圆形 */
+  border-radius: 80px;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  box-shadow: inset 0 -1px 0 #333 sf;
+}
+.site-author-image {
+  transition: transform 1s ease-out;
+}
+.site-author-image:hover {
+  transform: rotateZ(360deg);
 }
 .site-author-name {
   margin: 0;
@@ -1764,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b38329;
+  background: #a3ff47;
 }
 .feed-link,
 .chat {
@@ -1951,10 +1962,13 @@ pre .javascript .function {
 .footer-inner {
   text-align: center;
 }
+#animate {
+  animation: iconAnimate 1.33s ease-in-out infinite;
+}
 .with-love {
   display: inline-block;
   margin: 0 5px;
-  color: #808080;
+  color: #ec3247;
 }
 .powered-by,
 .theme-info {
@@ -2955,4 +2969,30 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.post-block {
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.3);
+  padding: 40px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-radius: 10px 10px 10px 10px;
+}
+.headband {
+  display: none;
+}
+.header-inner {
+  background: rgba(255,255,255,0.5);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-radius: 10px;
+}
+.sidebar-inner {
+  background: rgba(255,255,255,0.5);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
+  border-radius: 10px;
+}
+.live2d-widget-container {
+  right: 70px !important;
+}
+.site-meta {
+  background: #70b7fd;
 }
