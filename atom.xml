@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-06-15T13:42:25.229Z</updated>
+  <updated>2019-07-09T14:52:12.000Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown语法</title>
+    <link href="https://memory-you.github.io/2019/07/09/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>https://memory-you.github.io/2019/07/09/Markdown语法/</id>
+    <published>2019-07-09T14:52:12.000Z</published>
+    <updated>2019-07-09T14:52:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、-标题&quot;&gt;&lt;a href=&quot;#一、-标题&quot; class=&quot;headerlink&quot; title=&quot;一、 标题&quot;&gt;&lt;/a&gt;一、 标题&lt;/h1&gt;&lt;p&gt;在想要设置为标题的文字面前加#来表示，&lt;br&gt;一个#是一级标题，两个#是二级标题以此类推。支持六级标题。&lt;/p&gt;
+&lt;
+        
+      
+    
+    </summary>
+    
+      <category term="Markdown" scheme="https://memory-you.github.io/categories/Markdown/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

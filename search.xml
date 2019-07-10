@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Markdown语法]]></title>
+    <url>%2F2019%2F07%2F09%2FMarkdown%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[一、 标题在想要设置为标题的文字面前加#来表示，一个#是一级标题，两个#是二级标题以此类推。支持六级标题。 注：标准语法一般在#后跟一个空格再写文。 示例： 123456# 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题##### 这是五级标题###### 这是六级标题 效果如下： 这是一级标题这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题 二、 字体 斜体要倾斜的文字左右分别用一个*号抱起来 加粗要加粗的文字左右分别用两个*号抱起来 斜体加粗要倾斜和加粗的文字左右分别用三个*号包起来 删除线要加删除线的文字左右分别用两个~号包起来 示例： 1234*这是倾斜的文字***这是加粗的文字*****这是斜体加粗的文字***~~这是加删除线的文字~~ 效果如下： 这是倾斜的文字这是加粗的文字这是斜体加粗的文字这是加删除线的文字 三、 引用在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt; 示例： 123&gt;这是引用的内容&gt;&gt;这是引用的内容&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容 效果如下： 这是引用的内容 这是引用的内容 这是引用的内容 四、 分割线三个或三个以上的-或者*都可以。示例： 1234-------******* 效果如下： 可以看到，显示效果都是一样的。 五、 图片语法： 123![图片alt](图片位置 &quot;图片titlle&quot;)图片alt就是显示在图片下面的文字，相当于对图片内容的解释。图片titile是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加 示例： 12![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;) 效果如下： ![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg “区块链”) 六、 超链接语法： 12[超链接](超链接地址 &quot;超链接title&quot;)title 可加不可加 示例： 12[简书](http://jianshu.com)[百度](http://baidu.com) 效果如下： 简书百度 七、 列表 无序列表 语法：无序列表用-、+、*任何一种都可以。 12345- 列表内容+ 列表内容* 列表内容注意： - + * 跟内容之间都要有一个空格 效果如下： 列表内容 列表内容 列表内容 有序列表 语法：数字加点 123451. 列表内容2. 列表内容3. 列表内容注意： 序号跟内容之间要有空格 效果如下： 列表内容 列表内容 列表内容 列表嵌套 上一级与下一级之间桥三个空格即可* 一级无序列表内容 二级无序列表内容 二级无序列表内容 二级无序列表内容 一级无序列表内容 二级无序列表内容 二级无序列表内容 二级无序列表内容 一级无序列表内容 二级无序列表内容 二级无序列表内容 二级无序列表内容 八、 表格语法： 1234567891011表头|表头|表头---| :--: |---;内容|内容|内容内容|内容|内容第二行分割表头和内容。- 有一个就行，为了对齐，就多加了几个文字默认居左-两边加：表示文字居中-右边加：表示文字居右注意：原生的语法两边都要用 示例： 姓名 技能 排行 刘备 哭 大哥 关羽 打 二哥 张飞 骂 三弟 九、 代码语法：单行代码： 代码之间分别用一个反引号抱起来 1`代码内容` 代码块： 代码之间分别用三个反引号包起来，且两边的反引号单独占一行。 12345(```)代码...代码...代码...(```) 注意： 为了防止转义，前后三个反引号处加了小括号，实际是没有的。 示例： 单行代码 1`create database hero;` 代码块： 123456(```) function fun()&#123; echo &quot;这是一句非常牛逼的代码&quot;; &#125; fun();(```) 效果如下： 单行代码 create database hero; 代码块： 1234function fun()&#123; echo &quot;这是一句非常牛逼的代码&quot;;&#125;fun();]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F06%2F15%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
