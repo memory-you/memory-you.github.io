@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-07-09T14:52:12.000Z</updated>
+  <updated>2019-07-10T14:19:06.000Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP常见的状态码</title>
+    <link href="https://memory-you.github.io/2019/07/10/HTTP%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+    <id>https://memory-you.github.io/2019/07/10/HTTP常见的状态码/</id>
+    <published>2019-07-10T14:19:06.000Z</published>
+    <updated>2019-07-10T14:19:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。&lt;/p&gt;
+&lt;p&gt;状态码的类别：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;123&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;类别
+        
+      
+    
+    </summary>
+    
+      <category term="HTTP" scheme="https://memory-you.github.io/categories/HTTP/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Markdown语法</title>
@@ -29,8 +59,8 @@
       
         
         
-          &lt;h1 id=&quot;一、-标题&quot;&gt;&lt;a href=&quot;#一、-标题&quot; class=&quot;headerlink&quot; title=&quot;一、 标题&quot;&gt;&lt;/a&gt;一、 标题&lt;/h1&gt;&lt;p&gt;在想要设置为标题的文字面前加#来表示，&lt;br&gt;一个#是一级标题，两个#是二级标题以此类推。支持六级标题。&lt;/p&gt;
-&lt;
+          &lt;h1 id=&quot;一、标题&quot;&gt;&lt;a href=&quot;#一、标题&quot; class=&quot;headerlink&quot; title=&quot;一、标题&quot;&gt;&lt;/a&gt;一、标题&lt;/h1&gt;&lt;p&gt;在想要设置为标题的文字面前加#来表示，&lt;br&gt;一个#是一级标题，两个#是二级标题以此类推。支持六级标题。&lt;/p&gt;
+&lt;p&gt;注：
         
       
     
