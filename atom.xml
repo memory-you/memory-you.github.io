@@ -59,8 +59,8 @@
       
         
         
-          &lt;h1 id=&quot;一、标题&quot;&gt;&lt;a href=&quot;#一、标题&quot; class=&quot;headerlink&quot; title=&quot;一、标题&quot;&gt;&lt;/a&gt;一、标题&lt;/h1&gt;&lt;p&gt;在想要设置为标题的文字面前加#来表示，&lt;br&gt;一个#是一级标题，两个#是二级标题以此类推。支持六级标题。&lt;/p&gt;
-&lt;p&gt;注：
+          &lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;p&gt;在想要设置为标题的文字面前加#来表示，&lt;br&gt;一个#是一级标题，两个#是二级标题以此类推。支持六级标题。&lt;/p&gt;
+&lt;p&gt;注：标准语法一般在#
         
       
     
