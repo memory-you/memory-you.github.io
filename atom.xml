@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-08-21T13:31:02.485Z</updated>
+  <updated>2019-08-21T16:07:11.602Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>浏览器渲染原理</title>
+    <link href="https://memory-you.github.io/2019/08/21/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/"/>
+    <id>https://memory-you.github.io/2019/08/21/浏览器渲染原理/</id>
+    <published>2019-08-21T13:39:07.000Z</published>
+    <updated>2019-08-21T16:07:11.602Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。&lt;/p&gt;
+&lt;p&gt;本文我就以Webkit为例，对现代浏览器的渲染过程进行一个深度的剖析。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>从URL输入到页面展现</title>
     <link href="https://memory-you.github.io/2019/08/19/%E4%BB%8EURL%E8%BE%93%E5%85%A5%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%8E%B0/"/>
     <id>https://memory-you.github.io/2019/08/19/从URL输入到页面展现/</id>
     <published>2019-08-19T15:03:22.000Z</published>
-    <updated>2019-08-21T13:31:02.485Z</updated>
+    <updated>2019-08-21T13:36:05.771Z</updated>
     
     <summary type="html">
     
