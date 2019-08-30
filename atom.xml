@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-08-30T07:11:08.200Z</updated>
+  <updated>2019-08-30T12:59:48.180Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTTP常见的状态码</title>
+    <link href="https://memory-you.github.io/2019/08/30/HTTP%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+    <id>https://memory-you.github.io/2019/08/30/HTTP常见的状态码/</id>
+    <published>2019-08-30T12:14:27.000Z</published>
+    <updated>2019-08-30T12:59:48.180Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>常见六大Web安全按攻防解析</title>
     <link href="https://memory-you.github.io/2019/08/29/%E5%B8%B8%E8%A7%81%E5%85%AD%E5%A4%A7Web%E5%AE%89%E5%85%A8%E6%8C%89%E6%94%BB%E9%98%B2%E8%A7%A3%E6%9E%90/"/>
     <id>https://memory-you.github.io/2019/08/29/常见六大Web安全按攻防解析/</id>
     <published>2019-08-29T08:04:25.000Z</published>
-    <updated>2019-08-30T07:11:08.200Z</updated>
+    <updated>2019-08-30T12:13:37.043Z</updated>
     
     <summary type="html">
     
@@ -129,24 +146,6 @@
       &lt;h2 id=&quot;懒加载&quot;&gt;&lt;a href=&quot;#懒加载&quot; class=&quot;headerlink&quot; title=&quot;懒加载&quot;&gt;&lt;/a&gt;懒加载&lt;/h2&gt;&lt;h3 id=&quot;什么是懒加载&quot;&gt;&lt;a href=&quot;#什么是懒加载&quot; class=&quot;headerlink&quot; title=&quot;什么是懒加载&quot;&gt;&lt;/a&gt;什么是懒加载&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;懒加载也叫延迟加载，指的是在长网页中延迟加载图像，是一种很好优化网页性能的方式。&lt;/strong&gt; 用户滚动到他们之前，可视区域外的图像不会加载。这与图像预加载相反，在长网页上使用延迟加载将使网页加载更快。在某些情况下，它还可以帮助减少服务器负载。常适用图片很多，页面很长的电商网站场景中。&lt;/p&gt;
     
     </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP常见的状态码</title>
-    <link href="https://memory-you.github.io/2019/07/10/HTTP%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81/"/>
-    <id>https://memory-you.github.io/2019/07/10/HTTP常见的状态码/</id>
-    <published>2019-07-10T14:19:06.000Z</published>
-    <updated>2019-07-10T14:19:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="HTTP" scheme="https://memory-you.github.io/categories/HTTP/"/>
     
     
   </entry>
