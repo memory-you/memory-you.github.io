@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-08-31T08:07:46.909Z</updated>
+  <updated>2019-08-31T14:41:26.273Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内存空间详细图解</title>
+    <link href="https://memory-you.github.io/2019/08/31/%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E8%AF%A6%E7%BB%86%E5%9B%BE%E8%A7%A3/"/>
+    <id>https://memory-you.github.io/2019/08/31/内存空间详细图解/</id>
+    <published>2019-08-31T08:28:24.000Z</published>
+    <updated>2019-08-31T14:41:26.273Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+因为JavaScript具有自动垃圾回收机制，所以对前端开发来说，内存空间并不是一个经常被提及的概念。但想要对JS理解更加深刻，就必须对内存空间有一个清晰的认知。
+
+&lt;p&gt;在学习内存空间之前，我们需要对这三种数据结构有个直观的认知，堆（heap）、栈（stack）和队列（queue）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>消息图解作用域链与闭包</title>
+    <link href="https://memory-you.github.io/2019/08/31/%E6%B6%88%E6%81%AF%E5%9B%BE%E8%A7%A3%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E4%B8%8E%E9%97%AD%E5%8C%85/"/>
+    <id>https://memory-you.github.io/2019/08/31/消息图解作用域链与闭包/</id>
+    <published>2019-08-31T08:27:42.000Z</published>
+    <updated>2019-08-31T08:27:42.546Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>手写实现call()、apply()、bind()</title>
