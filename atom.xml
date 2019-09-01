@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-01T13:28:33.493Z</updated>
+  <updated>2019-09-01T14:03:32.389Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>全方位解读this</title>
+    <link href="https://memory-you.github.io/2019/09/01/%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E8%AF%BBthis/"/>
+    <id>https://memory-you.github.io/2019/09/01/全方位解读this/</id>
+    <published>2019-09-01T13:30:24.000Z</published>
+    <updated>2019-09-01T14:03:32.389Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+我们在学习JavaScript的过程中，由于对一些概念理解得不是很清楚，但是又想要通过一些方式把它记下来，于是就很容易草率的给这些概念定下一些方便自己记忆的有偏差的结论.有的不准确的结论在网上还广为流传。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>图解作用域链与闭包</title>
