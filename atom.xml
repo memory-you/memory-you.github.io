@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-01T07:55:36.221Z</updated>
+  <updated>2019-09-01T08:34:17.587Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,24 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>变量对象图解</title>
+    <link href="https://memory-you.github.io/2019/09/01/%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1%E5%9B%BE%E8%A7%A3/"/>
+    <id>https://memory-you.github.io/2019/09/01/变量对象图解/</id>
+    <published>2019-09-01T08:08:37.000Z</published>
+    <updated>2019-09-01T08:34:17.587Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+在JavaScript中，我们肯定不可避免需要声明变量和函数，可是JS解析器是如何找到这些变量的呢？我们还得对执行上下文有个更进一步的了解。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>执行上下文图解</title>
     <link href="https://memory-you.github.io/2019/09/01/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%9B%BE%E8%A7%A3/"/>
     <id>https://memory-you.github.io/2019/09/01/执行上下文图解/</id>
     <published>2019-09-01T06:37:11.000Z</published>
-    <updated>2019-09-01T07:55:36.221Z</updated>
+    <updated>2019-09-01T08:11:53.125Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 在JavaScript学习初期或者面试的时候常常会遇到考核变量提升的思考题。先来一个简单的。
 
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr
-        
-      
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a);   &lt;span class=&quot;comment&quot;&gt;// 这里会打印出什么？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;暂时先不管这个例子，我们先引入一个JavaScript中最基础，但同时也是最重要的一个概念：执行上下文（Execution Context）。&lt;/p&gt;
     
     </summary>
     
