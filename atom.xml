@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-01T08:34:17.587Z</updated>
+  <updated>2019-09-01T13:28:33.493Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>图解作用域链与闭包</title>
+    <link href="https://memory-you.github.io/2019/09/01/%E5%9B%BE%E8%A7%A3%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E4%B8%8E%E9%97%AD%E5%8C%85/"/>
+    <id>https://memory-you.github.io/2019/09/01/图解作用域链与闭包/</id>
+    <published>2019-09-01T12:33:01.000Z</published>
+    <updated>2019-09-01T13:28:33.493Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;初学JavaScript的时候，我在学习闭包上，走了很多弯路。而这次重新回过头来对基础知识进行梳理，要讲清楚闭包，也是一个非常大的挑战。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>变量对象图解</title>
     <link href="https://memory-you.github.io/2019/09/01/%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1%E5%9B%BE%E8%A7%A3/"/>
     <id>https://memory-you.github.io/2019/09/01/变量对象图解/</id>
     <published>2019-09-01T08:08:37.000Z</published>
-    <updated>2019-09-01T08:34:17.587Z</updated>
+    <updated>2019-09-01T12:40:09.376Z</updated>
     
     <summary type="html">
     
@@ -67,30 +85,6 @@
 因为JavaScript具有自动垃圾回收机制，所以对前端开发来说，内存空间并不是一个经常被提及的概念。但想要对JS理解更加深刻，就必须对内存空间有一个清晰的认知。
 
 &lt;p&gt;在学习内存空间之前，我们需要对这三种数据结构有个直观的认知，堆（heap）、栈（stack）和队列（queue）。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>消息图解作用域链与闭包</title>
-    <link href="https://memory-you.github.io/2019/08/31/%E6%B6%88%E6%81%AF%E5%9B%BE%E8%A7%A3%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E4%B8%8E%E9%97%AD%E5%8C%85/"/>
-    <id>https://memory-you.github.io/2019/08/31/消息图解作用域链与闭包/</id>
-    <published>2019-08-31T08:27:42.000Z</published>
-    <updated>2019-08-31T08:27:42.546Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-
-        
-      
     
     </summary>
     
