@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-01T14:03:32.389Z</updated>
+  <updated>2019-09-02T07:23:21.852Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>函数与函数式编程</title>
+    <link href="https://memory-you.github.io/2019/09/01/%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    <id>https://memory-you.github.io/2019/09/01/函数与函数式编程/</id>
+    <published>2019-09-01T15:08:25.000Z</published>
+    <updated>2019-09-02T07:23:21.852Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;纵观JavaScript中所有必须需要掌握的重点知识中，函数时我们在初学的时候最容易忽视的一个知识点。在学习的过程中，可能会有很多人、很多文章告诉你面向对象很重要，原型很重要，可是却很少有人告诉你，面向对象中所有的重点难点，几乎都与函数息息相关。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>全方位解读this</title>
@@ -113,19 +131,12 @@
     <link href="https://memory-you.github.io/2019/08/31/%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0call()%E3%80%81apply()%E3%80%81bind()/"/>
     <id>https://memory-you.github.io/2019/08/31/手写实现call()、apply()、bind()/</id>
     <published>2019-08-31T04:29:04.000Z</published>
-    <updated>2019-08-31T08:07:46.909Z</updated>
+    <updated>2019-09-02T07:30:11.271Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参
-        
-      
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。
     
     </summary>
     
@@ -137,20 +148,12 @@
     <link href="https://memory-you.github.io/2019/08/31/JavaScript%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     <id>https://memory-you.github.io/2019/08/31/JavaScript之工厂模式/</id>
     <published>2019-08-31T03:17:01.000Z</published>
-    <updated>2019-08-31T03:48:39.841Z</updated>
+    <updated>2019-09-02T07:30:41.778Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;工厂模式类似现实生活种的工厂可以产生大量相似的商品，去做同样的事情，实现相同的效果；&lt;/p&gt;
-&lt;p&gt;简单的工厂模型可以理解为解决多个相似的问题，这也是它的优点。相关代码如下：&lt;/p&gt;
-        
-      
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+工厂模式类似现实生活种的工厂可以产生大量相似的商品，去做同样的事情，实现相同的效果；
     
     </summary>
     
