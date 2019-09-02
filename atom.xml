@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-02T08:19:29.181Z</updated>
+  <updated>2019-09-02T13:53:05.271Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>详解面向对象、构造函数、原型与原型链</title>
+    <link href="https://memory-you.github.io/2019/09/02/%E8%AF%A6%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>https://memory-you.github.io/2019/09/02/详解面向对象、构造函数、原型与原型链/</id>
+    <published>2019-09-02T08:22:43.000Z</published>
+    <updated>2019-09-02T13:53:05.271Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## 对象的定义
+
+&lt;p&gt;在ECMAScript-262中，对象被定义为“无无序属性的集合，其属性可以包含基本值、对象或者函数”。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>深入理解函数的柯里化</title>
@@ -345,22 +364,6 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
     </summary>
     
       <category term="Markdown" scheme="https://memory-you.github.io/categories/Markdown/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://memory-you.github.io/2019/06/15/hello-world/"/>
-    <id>https://memory-you.github.io/2019/06/15/hello-world/</id>
-    <published>2019-06-15T13:42:25.229Z</published>
-    <updated>2019-08-16T15:01:02.192Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
     
     
   </entry>
