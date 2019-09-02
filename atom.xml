@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-02T07:23:21.852Z</updated>
+  <updated>2019-09-02T08:19:29.181Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入理解函数的柯里化</title>
+    <link href="https://memory-you.github.io/2019/09/02/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E7%9A%84%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
+    <id>https://memory-you.github.io/2019/09/02/深入理解函数的柯里化/</id>
+    <published>2019-09-02T08:05:10.000Z</published>
+    <updated>2019-09-02T08:19:29.181Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+柯里化是函数的一个比较高级的应用，想要理解它并不简单。
+
+&lt;p&gt;柯里化是指一个函数（假设叫做createCurry），它接收函数A作为参数，运行后能够返回一个新的函数。并且这个新的函数能够处理函数A的剩余参数。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>函数与函数式编程</title>
