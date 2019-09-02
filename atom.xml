@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-02T13:53:05.271Z</updated>
+  <updated>2019-09-02T15:00:37.995Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>透彻掌握Promise</title>
+    <link href="https://memory-you.github.io/2019/09/02/%E9%80%8F%E5%BD%BB%E6%8E%8C%E6%8F%A1Promise/"/>
+    <id>https://memory-you.github.io/2019/09/02/透彻掌握Promise/</id>
+    <published>2019-09-02T13:56:26.000Z</published>
+    <updated>2019-09-02T15:00:37.995Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>详解面向对象、构造函数、原型与原型链</title>
@@ -346,24 +370,6 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
       &lt;h2 id=&quot;懒加载&quot;&gt;&lt;a href=&quot;#懒加载&quot; class=&quot;headerlink&quot; title=&quot;懒加载&quot;&gt;&lt;/a&gt;懒加载&lt;/h2&gt;&lt;h3 id=&quot;什么是懒加载&quot;&gt;&lt;a href=&quot;#什么是懒加载&quot; class=&quot;headerlink&quot; title=&quot;什么是懒加载&quot;&gt;&lt;/a&gt;什么是懒加载&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;懒加载也叫延迟加载，指的是在长网页中延迟加载图像，是一种很好优化网页性能的方式。&lt;/strong&gt; 用户滚动到他们之前，可视区域外的图像不会加载。这与图像预加载相反，在长网页上使用延迟加载将使网页加载更快。在某些情况下，它还可以帮助减少服务器负载。常适用图片很多，页面很长的电商网站场景中。&lt;/p&gt;
     
     </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown语法</title>
-    <link href="https://memory-you.github.io/2019/07/09/Markdown%E8%AF%AD%E6%B3%95/"/>
-    <id>https://memory-you.github.io/2019/07/09/Markdown语法/</id>
-    <published>2019-07-09T14:52:12.000Z</published>
-    <updated>2019-07-09T14:52:12.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;p&gt;在想要设置为标题的文字面前加#来表示，&lt;br&gt;一个#是一级标题，两个#是二级标题以此类推。支持六级标题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Markdown" scheme="https://memory-you.github.io/categories/Markdown/"/>
     
     
   </entry>
