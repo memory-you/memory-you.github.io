@@ -381,6 +381,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/10/节流/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero XP">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=107844747,2223636535&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zeroXP">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/10/节流/" class="post-title-link" itemprop="url">节流</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-10 22:46:56 / 修改时间：23:20:29" itemprop="dateCreated datePublished" datetime="2019-09-10T22:46:56+08:00">2019-09-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <meta name="referrer" content="no-referrer">
+
+<p>节流的原理：如果你持续触发事件，每隔一段时间，只执行一次事件。根据首次是否执行以及结束后是否执行，效果有所不同，实现的方式也有所不同。我们用leading代表首次是否执行，trailing代表结束后是否再执行一次。</p>
+<p>关于节流的实现，有两种主流的实现方式，一种是使用时间戳，一种是设置时间器。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/10/节流/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/09/防抖/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -642,12 +822,24 @@
                 
               
 
-              <time title="创建时间：2019-09-02 21:56:26 / 修改时间：23:22:42" itemprop="dateCreated datePublished" datetime="2019-09-02T21:56:26+08:00">2019-09-02</time>
+              <time title="创建时间：2019-09-02 21:56:26" itemprop="dateCreated datePublished" datetime="2019-09-02T21:56:26+08:00">2019-09-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-10 22:46:44" itemprop="dateModified" datetime="2019-09-10T22:46:44+08:00">2019-09-10</time>
               
             
           </span>
@@ -710,72 +902,17 @@
 
       
         
+          <meta name="referrer" content="no-referrer">
+在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。
+          <!--noindex-->
           
-            <meta name="referrer" content="no-referrer">
-
-<p>在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单的ajax原生实现</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">'https://hq.tigerbrokers.com/fundamental/finance_calendar/getType/2017-02-26/2017-06-10'</span>;</span><br><span class="line"><span class="keyword">var</span> result;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> XHR = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">XHR.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">XHR.send();</span><br><span class="line"></span><br><span class="line">XHR.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (XHR.readyState == <span class="number">4</span> &amp;&amp; XHR.status == <span class="number">200</span>) &#123;</span><br><span class="line">        result = XHR.response;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在ajax的原生实现中，利用了onreadystatechange事件，当该事件触发并且符合一定条件时，才能拿到我们想要的数据，之后我们才能开始处理数据。</p>
-<p>这样做看上去并没有什么麻烦，但是如果这个时间，我们还需要做另一个ajax请求，这个新的ajax的其中一个参数，要从上一个ajax请求中获取，这个时间我们就要这样做。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">'https://hq.tigerbrokers.com/fundamental/finance_calendar/getType/2017-02-26/2017-06-10'</span>;</span><br><span class="line"><span class="keyword">var</span> result;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> XHR = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">XHR.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">XHR.send();</span><br><span class="line"></span><br><span class="line">XHR.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (XHR.readyState == <span class="number">4</span> &amp;&amp; XHR.status == <span class="number">200</span>) &#123;</span><br><span class="line">        result = XHR.response;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 伪代码</span></span><br><span class="line">        <span class="keyword">var</span> url2 = <span class="string">'http:xxx.yyy.com/zzz?ddd='</span> + result.someParams;</span><br><span class="line">        <span class="keyword">var</span> XHR2 = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        XHR2.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">        XHR2.send();</span><br><span class="line">        XHR2.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当出现第三个ajax（甚至更多）依然依赖上一个请求的时候，我们的代码就变成了一场灾难。这场灾难往往被称为回调地狱。</p>
-<p>因此我们需要一个叫做Promise的东西来解决这个问题。</p>
-<p>当然除了回调地狱之外，我们还有一个非常重要的需求：为了我们的代码更具可读性与可维护性，我们需要将数据请求与数据处理明确的区分开来。上面的写法时完全没有区分来，当数据变得复杂时，也许我们自己都无法轻松维护自己的代码了。这也是模块化过程中，必须要掌握的一个重要的技能。</p>
-<p>当我们想要确保某代码在谁谁之后执行时，我们可以利用函数调用栈，将我们想要执行的代码放入回调函数中。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一个简单的封装</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">want</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'这是你想要执行的代码'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">want</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'这里表示执行了一大堆各种代码'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他代码执行完毕，最后执行回调函数</span></span><br><span class="line">    want &amp;&amp; want();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(want);</span><br></pre></td></tr></table></figure>
-
-<p>利用回调函数封装，是我们在初学JavaScript时常常会使用的技能。</p>
-<p>确保我们想要的代码压后执行，除了利用函数调用栈的执行顺序之外，还可以利用事件队列机制。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">want</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'这是你想要执行的代码'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">want</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 将想要执行的代码放入队列中，根据事件循环的机制，我们就不用非得将它放到最后面了，由你自由选择</span></span><br><span class="line">    want &amp;&amp; setTimeout(want, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'这里表示执行了一大堆各种代码'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(want);</span><br></pre></td></tr></table></figure>
-
-<p>如果浏览器已经支持了原生的Promise对象，那么我们就知道，浏览器的JS引擎里已经有了Promise队列，这样就可以利用Promise将任务放在它的队列中去。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">want</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'这是你想要执行的代码'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">want</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'这里表示执行了一大堆各种代码'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回Promise对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> want == <span class="string">'function'</span>) &#123;</span><br><span class="line">            resolve(want);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            reject(<span class="string">'TypeError: '</span>+ want +<span class="string">'不是一个函数'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(want).then(<span class="function"><span class="keyword">function</span>(<span class="params">want</span>) </span>&#123;</span><br><span class="line">    want();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">fn(<span class="string">'1234'</span>).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>看上去变得更加复杂了，但是代码变得更加健壮，处理了错误输入的情况。</p>
-<p>为了更好的往下扩展Promise的应用，这里需要先跟大家介绍一下Promsie的基础知识。</p>
-<p> Promise对象有三种状态，他们分别是：</p>
-<ul>
-<li>pending: 等待中，或者进行中，表示还没有得到结果</li>
-<li>resolved(Fulfilled): 已经完成，表示得到了我们想要的结果，可以继续往下执行</li>
-<li>rejected: 也表示得到结果，但是由于结果并非我们所愿，因此拒绝执行</li>
-</ul>
-<p>这三种状态不受外界影响，而且状态只能从pending改变为resolved或者rejected，并且不可逆。在Promise对象的构造函数中，将一个函数作为第一个参数。而这个函数，就是用来处理Promise的状态变化。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">true</span>) &#123; resolve() &#125;;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">false</span>) &#123; reject() &#125;;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>上面的resolved和reject都为一个函数，它们的作用分别是将状态修改为resolved和reject。</p>
-<p>Promise对象中的then方法，可以接收构造函数中处理的状态变化，并分别对应执行。then方法有2个参数，第一个函数接收resolved状态的执行，第二个参数接收reject状态的执行。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> num == <span class="string">'number'</span>) &#123;</span><br><span class="line">            resolve();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            reject();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'参数是一个number值'</span>);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'参数不是一个number值'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(<span class="string">'hahha'</span>);</span><br><span class="line">fn(<span class="number">1234</span>);</span><br></pre></td></tr></table></figure>
-
-<p>then方法的执行结果也会返回一个Promise对象。因此我们还可以继续then的链式执行，这也是解决回调地狱的主要方式。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> num == <span class="string">'number'</span>) &#123;</span><br><span class="line">            resolve();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            reject();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'参数是一个number值'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'参数不是一个number值'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(<span class="string">'hahha'</span>);</span><br><span class="line">fn(<span class="number">1234</span>);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>then(null, function() {}) 就等同于catch(function() {})</p>
-</blockquote>
-<p>Promise中的数据传递</p>
-<p>大家自行从下面的例子中领悟：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> num == <span class="string">'number'</span>) &#123;</span><br><span class="line">            resolve(num);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            reject(<span class="string">'TypeError'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(<span class="number">2</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'first: '</span> + num);</span><br><span class="line">    <span class="keyword">return</span> num + <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'second: '</span> + num);</span><br><span class="line">    <span class="keyword">return</span> num + <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'third: '</span> + num);</span><br><span class="line">    <span class="keyword">return</span> num + <span class="number">1</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line">first: <span class="number">2</span></span><br><span class="line">second: <span class="number">3</span></span><br><span class="line">third: <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-<p>OK，了解了这些基础知识之后，我们再回过头，利用Promise的知识，对最开始的ajax的例子进行一个简单的封装。看看会是什么样子。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">'https://hq.tigerbrokers.com/fundamental/finance_calendar/getType/2017-02-26/2017-06-10'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 封装一个get请求的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getJSON</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> XHR = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        XHR.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">        XHR.send();</span><br><span class="line"></span><br><span class="line">        XHR.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (XHR.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (XHR.status == <span class="number">200</span>) &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="keyword">var</span> response = <span class="built_in">JSON</span>.parse(XHR.responseText);</span><br><span class="line">                        resolve(response);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">                        reject(e);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    reject(<span class="keyword">new</span> <span class="built_in">Error</span>(XHR.statusText));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getJSON(url).then(<span class="function"><span class="params">resp</span> =&gt;</span> <span class="built_in">console</span>.log(resp));</span><br></pre></td></tr></table></figure>
-
-<p>为了健壮性，处理了很多可能出现的异常，总之，就是正确的返回结果，就resolve一下，错误的返回结果，就reject一下。并且利用上面的参数传递的方式，将正确结果或者错误信息通过他们的参数传递出来。</p>
-<blockquote>
-<p>现在所有的库几乎都将ajax请求利用Promise进行了封装，因此我们在使用jQuery等库中的ajax请求时，都可以利用Promise来让我们的代码更加优雅和简单。这也是Promise最常用的一个场景，因此我们一定要非常非常熟悉它，这样才能在应用的时候更加灵活。</p>
-</blockquote>
-<p>Promise.all</p>
-<p>当有一个ajax请求，它的参数需要另外2个甚至多个请求都要有返回结果之后才能确定，那么这个时候，就需要用到Promise.all来帮助我们应对这个场景。</p>
-<p>Promise.all接收一个Promise对象组成的数组作为参数，当这个数组所有的Promise对象状态都变成resolved或者reject的时候，它才会去调用then方法。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">'https://hq.tigerbrokers.com/fundamental/finance_calendar/getType/2017-02-26/2017-06-10'</span>;</span><br><span class="line"><span class="keyword">var</span> url1 = <span class="string">'https://hq.tigerbrokers.com/fundamental/finance_calendar/getType/2017-03-26/2017-06-10'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderAll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.all([getJSON(url), getJSON(url1)]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">renderAll().then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 建议大家在浏览器中看看这里的value值</span></span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>Promise.race</p>
-<p>与Promise.all相似的是，Promise.race都是以一个Promise对象组成的数组作为参数，不同的是，只要当数组中的其中一个Promise状态变成resolved或者rejected时，就可以调用then方法了。而传递给then方法的值也会有所不同。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderRace</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.race([getJSON(url), getJSON(url1)]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">renderRace().then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/02/透彻掌握Promise/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -2083,186 +2220,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/08/31/内存空间详细图解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero XP">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=107844747,2223636535&fm=26&gp=0.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zeroXP">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/31/内存空间详细图解/" class="post-title-link" itemprop="url">内存空间详细图解</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-31 16:28:24 / 修改时间：22:41:26" itemprop="dateCreated datePublished" datetime="2019-08-31T16:28:24+08:00">2019-08-31</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2.8k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <meta name="referrer" content="no-referrer">
-因为JavaScript具有自动垃圾回收机制，所以对前端开发来说，内存空间并不是一个经常被提及的概念。但想要对JS理解更加深刻，就必须对内存空间有一个清晰的认知。
-
-<p>在学习内存空间之前，我们需要对这三种数据结构有个直观的认知，堆（heap）、栈（stack）和队列（queue）。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/31/内存空间详细图解/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2311,7 +2268,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2393,7 +2350,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">125k</span>
+    <span title="站点总字数">131k</span>
   
 
   
@@ -2402,7 +2359,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:54</span>
+    <span title="站点阅读时长">1:59</span>
   
 </div>
 

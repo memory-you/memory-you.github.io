@@ -106,17 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。 1234567891011121314// 简单的ajax原生实现var url = &apos;https://hq.tigerbrokers.com/fundame">
+  <meta name="description" content="在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="透彻掌握Promise">
 <meta property="og:url" content="https://memory-you.github.io/2019/09/02/透彻掌握Promise/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。 1234567891011121314// 简单的ajax原生实现var url = &apos;https://hq.tigerbrokers.com/fundame">
+<meta property="og:description" content="在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-02T15:22:42.492Z">
+<meta property="og:updated_time" content="2019-09-10T14:46:44.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="透彻掌握Promise">
-<meta name="twitter:description" content="在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。 1234567891011121314// 简单的ajax原生实现var url = &apos;https://hq.tigerbrokers.com/fundame">
+<meta name="twitter:description" content="在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。">
 
 
 
@@ -427,12 +427,24 @@
                 
               
 
-              <time title="创建时间：2019-09-02 21:56:26 / 修改时间：23:22:42" itemprop="dateCreated datePublished" datetime="2019-09-02T21:56:26+08:00">2019-09-02</time>
+              <time title="创建时间：2019-09-02 21:56:26" itemprop="dateCreated datePublished" datetime="2019-09-02T21:56:26+08:00">2019-09-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-10 22:46:44" itemprop="dateModified" datetime="2019-09-10T22:46:44+08:00">2019-09-10</time>
               
             
           </span>
@@ -495,8 +507,10 @@
 
       
         <meta name="referrer" content="no-referrer">
+在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。
 
-<p>在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。</p>
+<a id="more"></a>
+
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单的ajax原生实现</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">'https://hq.tigerbrokers.com/fundamental/finance_calendar/getType/2017-02-26/2017-06-10'</span>;</span><br><span class="line"><span class="keyword">var</span> result;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> XHR = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">XHR.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">XHR.send();</span><br><span class="line"></span><br><span class="line">XHR.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (XHR.readyState == <span class="number">4</span> &amp;&amp; XHR.status == <span class="number">200</span>) &#123;</span><br><span class="line">        result = XHR.response;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在ajax的原生实现中，利用了onreadystatechange事件，当该事件触发并且符合一定条件时，才能拿到我们想要的数据，之后我们才能开始处理数据。</p>
@@ -661,7 +675,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -743,7 +757,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">125k</span>
+    <span title="站点总字数">131k</span>
   
 
   
@@ -752,7 +766,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:54</span>
+    <span title="站点阅读时长">1:59</span>
   
 </div>
 

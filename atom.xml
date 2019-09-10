@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-09T16:04:22.744Z</updated>
+  <updated>2019-09-10T15:20:29.358Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>节流</title>
+    <link href="https://memory-you.github.io/2019/09/10/%E8%8A%82%E6%B5%81/"/>
+    <id>https://memory-you.github.io/2019/09/10/节流/</id>
+    <published>2019-09-10T14:46:56.000Z</published>
+    <updated>2019-09-10T15:20:29.358Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;节流的原理：如果你持续触发事件，每隔一段时间，只执行一次事件。根据首次是否执行以及结束后是否执行，效果有所不同，实现的方式也有所不同。我们用leading代表首次是否执行，trailing代表结束后是否再执行一次。&lt;/p&gt;
+&lt;p&gt;关于节流的实现，有两种主流的实现方式，一种是使用时间戳，一种是设置时间器。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>防抖</title>
@@ -64,19 +83,12 @@
     <link href="https://memory-you.github.io/2019/09/02/%E9%80%8F%E5%BD%BB%E6%8E%8C%E6%8F%A1Promise/"/>
     <id>https://memory-you.github.io/2019/09/02/透彻掌握Promise/</id>
     <published>2019-09-02T13:56:26.000Z</published>
-    <updated>2019-09-02T15:22:42.492Z</updated>
+    <updated>2019-09-10T14:46:44.792Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时
-        
-      
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。
     
     </summary>
     
@@ -379,22 +391,6 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
     
       &lt;p&gt;在浏览器中输入URL到整个页面显示在用户面前时这个过程中到底发生了什么？经历怎样的一个过程？&lt;/p&gt;
 &lt;p&gt;总体来说分为以下几个过程：&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>如何居中一个元素</title>
-    <link href="https://memory-you.github.io/2019/08/18/%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0/"/>
-    <id>https://memory-you.github.io/2019/08/18/如何居中一个元素/</id>
-    <published>2019-08-18T05:50:32.000Z</published>
-    <updated>2019-08-18T07:48:49.235Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;水平居中&quot;&gt;&lt;a href=&quot;#水平居中&quot; class=&quot;headerlink&quot; title=&quot;水平居中&quot;&gt;&lt;/a&gt;水平居中&lt;/h2&gt;&lt;h3 id=&quot;行内元素水平居中&quot;&gt;&lt;a href=&quot;#行内元素水平居中&quot; class=&quot;headerlink&quot; title=&quot;行内元素水平居中&quot;&gt;&lt;/a&gt;行内元素水平居中&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;利用text-align:center可以实现在块级元素内部的行内元素水平居中。&lt;/strong&gt;此方法对inline、inline-block、inline-table和inline-flex元素水平居中都有效。 &lt;/p&gt;
     
     </summary>
     
