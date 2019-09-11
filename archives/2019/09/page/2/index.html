@@ -106,17 +106,13 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="手写实现call()、apply()、bind()">
-<meta property="og:url" content="https://memory-you.github.io/2019/08/31/手写实现call()、apply()、bind()/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="zeroXP">
+<meta property="og:url" content="https://memory-you.github.io/archives/2019/09/page/2/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-02T07:30:11.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="手写实现call()、apply()、bind()">
-<meta name="twitter:description" content="apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。">
+<meta name="twitter:title" content="zeroXP">
 
 
 
@@ -126,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/08/31/手写实现call()、apply()、bind()/">
+  <link rel="canonical" href="https://memory-you.github.io/archives/2019/09/page/2/">
 
 
 
@@ -136,7 +132,7 @@
   };
 </script>
 
-  <title>手写实现call()、apply()、bind() | zeroXP</title>
+  <title>归档 | zeroXP</title>
   
 
 
@@ -184,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <!-- fork me on github -->
@@ -293,7 +289,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-archives menu-item-active">
 
     
     
@@ -364,268 +360,108 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 25 篇日志。 继续努力。
+      </span>
+      
 
-  
-  
-  
+      
 
-  
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/08/31/手写实现call()、apply()、bind()/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero XP">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=107844747,2223636535&fm=26&gp=0.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zeroXP">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+          <a class="post-title-link" href="/2019/09/01/执行上下文图解/" itemprop="url">
+            
+              <span itemprop="name">执行上下文图解</span>
+            
+          </a>
         
-          <h1 class="post-title" itemprop="name headline">手写实现call()、apply()、bind()
+      </h2>
 
-              
-            
-          </h1>
-        
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-09-01T14:37:11+08:00" content="2019-09-01">
+          09-01
+        </time>
+      </div>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-31 12:29:04" itemprop="dateCreated datePublished" datetime="2019-08-31T12:29:04+08:00">2019-08-31</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-02 15:30:11" itemprop="dateModified" datetime="2019-09-02T15:30:11+08:00">2019-09-02</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <meta name="referrer" content="no-referrer">
-apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。
-
-<a id="more"></a>
-
-<h2 id="call"><a href="#call" class="headerlink" title="call()"></a>call()</h2><ol>
-<li>用法</li>
-</ol>
-<p>call方法将需要参数按顺序传递。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum.call(<span class="keyword">this</span>, num1, num2);</span><br><span class="line">&#125;</span><br><span class="line">alert(callSum(<span class="number">10</span>,<span class="number">10</span>));   <span class="comment">//20</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>实现原理</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call2 = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">      context = context || <span class="built_in">window</span></span><br><span class="line">      context.fn = <span class="keyword">this</span></span><br><span class="line">      <span class="keyword">var</span> args = [];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>, len = <span class="built_in">arguments</span>.length; i &lt; len; i++) &#123;</span><br><span class="line">        args.push(<span class="string">'arguments['</span> + i + <span class="string">']'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> result = <span class="built_in">eval</span>(<span class="string">'context.fn('</span> + args +<span class="string">')'</span>);</span><br><span class="line">      <span class="keyword">delete</span> context.fn</span><br><span class="line">      <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h2><ol>
-<li>用法</li>
-</ol>
-<p>apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组，可以是Array的实例，也可以是arguments对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum1</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum2</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, [num1, num2]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(callSum1(<span class="number">10</span>,<span class="number">10</span>));   <span class="comment">//20</span></span><br><span class="line">alert(callSum2(<span class="number">10</span>,<span class="number">10</span>));   <span class="comment">//20</span></span><br></pre></td></tr></table></figure>
-
-<p>其中this是你想指定的上下文，它可以是任何一个JavaScript对象（JavaScript中一切皆对象）。apply()和call()的用法，接收参数的方式不一样，使用call()和apply()来扩充作用域的最大好处，就是对象不需要与方法有任何耦合关系，如果你传的 context 就 null 或者 undefined，那么 window 对象就是默认的 context（严格模式下默认 context 是 undefined)。</p>
-<ol start="2">
-<li>实现原理</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.apply = <span class="function"><span class="keyword">function</span> (<span class="params">context, arr</span>) </span>&#123;</span><br><span class="line">      context = <span class="built_in">Object</span>(context) || <span class="built_in">window</span>;</span><br><span class="line">      context.fn = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> result;</span><br><span class="line">      <span class="keyword">if</span> (!arr) &#123;</span><br><span class="line">        result = context.fn();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> args = [];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">          args.push(<span class="string">'arr['</span> + i + <span class="string">']'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        result = <span class="built_in">eval</span>(<span class="string">'context.fn('</span> + args + <span class="string">')'</span>)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">delete</span> context.fn</span><br><span class="line">      <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h2><ol>
-<li>用法</li>
-</ol>
-<p>bind()用法：第一个参数是this的指向，从第二个参数开始接收的参数列表</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">color</span>: <span class="string">"blue"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    alert(<span class="keyword">this</span>.color);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objectSayColor = sayColor.bind(o);</span><br><span class="line"></span><br><span class="line">objectSayColor();    <span class="comment">//blue</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>实现原理</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span> (<span class="params">oThis</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Function.prototype.bind - what is trying to be bound is not callable"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> aArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>),</span><br><span class="line">      fToBind = <span class="keyword">this</span>,</span><br><span class="line">      fNOP = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">      fBound = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="comment">// 当作为构造函数时，this 指向实例，此时结果为 true，将绑定函数的 this 指向该实例，可以让实例获得来自绑定函数的值</span></span><br><span class="line">    <span class="comment">// 以上面的是 demo 为例，如果改成 `this instanceof fBound ? null : context`，实例只是一个空对象，将 null 改成 this ，实例会具有 habit 属性</span></span><br><span class="line">    <span class="comment">// 当作为普通函数时，this 指向 window，此时结果为 false，将绑定函数的 this 指向 context</span></span><br><span class="line">        <span class="keyword">return</span> fToBind.apply(</span><br><span class="line">            <span class="keyword">this</span> <span class="keyword">instanceof</span> fNOP &amp;&amp; oThis ? <span class="keyword">this</span> : oThis || <span class="built_in">window</span>,</span><br><span class="line">            aArgs.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>))</span><br><span class="line">        );</span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">  fNOP.prototype = <span class="keyword">this</span>.prototype;</span><br><span class="line">  fBound.prototype = <span class="keyword">new</span> fNOP();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> fBound;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>call、apply和bind函数存在的区别：</p>
-<ul>
-<li>bind()不会立即执行，而是返回一个改变了上下文this的函数，便于稍后调用；</li>
-<li>apply，call则是立即调用；</li>
-<li>call比apply的性能要好，平常可以多用call。call传入参数的格式正式内部所需要的格式；</li>
-</ul>
-<p>需要注意的一点的是：</p>
-<ul>
-<li>在ES6的箭头函数下，call和apply将失效，对于箭头函数来说，函数内部的this对象，就是定义时所在的对象；</li>
-<li>箭头函数不可以当作构造函数，也就是说不可以使用new关键字，否则会抛出一个错误。</li>
-<li>箭头函数不可以使用arguments对象，该对象在函数中不存在；</li>
-</ul>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/08/31/JavaScript之工厂模式/" rel="next" title="JavaScript之工厂模式">
-                <i class="fa fa-chevron-left"></i> JavaScript之工厂模式
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/31/内存空间详细图解/" rel="prev" title="内存空间详细图解">
-                内存空间详细图解 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
+
+      
+
+    </div>
   </div>
+  
+  
+  
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2019/09/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2019/09/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
 
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -645,17 +481,8 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -727,23 +554,6 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#call"><span class="nav-number">1.</span> <span class="nav-text">call()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply"><span class="nav-number">2.</span> <span class="nav-text">apply()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bind"><span class="nav-number">3.</span> <span class="nav-text">bind()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -908,10 +718,6 @@ setInterval("createtime()",250);
 
 
   
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
 
   
 
@@ -927,8 +733,6 @@ setInterval("createtime()",250);
 
   
 
-
-  
 
 
   
