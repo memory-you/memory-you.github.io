@@ -106,21 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="在JavaScript中，我们肯定不可避免需要声明变量和函数，可是JS解析器是如何找到这些变量的呢？我们还得对执行上下文有个更进一步的了解。">
+  <meta name="description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="变量对象图解">
-<meta property="og:url" content="https://memory-you.github.io/2019/09/01/变量对象图解/index.html">
+<meta property="og:title" content="ES6系列之let和const">
+<meta property="og:url" content="https://memory-you.github.io/2019/09/13/ES6系列之let和const/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="在JavaScript中，我们肯定不可避免需要声明变量和函数，可是JS解析器是如何找到这些变量的呢？我们还得对执行上下文有个更进一步的了解。">
+<meta property="og:description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-ab88faf1cbf625b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-391af3aad043c028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-7d131cfe82a20d37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/701/format/webp">
-<meta property="og:updated_time" content="2019-09-01T12:40:09.376Z">
+<meta property="og:updated_time" content="2019-09-13T10:26:23.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="变量对象图解">
-<meta name="twitter:description" content="在JavaScript中，我们肯定不可避免需要声明变量和函数，可是JS解析器是如何找到这些变量的呢？我们还得对执行上下文有个更进一步的了解。">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/599584-ab88faf1cbf625b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700/format/webp">
+<meta name="twitter:title" content="ES6系列之let和const">
+<meta name="twitter:description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
 
 
 
@@ -130,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/09/01/变量对象图解/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/09/13/ES6系列之let和const/">
 
 
 
@@ -140,7 +136,7 @@
   };
 </script>
 
-  <title>变量对象图解 | zeroXP</title>
+  <title>ES6系列之let和const | zeroXP</title>
   
 
 
@@ -388,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/01/变量对象图解/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/13/ES6系列之let和const/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -405,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">变量对象图解
+          <h1 class="post-title" itemprop="name headline">ES6系列之let和const
 
               
             
@@ -431,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-09-01 16:08:37 / 修改时间：20:40:09" itemprop="dateCreated datePublished" datetime="2019-09-01T16:08:37+08:00">2019-09-01</time>
+              <time title="创建时间：2019-09-13 16:05:48 / 修改时间：18:26:23" itemprop="dateCreated datePublished" datetime="2019-09-13T16:05:48+08:00">2019-09-13</time>
             
 
             
@@ -464,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.3k</span>
+                <span title="本文字数">4.1k</span>
               
 
               
@@ -478,7 +474,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -499,56 +495,107 @@
 
       
         <meta name="referrer" content="no-referrer">
-在JavaScript中，我们肯定不可避免需要声明变量和函数，可是JS解析器是如何找到这些变量的呢？我们还得对执行上下文有个更进一步的了解。
 
+<p>通过 <code>var</code>声明的变量存在变量提升的特性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)</span><br></pre></td></tr></table></figure>
+
+<p>初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：</p>
 <a id="more"></a>
 
-<p><img src="//upload-images.jianshu.io/upload_images/599584-ab88faf1cbf625b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700/format/webp" alt></p>
-<p>一个执行上下文的什么周期分为两个阶段：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value</span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)</span><br></pre></td></tr></table></figure>
+
+<p>如果condition为false，结果会是undefined。</p>
+<p>除此之外，在for循环中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i)</span><br></pre></td></tr></table></figure>
+
+<p>为了加强对变量生命周期的控制，ECMAScript6引入块级作用域。</p>
+<p>块级作用域存在于：</p>
 <ul>
-<li>创建阶段：在这个阶段中，执行上下文会分别创建变量对象，建立作用域链，以及确定this的指向。</li>
-<li>代码执行阶段：创建完成之后，就会开始执行代码。这个时候，会完成变量赋值，函数引用，以及执行其他代码。</li>
+<li>函数内部</li>
+<li>块中（字符 { 和 } 之间的区域）</li>
 </ul>
-<p><img src="//upload-images.jianshu.io/upload_images/599584-391af3aad043c028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt></p>
-<p>从这里我们就可以看出详细了解执行上下文几位重要，，因为其中涉及到了变量对象，作用域链，this等很多人没弄明白，但是却极为重要的概念。它关系到我们能不能真正理解JavaScript。</p>
-<h2 id="变量对象（Variable-Object）"><a href="#变量对象（Variable-Object）" class="headerlink" title="变量对象（Variable Object）"></a>变量对象（Variable Object）</h2><p>变量对象的创建，依次经历了一下几个过程。</p>
+<hr>
+<h2 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h2><p>块级声明用于声明在指定块的作用域之外无法访问的变量。</p>
+<p>let和const都是块级声明的一种。</p>
+<p>我们来回顾下let和const的特点。</p>
 <ol>
-<li>建立arguments对象，检查当前上下文的参数，建立该对象下的属性与属性值。</li>
-<li>建立当前上下文的函数声明，也就是使用function关键字声明的函数。在变量对象中以函数名建立一个属性，属性值为指向该函数所在内存地址的引用。如果函数名的属性已经存在，那么该属性将会被新的引用所覆盖。</li>
-<li>检查当前上下文中的变量声明，每找到一个变量声明，就在变量对象中以变量名建立一个属性，属性值为undefined。如果该变量名的属性已经存在，为了防止同名的函数被修改为undefined，则会直接跳过，原属性不会被修改。</li>
+<li>不会被提升</li>
 </ol>
-<p>许多读者在阅读到这的时候会因为下面的这样场景对于“跳过”一词产生疑问。既然变量声明的foo遇到函数声明的foo会跳过，可是为什么最后foo的输出结果仍然是被覆盖了？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'function foo'</span>) &#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> valur = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)  <span class="comment">// Uncaught ReferenceError: value is not defined</span></span><br></pre></td></tr></table></figure>
 
-<p>其实只是大家在阅读的时候不够仔细，因为上面的三条规则仅仅适用于变量对象的创建过程。也就是执行上下文的创建过程。而<code>foo = 20</code>是在执行上下文的执行过程中运行的，输出结果自然会是20。对比下例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// function foo</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'function foo'</span>) &#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="number">20</span>;</span><br><span class="line"><span class="comment">// 上栗的执行顺序为</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先将所有函数声明放入变量对象中</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'function foo'</span>) &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其次将所有变量声明放入变量对象中，但是因为foo已经存在同名函数，因此此时会跳过undefined的赋值</span></span><br><span class="line"><span class="comment">// var foo = undefined;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 然后开始执行阶段代码的执行</span></span><br><span class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// function foo</span></span><br><span class="line">foo = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>重复声明报错</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> value = <span class="number">2</span>  <span class="comment">// Uncaught SyntaxError: Identifier 'value' has already been declared</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/599584-7d131cfe82a20d37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/701/format/webp" alt></p>
-<p>根据这个规则，理解变量提升就变得十分简单了。在很多文章中虽然提到了变量提升，但是具体是怎么回事还真的很多人都说不出来，以后在面试中用变量对象的创建过程跟面试官解释变量提升，保证瞬间提升逼格。</p>
-<p>在上面的规则中，function声明会比var声明优先级更高一点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demo01</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="built_in">console</span>.log(foo());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>不绑定全局作用域</li>
+</ol>
+<p>当在全局作用域中使用var声明的时候，会创建一个新的全局变量作为全局对象的属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.value)  <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 
-<p>在上例中，我们直接从test()的执行上下文开始理解。全局作用域中运行test()时，test()的执行上下文开始创建。为了便于理解，我们用如下形式来表示。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建过程</span></span><br><span class="line">testEC = &#123;</span><br><span class="line">    <span class="comment">// 变量对象</span></span><br><span class="line">    VO: &#123;&#125;,</span><br><span class="line">    scopeChain: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 因为本文暂时不详细解释作用域链，所以把变量对象专门提出来说明</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// VO 为 Variable Object的缩写，即变量对象</span></span><br><span class="line">VO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;...&#125;,  <span class="comment">//注：在浏览器的展示中，函数的参数可能并不是放在arguments对象中，这里为了方便理解，我做了这样的处理</span></span><br><span class="line">    foo: &lt;foo reference&gt;  // 表示foo的地址引用</span><br><span class="line">    a: undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然而，let和const不会：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> value = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.value)  <span class="comment">//  undefined</span></span><br></pre></td></tr></table></figure>
 
-<p>未进入执行阶段之前，变量对象中的属性都不能访问！但是进入执行阶段之后，变量对象转变为了活动对象，里面的属性都能被访问了，然后开始进行执行阶段的操作。</p>
-<blockquote>
-<p>如果在面试的时候被问到变量对象和活动对象有什么区别，就可以自如应答了。它们其实就是同一个对象，只是处于执行上下文的不同生命周期。不过只有处于函数调用栈栈顶的执行上下文的变量对象，才会变成活动对象。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行阶段</span></span><br><span class="line">VO -&gt;  AO   <span class="comment">// Active Object</span></span><br><span class="line">AO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;...&#125;,</span><br><span class="line">    foo: &lt;foo reference&gt;,</span><br><span class="line">    a: 1,</span><br><span class="line">    this: Window</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再来说下let和const的区别：</p>
+<p>const用于声明常量，其值一旦被设定不能再被修改，否则会报错</p>
+<p>值得一提的是：const声明不允许修改绑定，但允许修改值，这意味着当用const声明对象时：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">    value: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 没问题</span></span><br><span class="line">data.value = <span class="number">2</span></span><br><span class="line">data.num = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line">data = &#123;&#125;  <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
 
-<p>因此，上面的例子demo1，执行顺序就变成了这样</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> a;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="built_in">console</span>.log(foo());</span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="暂时死区"><a href="#暂时死区" class="headerlink" title="暂时死区"></a>暂时死区</h2><p>临时死区（Temporal Dead Zone），简称为TDZ。</p>
+<p>let和const声明的变量不会被提升到作用域顶部，如果在声明之前访问这些变量，会导致报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> value) <span class="comment">// Uncaught ReferenceError: value is not defined</span></span><br><span class="line"><span class="keyword">let</span> value = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>再来一个例子，巩固一下我们的理解。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demo2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> foo = <span class="string">'Hello'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">    <span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'world'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'hello'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br><span class="line"><span class="comment">// 创建阶段</span></span><br><span class="line">VO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;...&#125;,</span><br><span class="line">    foo: &lt;foo reference&gt;,</span><br><span class="line">    bar: undefined</span><br><span class="line">&#125;</span><br><span class="line">// 这里有一个需要注意的地方，因为var声明的变量当遇到同名的属性时，会跳过而不会覆盖</span><br><span class="line">// 执行阶段</span><br><span class="line">VO -&gt; AO</span><br><span class="line">VO = &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    foo: 'Hello',</span><br><span class="line">    bar: &lt;bar reference&gt;,</span><br><span class="line">    this: Window</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是因为JavaScript引擎在扫描代码发现变量声明时，要么将它们提升到作用域顶部（遇到var声明），要么将声明放在TDZ中（遇到let和const声明）。访问TDZ中的变量会触发运行时错误。只有执行过变量声明语句后，变量才会从TDZ中移除，然后方可访问。</p>
+<p>看似很好理解，不保证不会犯错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="string">'global'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">    <span class="keyword">let</span> value = <span class="string">'local'</span></span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">    <span class="keyword">const</span> value = <span class="string">'local'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>需要结合上面的知识，仔细对比这个例子中变量对象从创建阶段到执行阶段的变化，如果你已经理解了，说明变量对象相关的东西都已经难不倒你了。</p>
-<h2 id="全局上下文的变量对象"><a href="#全局上下文的变量对象" class="headerlink" title="全局上下文的变量对象"></a>全局上下文的变量对象</h2><p>以浏览器为例，全局对象为window。</p>
-<p>全局上下文有个特殊的地方，它的变量对象，就是window对象。而这个特殊，在this指向上也同样适用，this也是指向window。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以浏览器中为例，全局对象为window</span></span><br><span class="line"><span class="comment">// 全局上下文</span></span><br><span class="line">windowEC = &#123;</span><br><span class="line">    VO: Window,</span><br><span class="line">    scopeChain: &#123;&#125;,</span><br><span class="line">    <span class="keyword">this</span>: Window</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两个例子中，结果并不会打印’global’，而是报错<code>Uncaught ReferenceError: value is not defined</code>，就是因为 TDZ 的缘故。</p>
+<hr>
+<h2 id="循环中的块级作用域"><a href="#循环中的块级作用域" class="headerlink" title="循环中的块级作用域"></a>循环中的块级作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
 
-<p>除此之外，全局上下文的生命周期，与程序额生命周期一致，只要程序运行不结束。比如关闭浏览器窗口，全局上下文就会一直存在，其它所有的上下文环境，都能直接访问全局上下文的属性。</p>
+<p>一个老生常谈的面试题，解决方案如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(i))</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<p>ES6的let为这个问题提供了新的解决方案：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    function[i] = function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<p>问题在于，上面讲了let不提升，不能重复声明，不能绑定全局作用域等等特性，可是为什么在这里就能正确打印出i值呢？</p>
+<p>如果是不重复声明，在循环第二次的时候，又用let声明了i，应该报错呀，就算因为某种原因，重复声明不报错，一遍一遍迭代，i的值最终还应该是3呀。</p>
+<p>设置循环变量的那个部分是一个单独的作用域，就比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子是对的，如果我们把let改成var呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
+
+<p>为什么结果就不一样了呢，如果有单独的作用域，结果应该是相同的</p>
+<p>如果要追究这个问题，就要抛弃掉之前所讲的这些特性！这是因为 let 声明在循环内部的行为是标准中专门定义的，不一定就与 let 的不提升特性有关，其实，在早期的 let 实现中就不包含这一行为。</p>
+<p>我们会发现，在for循环中使用let和var，底层会使用不同的处理方式。</p>
+<p>那么当使用let的时候底层到底是怎样做的呢？</p>
+<p>简单的来说，就是在 <code>for (let i = 0; i &lt; 3; i++)</code> 中，即圆括号之内建立一个隐藏的作用域，这就可以解释为什么：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
+
+<p>然后每次迭代循环时都创建一个新变量，并以之前迭代中同名变量的值将其初始化。这样对于下面这样一段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<p>就相当于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 伪代码</span></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">0</span>) &#123;</span><br><span class="line">    funcs[<span class="number">0</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">1</span>) &#123;</span><br><span class="line">    funcs[<span class="number">1</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">2</span>) &#123;</span><br><span class="line">    funcs[<span class="number">2</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>当执行函数的时候，根据词法作用域就可以找到正确的值，其实也可以理解为let声明模仿了闭包的做法来简化循环过程。</p>
+<hr>
+<h2 id="循环中的let和const"><a href="#循环中的let和const" class="headerlink" title="循环中的let和const"></a>循环中的let和const</h2><p>不过到这里还没有结束，如果我们把let改成const呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>](); <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+
+<p>结果会是报错，因为虽然我们每次都创建了一个新的变量，然而我们在迭代中尝试修改const的值，所有最终会报错。</p>
+<p>说完了普通的for循环，我们还有for in 循环。</p>
+<p>那下面的结果时什么呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = [], object = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    funcs.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(key)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcs[<span class="number">0</span>]()</span><br></pre></td></tr></table></figure>
+
+<p>结果是’c’</p>
+<p>那如果把 var 改成 let 或者 const 呢？</p>
+<p>使用 let，结果自然会是 ‘a’，const 呢？ 报错还是 ‘a’?</p>
+<p>结果是正确打印 ‘a’，这是因为在 for in 循环中，每次迭代不会修改已有的绑定，而是会创建一个新的绑定。</p>
 
       
     </div>
@@ -579,8 +626,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/01/执行上下文图解/" rel="next" title="执行上下文图解">
-                <i class="fa fa-chevron-left"></i> 执行上下文图解
+              <a href="/2019/09/10/数组去重/" rel="next" title="数组去重">
+                <i class="fa fa-chevron-left"></i> 数组去重
               </a>
             
           </div>
@@ -588,10 +635,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/01/图解作用域链与闭包/" rel="prev" title="图解作用域链与闭包">
-                图解作用域链与闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -728,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量对象（Variable-Object）"><span class="nav-number">1.</span> <span class="nav-text">变量对象（Variable Object）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局上下文的变量对象"><span class="nav-number">2.</span> <span class="nav-text">全局上下文的变量对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let和const"><span class="nav-number">1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂时死区"><span class="nav-number">2.</span> <span class="nav-text">暂时死区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环中的块级作用域"><span class="nav-number">3.</span> <span class="nav-text">循环中的块级作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环中的let和const"><span class="nav-number">4.</span> <span class="nav-text">循环中的let和const</span></a></li></ol></div>
             
 
           </div>
