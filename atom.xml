@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-14T09:53:32.197Z</updated>
+  <updated>2019-09-15T05:27:26.526Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Symbol的使用场景</title>
+    <link href="https://memory-you.github.io/2019/09/14/Symbol%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+    <id>https://memory-you.github.io/2019/09/14/Symbol的使用场景/</id>
+    <published>2019-09-14T14:40:33.000Z</published>
+    <updated>2019-09-15T05:27:26.526Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## ES6第7中数据类型——Symbol
+
+&lt;p&gt;已经有的6中数据类型：&lt;code&gt;Undefined&lt;/code&gt;、&lt;code&gt;Null&lt;/code&gt;、&lt;code&gt;布尔值&lt;/code&gt;、
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ES6系列之箭头函数</title>
@@ -387,23 +412,6 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>常见六大Web安全按攻防解析</title>
-    <link href="https://memory-you.github.io/2019/08/29/%E5%B8%B8%E8%A7%81%E5%85%AD%E5%A4%A7Web%E5%AE%89%E5%85%A8%E6%8C%89%E6%94%BB%E9%98%B2%E8%A7%A3%E6%9E%90/"/>
-    <id>https://memory-you.github.io/2019/08/29/常见六大Web安全按攻防解析/</id>
-    <published>2019-08-29T08:04:25.000Z</published>
-    <updated>2019-08-30T12:13:37.043Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-在互联网时代，数据安全与个人隐私受到了前所未有的挑战，各种新奇的攻击技术层出不穷。如何才能更好地保护我们的数据？
     
     </summary>
     
