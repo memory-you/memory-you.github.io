@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-16T11:23:08.917Z</updated>
+  <updated>2019-09-16T14:19:32.227Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6系列之Generator的自动执行</title>
+    <link href="https://memory-you.github.io/2019/09/16/ES6%E7%B3%BB%E5%88%97%E4%B9%8BGenerator%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C/"/>
+    <id>https://memory-you.github.io/2019/09/16/ES6系列之Generator的自动执行/</id>
+    <published>2019-09-16T12:27:55.000Z</published>
+    <updated>2019-09-16T14:19:32.227Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;##　单个异步任务&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fetch = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;node-fetch&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;* &lt;span class=&quot;title&quot;&gt;gen&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; url = &lt;span class=&quot;string&quot;&gt;&#39;https://api.github.com/users/github&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; fetch(url)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(result.bio)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;为了获得最终的执行结果，你需要这样做：&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ES6之Promise</title>
@@ -91,6 +112,23 @@
 &lt;p&gt;已经有的6中数据类型：&lt;code&gt;Undefined&lt;/code&gt;、&lt;code&gt;Null&lt;/code&gt;、&lt;code&gt;布尔值&lt;/code&gt;、
         
       
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ES6系列之模拟Symbol类型</title>
+    <link href="https://memory-you.github.io/2019/09/14/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E6%A8%A1%E6%8B%9FSymbol%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://memory-you.github.io/2019/09/14/ES6系列之模拟Symbol类型/</id>
+    <published>2019-09-14T10:01:47.000Z</published>
+    <updated>2019-09-16T14:20:41.932Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+实际上，Symbol的很多特性都无法模拟实现，所以先让我们回顾下有哪些特性，然后挑点能实现的。当然在看的过程中，你也可以思想这个特性是否能实现，如果能实现，该如何实现。
     
     </summary>
     
@@ -380,42 +418,6 @@
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a);   &lt;span class=&quot;comment&quot;&gt;// 这里会打印出什么？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;暂时先不管这个例子，我们先引入一个JavaScript中最基础，但同时也是最重要的一个概念：执行上下文（Execution Context）。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>内存空间详细图解</title>
-    <link href="https://memory-you.github.io/2019/08/31/%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E8%AF%A6%E7%BB%86%E5%9B%BE%E8%A7%A3/"/>
-    <id>https://memory-you.github.io/2019/08/31/内存空间详细图解/</id>
-    <published>2019-08-31T08:28:24.000Z</published>
-    <updated>2019-08-31T14:41:26.273Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-因为JavaScript具有自动垃圾回收机制，所以对前端开发来说，内存空间并不是一个经常被提及的概念。但想要对JS理解更加深刻，就必须对内存空间有一个清晰的认知。
-
-&lt;p&gt;在学习内存空间之前，我们需要对这三种数据结构有个直观的认知，堆（heap）、栈（stack）和队列（queue）。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>手写实现call()、apply()、bind()</title>
-    <link href="https://memory-you.github.io/2019/08/31/%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0call()%E3%80%81apply()%E3%80%81bind()/"/>
-    <id>https://memory-you.github.io/2019/08/31/手写实现call()、apply()、bind()/</id>
-    <published>2019-08-31T04:29:04.000Z</published>
-    <updated>2019-09-02T07:30:11.271Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。
     
     </summary>
     
