@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-16T07:22:22.951Z</updated>
+  <updated>2019-09-16T11:23:08.917Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6之Promise</title>
+    <link href="https://memory-you.github.io/2019/09/16/ES6%E4%B9%8BPromise/"/>
+    <id>https://memory-you.github.io/2019/09/16/ES6之Promise/</id>
+    <published>2019-09-16T07:33:59.000Z</published>
+    <updated>2019-09-16T11:23:08.917Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;说起Promise，我们一般都会从回调或者回调地狱说起，那么使用回调到底会导致哪些不好的地方呢？&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ES6系列值WeakMap</title>
@@ -398,23 +416,6 @@
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript之工厂模式</title>
-    <link href="https://memory-you.github.io/2019/08/31/JavaScript%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://memory-you.github.io/2019/08/31/JavaScript之工厂模式/</id>
-    <published>2019-08-31T03:17:01.000Z</published>
-    <updated>2019-09-02T07:30:41.778Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-工厂模式类似现实生活种的工厂可以产生大量相似的商品，去做同样的事情，实现相同的效果；
     
     </summary>
     
