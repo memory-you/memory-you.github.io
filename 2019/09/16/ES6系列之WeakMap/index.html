@@ -106,17 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
+  <meta name="description" content="我们先从WeakMap的特性说起，然后聊聊WeakMap的一些应用场景。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6系列之let和const">
-<meta property="og:url" content="https://memory-you.github.io/2019/09/13/ES6系列之let和const/index.html">
+<meta property="og:title" content="ES6系列值WeakMap">
+<meta property="og:url" content="https://memory-you.github.io/2019/09/16/ES6系列之WeakMap/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
+<meta property="og:description" content="我们先从WeakMap的特性说起，然后聊聊WeakMap的一些应用场景。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T10:26:23.921Z">
+<meta property="og:updated_time" content="2019-09-16T07:22:22.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6系列之let和const">
-<meta name="twitter:description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
+<meta name="twitter:title" content="ES6系列值WeakMap">
+<meta name="twitter:description" content="我们先从WeakMap的特性说起，然后聊聊WeakMap的一些应用场景。">
 
 
 
@@ -126,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/09/13/ES6系列之let和const/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/09/16/ES6系列之WeakMap/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>ES6系列之let和const | zeroXP</title>
+  <title>ES6系列值WeakMap | zeroXP</title>
   
 
 
@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/13/ES6系列之let和const/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/16/ES6系列之WeakMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -401,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6系列之let和const
+          <h1 class="post-title" itemprop="name headline">ES6系列值WeakMap
 
               
             
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-09-13 16:05:48 / 修改时间：18:26:23" itemprop="dateCreated datePublished" datetime="2019-09-13T16:05:48+08:00">2019-09-13</time>
+              <time title="创建时间：2019-09-16 14:29:55 / 修改时间：15:22:22" itemprop="dateCreated datePublished" datetime="2019-09-16T14:29:55+08:00">2019-09-16</time>
             
 
             
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.1k</span>
+                <span title="本文字数">4.3k</span>
               
 
               
@@ -496,106 +496,85 @@
       
         <meta name="referrer" content="no-referrer">
 
-<p>通过 <code>var</code>声明的变量存在变量提升的特性：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)</span><br></pre></td></tr></table></figure>
-
-<p>初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：</p>
+<p>我们先从WeakMap的特性说起，然后聊聊WeakMap的一些应用场景。</p>
 <a id="more"></a>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value</span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)</span><br></pre></td></tr></table></figure>
-
-<p>如果condition为false，结果会是undefined。</p>
-<p>除此之外，在for循环中：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i)</span><br></pre></td></tr></table></figure>
-
-<p>为了加强对变量生命周期的控制，ECMAScript6引入块级作用域。</p>
-<p>块级作用域存在于：</p>
-<ul>
-<li>函数内部</li>
-<li>块中（字符 { 和 } 之间的区域）</li>
-</ul>
-<hr>
-<h2 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h2><p>块级声明用于声明在指定块的作用域之外无法访问的变量。</p>
-<p>let和const都是块级声明的一种。</p>
-<p>我们来回顾下let和const的特点。</p>
-<ol>
-<li>不会被提升</li>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
+<li>WeakMap只接受对象作为键名</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> valur = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)  <span class="comment">// Uncaught ReferenceError: value is not defined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">WeakMap</span>()</span><br><span class="line">map.set(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">// TypeError: Invalid value used as weak map key</span></span><br><span class="line">map.set(<span class="literal">null</span>, <span class="number">2</span>);</span><br><span class="line"><span class="comment">// TypeError: Invalid value used as weak map key</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>重复声明报错</li>
+<li>WeakMap的键名所引用的对象是弱应用</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> value = <span class="number">2</span>  <span class="comment">// Uncaught SyntaxError: Identifier 'value' has already been declared</span></span><br></pre></td></tr></table></figure>
+<p>这句话其实让我非常费解，我个人觉得这句话真正想表达的意思应该是：</p>
+<blockquote>
+<p>WeakMaps hold “weak” references to key objects,</p>
+</blockquote>
+<p>翻译过来应该是 WeakMaps 保持了对键名所引用的对象的弱引用。</p>
+<p>我们先聊聊弱引用：</p>
+<blockquote>
+<p>在计算机程序设计中，弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。 一个对象若只被弱引用所引用，则被认为是不可访问（或弱可访问）的，并因此可能在任何时刻被回收。</p>
+</blockquote>
+<p>在 JavaScript 中，一般我们创建一个对象，都是建立一个强引用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+
+<p>只有当我们手动设置<code>obj = null</code> 的时候，才有可能回收obj所引用的对象。</p>
+<p>而如果我们能创建一个弱引用的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设可以这样创建一个</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> WeakObject()</span><br></pre></td></tr></table></figure>
+
+<p>我们什么都不用做，只用静静的等待垃圾回收机制执行，obj所引用的对象就会被回收。</p>
+<p>我们再来看看这句：</p>
+<blockquote>
+<p>WeakMap保持了对键名所引用的对象的弱引用</p>
+</blockquote>
+<p>正常情况下，我们举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>)</span><br><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">    [key, <span class="number">1</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>使用这种方式，我们其实建立了arr和key所引用的对象（我们假设这个真正的对象叫Obj）的强引用。</p>
+<p>所有当你设置<code>key = null</code>时，只是去掉了key对Obj的强引用，并没有去除arr对Obj的强引用，所以Obj还是不会被回收掉。</p>
+<p>Map类型也是类似：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"><span class="keyword">let</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立了map对key'所引用对象的强引用</span></span><br><span class="line">map.set(key, <span class="number">1</span>)</span><br><span class="line"><span class="comment">// key = null 不会导致key的原引用对象被回收</span></span><br><span class="line">key = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>我们可以通过Node来证明一下这个问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 允许手动执行垃圾回收机制</span></span><br><span class="line">node --expose-gc</span><br><span class="line"></span><br><span class="line">global.gc() <span class="comment">// 返回Nodejs的内存占用情况，单位是bytes</span></span><br><span class="line">process.memoryUsage() <span class="comment">// heapUsed: 460360 = 4.4M</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"><span class="keyword">let</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>)</span><br><span class="line">map.set(key, <span class="number">1</span>)</span><br><span class="line">global.gc()</span><br><span class="line">process.memoryUsage() <span class="comment">// heapUsed: 46751472 注意这里大约是 44.6M</span></span><br><span class="line"></span><br><span class="line">key = <span class="literal">null</span></span><br><span class="line">global.gc()</span><br><span class="line">process.memoryUsage() <span class="comment">// heapUsed: 46754648 ≈ 44.6M</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这句话其实是无用的，因为 key 已经是 null 了</span></span><br><span class="line">map.delete(key);</span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 46755856 ≈ 44.6M</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你想要让 Obj 被回收掉，你需要先 <code>delete(key)</code> 然后再 <code>key = null</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="keyword">let</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>);</span><br><span class="line">map.set(key, <span class="number">1</span>);</span><br><span class="line">map.delete(key);</span><br><span class="line">key = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p>我们依然通过 Node 证明一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">node --expose-gc</span><br><span class="line"></span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 4638376 ≈ 4.4M</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="keyword">let</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>);</span><br><span class="line">map.set(key, <span class="number">1</span>);</span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 46727816 ≈ 44.6M</span></span><br><span class="line"></span><br><span class="line">map.delete(key);</span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 46748352 ≈ 44.6M</span></span><br><span class="line"></span><br><span class="line">key = <span class="literal">null</span>;</span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 4808064 ≈ 4.6M</span></span><br></pre></td></tr></table></figure>
+
+<p>这个时候就要说到 WeakMap 了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> wm = <span class="keyword">new</span> WealMap()</span><br><span class="line"><span class="keyword">let</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>)</span><br><span class="line">wm.set(key, <span class="number">1</span>)</span><br><span class="line">key = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们设置 <code>wm.set(key, 1)</code> 时，其实建立了 wm 对 key 所引用的对象的弱引用，但因为 <code>let key = new Array(5 * 1024 * 1024)</code> 建立了 key 对所引用对象的强引用，被引用的对象并不会被回收，但是当我们设置 <code>key = null</code> 的时候，就只有 wm 对所引用对象的弱引用，下次垃圾回收机制执行的时候，该引用对象就会被回收掉。</p>
+<p>我们用 Node 证明一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">node --expose-gc</span><br><span class="line"></span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 4638992 ≈ 4.4M</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> wm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line"><span class="keyword">let</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>);</span><br><span class="line">wm.set(key, <span class="number">1</span>);</span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 46776176 ≈ 44.6M</span></span><br><span class="line"></span><br><span class="line">key = <span class="literal">null</span>;</span><br><span class="line">global.gc();</span><br><span class="line">process.memoryUsage(); <span class="comment">// heapUsed: 4800792 ≈ 4.6M</span></span><br></pre></td></tr></table></figure>
+
+<p>所以WeakMap可以帮你省掉手动删除对象关联数据的步骤，所以当你不能或者不想控制关联数据的生命周期时，就可以考虑使用WeakMap</p>
+<p>总结这个弱引用的特性，就是WeakMap保持了对键名所引用的对象的弱引用，即垃圾回收机制不将该引用考虑在内。只要所引用的对象的其他引用都被清除，垃圾回收机制就会释放该对象所占用的内存也就是说，一旦不再需要，WeakMap里面的键名对象和所对应的键值对会自动消失，不用手动删除引用。</p>
+<p>也正是因为这样的特性，WeakMap内部有多少个成员，取决于垃圾回收机制有没有运行，运行前后很可能成员个数时不一样的，而垃圾回收机制何时运行是不可预测的，因此ES6规定WeakMap不可遍历。</p>
+<p>所以WeakMap不像Map，一是没有遍历操作（即没有keys()、values()和entries()方法），也没有size属性，也不支持clear()方法。所以WeakMap只要四个方法可以用：get()、set()、has()、delete().。</p>
+<hr>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol>
+<li>在DOM对象上保存相关数据</li>
+</ol>
+<p>传统使用jQuery的时候，我们会通过<code>$.data()</code>在DOM对象上存储相关信息（就比如在删除按钮元素上储存帖子的ID信息），jQuery内部会使用一个对象管理DOM和对应的数据，当你将DOM元素删除，DOM对象置为空的时候，相关联的数据并不会被删除，你必须手动执行<code>$.removeData()</code>才能删除掉相关联的数据，WeakMap就可以简化这一操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> wm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>(), element = <span class="built_in">document</span>.querySelector(<span class="string">'.element'</span>)</span><br><span class="line">wm.set(element, <span class="string">'data'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> value = wm.get(element)</span><br><span class="line"><span class="built_in">console</span>.log(vlaue) <span class="comment">// data</span></span><br><span class="line"></span><br><span class="line">element.parentNode.removeChild(element)</span><br><span class="line">element = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>数据缓存</li>
+</ol>
+<p>从上一个例子，我们也可以看出，当我们需要关联对象和数据，比如在不修改原有对象的情况下储存某些属性或者根据对象储存一些计算的值等，而又不想管理这些数据时非常适合考虑使用WeakMap。数据缓存就是一个很好的例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cache = <span class="keyword">new</span> <span class="built_in">WeakMap</span>()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countOwnKeys</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (cache.has(obj)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Cached'</span>)</span><br><span class="line">        <span class="keyword">return</span> cache.get(obj)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Computed'</span>)</span><br><span class="line">        <span class="keyword">const</span> count = <span class="built_in">Object</span>.keys(obj).length</span><br><span class="line">        cache.set(obj, count)</span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>不绑定全局作用域</li>
+<li>私有属性</li>
 </ol>
-<p>当在全局作用域中使用var声明的时候，会创建一个新的全局变量作为全局对象的属性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.value)  <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>WeakMap也可以被用于实现私有变量，不过在ES6中实现私有变量的方式有很多种，这只是其中一种：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> privateData = <span class="keyword">new</span> <span class="built_in">WeakMap</span>()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">        privateData.set(<span class="keyword">this</span>, &#123; <span class="attr">name</span>: name, <span class="attr">age</span>: age &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> privateData.get(<span class="keyword">this</span>).name</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> privateData.get(<span class="keyword">this</span>).age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Person</span><br></pre></td></tr></table></figure>
 
-<p>然而，let和const不会：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> value = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.value)  <span class="comment">//  undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>再来说下let和const的区别：</p>
-<p>const用于声明常量，其值一旦被设定不能再被修改，否则会报错</p>
-<p>值得一提的是：const声明不允许修改绑定，但允许修改值，这意味着当用const声明对象时：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">    value: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 没问题</span></span><br><span class="line">data.value = <span class="number">2</span></span><br><span class="line">data.num = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line">data = &#123;&#125;  <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="暂时死区"><a href="#暂时死区" class="headerlink" title="暂时死区"></a>暂时死区</h2><p>临时死区（Temporal Dead Zone），简称为TDZ。</p>
-<p>let和const声明的变量不会被提升到作用域顶部，如果在声明之前访问这些变量，会导致报错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> value) <span class="comment">// Uncaught ReferenceError: value is not defined</span></span><br><span class="line"><span class="keyword">let</span> value = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>这是因为JavaScript引擎在扫描代码发现变量声明时，要么将它们提升到作用域顶部（遇到var声明），要么将声明放在TDZ中（遇到let和const声明）。访问TDZ中的变量会触发运行时错误。只有执行过变量声明语句后，变量才会从TDZ中移除，然后方可访问。</p>
-<p>看似很好理解，不保证不会犯错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="string">'global'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">    <span class="keyword">let</span> value = <span class="string">'local'</span></span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">    <span class="keyword">const</span> value = <span class="string">'local'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>两个例子中，结果并不会打印’global’，而是报错<code>Uncaught ReferenceError: value is not defined</code>，就是因为 TDZ 的缘故。</p>
-<hr>
-<h2 id="循环中的块级作用域"><a href="#循环中的块级作用域" class="headerlink" title="循环中的块级作用域"></a>循环中的块级作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-
-<p>一个老生常谈的面试题，解决方案如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(i))</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-
-<p>ES6的let为这个问题提供了新的解决方案：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    function[i] = function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-
-<p>问题在于，上面讲了let不提升，不能重复声明，不能绑定全局作用域等等特性，可是为什么在这里就能正确打印出i值呢？</p>
-<p>如果是不重复声明，在循环第二次的时候，又用let声明了i，应该报错呀，就算因为某种原因，重复声明不报错，一遍一遍迭代，i的值最终还应该是3呀。</p>
-<p>设置循环变量的那个部分是一个单独的作用域，就比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
-
-<p>这个例子是对的，如果我们把let改成var呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
-
-<p>为什么结果就不一样了呢，如果有单独的作用域，结果应该是相同的</p>
-<p>如果要追究这个问题，就要抛弃掉之前所讲的这些特性！这是因为 let 声明在循环内部的行为是标准中专门定义的，不一定就与 let 的不提升特性有关，其实，在早期的 let 实现中就不包含这一行为。</p>
-<p>我们会发现，在for循环中使用let和var，底层会使用不同的处理方式。</p>
-<p>那么当使用let的时候底层到底是怎样做的呢？</p>
-<p>简单的来说，就是在 <code>for (let i = 0; i &lt; 3; i++)</code> 中，即圆括号之内建立一个隐藏的作用域，这就可以解释为什么：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
-
-<p>然后每次迭代循环时都创建一个新变量，并以之前迭代中同名变量的值将其初始化。这样对于下面这样一段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-
-<p>就相当于：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 伪代码</span></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">0</span>) &#123;</span><br><span class="line">    funcs[<span class="number">0</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">1</span>) &#123;</span><br><span class="line">    funcs[<span class="number">1</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">2</span>) &#123;</span><br><span class="line">    funcs[<span class="number">2</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>当执行函数的时候，根据词法作用域就可以找到正确的值，其实也可以理解为let声明模仿了闭包的做法来简化循环过程。</p>
-<hr>
-<h2 id="循环中的let和const"><a href="#循环中的let和const" class="headerlink" title="循环中的let和const"></a>循环中的let和const</h2><p>不过到这里还没有结束，如果我们把let改成const呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>](); <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-
-<p>结果会是报错，因为虽然我们每次都创建了一个新的变量，然而我们在迭代中尝试修改const的值，所有最终会报错。</p>
-<p>说完了普通的for循环，我们还有for in 循环。</p>
-<p>那下面的结果时什么呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = [], object = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    funcs.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(key)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcs[<span class="number">0</span>]()</span><br></pre></td></tr></table></figure>
-
-<p>结果是’c’</p>
-<p>那如果把 var 改成 let 或者 const 呢？</p>
-<p>使用 let，结果自然会是 ‘a’，const 呢？ 报错还是 ‘a’?</p>
-<p>结果是正确打印 ‘a’，这是因为在 for in 循环中，每次迭代不会修改已有的绑定，而是会创建一个新的绑定。</p>
 
       
     </div>
@@ -626,8 +605,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/10/数组去重/" rel="next" title="数组去重">
-                <i class="fa fa-chevron-left"></i> 数组去重
+              <a href="/2019/09/15/ES6系列之迭代器与for-of/" rel="next" title="ES6系列之迭代器与for...of">
+                <i class="fa fa-chevron-left"></i> ES6系列之迭代器与for...of
               </a>
             
           </div>
@@ -635,10 +614,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/13/ES6系列之模板字符串/" rel="prev" title="模板字符串">
-                模板字符串 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -775,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let和const"><span class="nav-number">1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂时死区"><span class="nav-number">2.</span> <span class="nav-text">暂时死区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环中的块级作用域"><span class="nav-number">3.</span> <span class="nav-text">循环中的块级作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环中的let和const"><span class="nav-number">4.</span> <span class="nav-text">循环中的let和const</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a></li></ol></div>
             
 
           </div>

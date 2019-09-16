@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-16T06:17:50.650Z</updated>
+  <updated>2019-09-16T07:22:22.951Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6系列值WeakMap</title>
+    <link href="https://memory-you.github.io/2019/09/16/ES6%E7%B3%BB%E5%88%97%E4%B9%8BWeakMap/"/>
+    <id>https://memory-you.github.io/2019/09/16/ES6系列之WeakMap/</id>
+    <published>2019-09-16T06:29:55.000Z</published>
+    <updated>2019-09-16T07:22:22.951Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;我们先从WeakMap的特性说起，然后聊聊WeakMap的一些应用场景。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ES6系列之迭代器与for...of</title>
@@ -397,24 +415,6 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 工厂模式类似现实生活种的工厂可以产生大量相似的商品，去做同样的事情，实现相同的效果；
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Base64的原理与实现</title>
-    <link href="https://memory-you.github.io/2019/08/30/Base64%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://memory-you.github.io/2019/08/30/Base64的原理与实现/</id>
-    <published>2019-08-30T13:26:51.000Z</published>
-    <updated>2019-08-30T14:59:12.603Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的字符用可见字符来表示。Base64编码应运而生。&lt;/p&gt;
     
     </summary>
     
