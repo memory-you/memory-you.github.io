@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-15T05:27:26.526Z</updated>
+  <updated>2019-09-16T06:17:50.650Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6系列之迭代器与for...of</title>
+    <link href="https://memory-you.github.io/2019/09/15/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8Efor-of/"/>
+    <id>https://memory-you.github.io/2019/09/15/ES6系列之迭代器与for-of/</id>
+    <published>2019-09-15T05:34:57.000Z</published>
+    <updated>2019-09-16T06:17:50.650Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## 起源
+
+&lt;p&gt;一段标准的for循环代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; color = [&lt;span class=&quot;string&quot;&gt;&#39;red&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;green&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, len = color.length; i &amp;lt; len; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(color[i])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Symbol的使用场景</title>
@@ -395,23 +415,6 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
 &lt;p&gt;我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的字符用可见字符来表示。Base64编码应运而生。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP常见的状态码</title>
-    <link href="https://memory-you.github.io/2019/08/30/HTTP%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81/"/>
-    <id>https://memory-you.github.io/2019/08/30/HTTP常见的状态码/</id>
-    <published>2019-08-30T12:14:27.000Z</published>
-    <updated>2019-08-30T12:59:48.180Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。
     
     </summary>
     
