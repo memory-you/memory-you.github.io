@@ -106,17 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="我们">
+  <meta name="description" content="我们已查找指定目录下的最大文件为例，感受从： 回调函数 -&amp;gt; Promise -&amp;gt; Generator -&amp;gt; Async 异步处理方式的改变。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6系列之异步处理实战">
 <meta property="og:url" content="https://memory-you.github.io/2019/09/19/ES6系列之异步处理实战/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="我们">
+<meta property="og:description" content="我们已查找指定目录下的最大文件为例，感受从： 回调函数 -&amp;gt; Promise -&amp;gt; Generator -&amp;gt; Async 异步处理方式的改变。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-19T11:35:20.229Z">
+<meta property="og:updated_time" content="2019-09-19T12:35:21.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6系列之异步处理实战">
-<meta name="twitter:description" content="我们">
+<meta name="twitter:description" content="我们已查找指定目录下的最大文件为例，感受从： 回调函数 -&amp;gt; Promise -&amp;gt; Generator -&amp;gt; Async 异步处理方式的改变。">
 
 
 
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-09-19 19:34:40 / 修改时间：19:35:20" itemprop="dateCreated datePublished" datetime="2019-09-19T19:34:40+08:00">2019-09-19</time>
+              <time title="创建时间：2019-09-19 19:34:40 / 修改时间：20:35:21" itemprop="dateCreated datePublished" datetime="2019-09-19T19:34:40+08:00">2019-09-19</time>
             
 
             
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5</span>
+                <span title="本文字数">5.3k</span>
               
 
               
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -496,8 +496,46 @@
       
         <meta name="referrer" content="no-referrer">
 
-<p>我们</p>
+<p>我们已查找指定目录下的最大文件为例，感受从：</p>
+<p>回调函数 -&gt; Promise -&gt; Generator -&gt; Async</p>
+<p>异步处理方式的改变。</p>
+<a id="more"></a>
 
+<h2 id="API介绍"><a href="#API介绍" class="headerlink" title="API介绍"></a>API介绍</h2><p>为了实现这个功能，我们需要用到几个Nodejs的API，所有我们来简单介绍下。</p>
+<p>fs.readdir：方法用于读取目录，返回一个包含文件和目录的数组。</p>
+<p>fs.stat: 方法的参数是一个文件或目录，它产生一个对象，该对象包含了该文件或目录的具体信息。此外，该对象还有一个isFile()方法可以判断正在处理的到底是一个文件，还是一个目录。</p>
+<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>我们基本的实现思路就是：</p>
+<ol>
+<li>用<code>fs.readdir</code>获取指定目录的内容信息</li>
+<li>循环遍历内容信息，使用<code>fs.stat</code>获取该文件或者目录的具体信息</li>
+<li>将具体信息储存起来</li>
+<li>当全部储存起来，筛选其中的是文件的信息</li>
+<li>遍历比较，找出最大文件</li>
+<li>获取并返回最大文件</li>
+</ol>
+<hr>
+<h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLargest</span>(<span class="params">dir, cb</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 读取目录下的所有文件</span></span><br><span class="line">    fs.readdir(dir, <span class="function"><span class="keyword">function</span>(<span class="params">er, files</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (er) <span class="keyword">return</span> cb(er)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> counter = files.length</span><br><span class="line">        <span class="keyword">var</span> errored = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">var</span> stats = []</span><br><span class="line">        </span><br><span class="line">        files.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">file, index</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 读取文件信息</span></span><br><span class="line">            fs.stat(path.join(dir, file), <span class="function"><span class="keyword">function</span>(<span class="params">er, stat</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (errored) <span class="keyword">return</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (er) &#123;</span><br><span class="line">                    errored = <span class="literal">true</span></span><br><span class="line">                    <span class="keyword">return</span> cb(er)</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                stats[index] = stat</span><br><span class="line">                <span class="comment">// 事先算好有多少个文件，读取1个文件信息，计数减一，当为0时，说明读取完毕</span></span><br><span class="line">                <span class="keyword">if</span> (--couner == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">var</span> largest = stats.filter(<span class="function"><span class="keyword">function</span>(<span class="params">stat</span>) </span>&#123; <span class="keyword">return</span> stat.isFile()&#125;)</span><br><span class="line">                    	.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev, next</span>) </span>&#123;</span><br><span class="line">                            <span class="keyword">if</span> (prev.size &gt; next.size) <span class="keyword">return</span> prev</span><br><span class="line">                            <span class="keyword">return</span> next</span><br><span class="line">                        &#125;)</span><br><span class="line">                    cb(<span class="literal">null</span>, files[stats.indexOf(largest)])</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用方式为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找当前目录最大的文件</span></span><br><span class="line">findLargest(<span class="string">'./'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">er, filename</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (er) <span class="keyword">return</span> <span class="built_in">console</span>.error(er)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'largest file was:'</span>, filename)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readDir = <span class="function"><span class="keyword">function</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        fs.readdir(dir, <span class="function"><span class="keyword">function</span>(<span class="params">err, files</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) reject(err)</span><br><span class="line">            resolve(files)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stat = <span class="function"><span class="keyword">function</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        fs.stat(path, <span class="function"><span class="keyword">function</span>(<span class="params">err, stat</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) reject(err)</span><br><span class="line">            resolve(stat)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLargest</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> readDir(dir).then(<span class="function"><span class="keyword">function</span>(<span class="params">files</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> promises = files.map(<span class="function"><span class="params">file</span> =&gt;</span> stat(path.join(dir, file)))</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.all(promises).then(<span class="function"><span class="keyword">function</span>(<span class="params">stats</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123; stats, files &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> latgest = data.stats.filter(<span class="function"><span class="keyword">function</span>(<span class="params">stat</span>) </span>&#123; <span class="keyword">return</span> stat.isFile() &#125;)</span><br><span class="line">        	.reduce(<span class="function">(<span class="params">pre, next</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (prev.size &gt; next.size) <span class="keyword">return</span> prev</span><br><span class="line">                <span class="keyword">return</span> next</span><br><span class="line">            &#125;)</span><br><span class="line">        <span class="keyword">return</span> data.files[data.stats.indexOf(largest)]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用方式为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">findLargest(<span class="string">'./'</span>)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">filename</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'largest file was:'</span>, filename)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readDir = <span class="function"><span class="keyword">function</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        fs.readdir(dir, <span class="function"><span class="keyword">function</span>(<span class="params">err, files</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) reject(err)</span><br><span class="line">            resolve(files)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stat = <span class="function"><span class="keyword">function</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        fs.stat(path, <span class="function"><span class="keyword">function</span>(<span class="params">err, stat</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) reject(err)</span><br><span class="line">            resolve(stat)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">findLargest</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> files = <span class="keyword">yield</span> readDir(dir)</span><br><span class="line">    <span class="keyword">var</span> stats = <span class="keyword">yield</span> files.map(<span class="function"><span class="keyword">function</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stat(path.join(dir, file))</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> largest = stats.filter(<span class="function"><span class="keyword">function</span>(<span class="params">stat</span>) </span>&#123; <span class="keyword">return</span> stat.isFile() &#125;)</span><br><span class="line">    	.reduce(<span class="function">(<span class="params">prev, next</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (prev.size &gt; next.size) <span class="keyword">return</span> prev</span><br><span class="line">            <span class="keyword">return</span> next</span><br><span class="line">        &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> files[stats.indexOf(largest)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用方式为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">co(findLargest, <span class="string">'./'</span>)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">filename</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'largest file was:'</span>, filename)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Async"><a href="#Async" class="headerlink" title="Async"></a>Async</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readDir = <span class="function"><span class="keyword">function</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        fs.readdir(dir, <span class="function"><span class="keyword">function</span>(<span class="params">err, files</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) reject(err)</span><br><span class="line">            resolve(files)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stat = funcion(path) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        fs.stat(path, <span class="function"><span class="keyword">function</span>(<span class="params">err, stat</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) reject(err)</span><br><span class="line">            resolve(stat)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">findLargest</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> files = <span class="keyword">await</span> readDir(dir)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> promises = files.map(<span class="function"><span class="params">file</span> =&gt;</span> stat(path.join(dir, file)))</span><br><span class="line">    <span class="keyword">var</span> stats = <span class="keyword">await</span> <span class="built_in">Promise</span>.all(promises)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> largest = stats.filter(<span class="function"><span class="keyword">function</span>(<span class="params">stat</span>) </span>&#123; <span class="keyword">return</span> stat.isFile() &#125;)</span><br><span class="line">    	.reduce(<span class="function">(<span class="params">prev, next</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (prev.size &gt; next.size) <span class="keyword">return</span> prev</span><br><span class="line">            <span class="keyword">return</span> next</span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="keyword">return</span> files[stats.indexOf(largest)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用方式为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">findLargest(<span class="string">'./'</span>)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">filename</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'largest file was'</span>, filename)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -579,8 +617,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -653,6 +700,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#API介绍"><span class="nav-number">1.</span> <span class="nav-text">API介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调函数"><span class="nav-number">3.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">4.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generator"><span class="nav-number">5.</span> <span class="nav-text">Generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Async"><span class="nav-number">6.</span> <span class="nav-text">Async</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -679,7 +743,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">203k</span>
+    <span title="站点总字数">208k</span>
   
 
   
@@ -688,7 +752,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:04</span>
+    <span title="站点阅读时长">3:09</span>
   
 </div>
 
