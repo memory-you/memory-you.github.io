@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-20T09:54:58.925Z</updated>
+  <updated>2019-09-20T15:44:57.850Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,24 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ES6系列之模块加载方案</title>
+    <link href="https://memory-you.github.io/2019/09/20/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E6%96%B9%E6%A1%88/"/>
+    <id>https://memory-you.github.io/2019/09/20/ES6系列之模块加载方案/</id>
+    <published>2019-09-20T10:02:29.000Z</published>
+    <updated>2019-09-20T15:44:57.850Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;我们重点介绍以下四种模块加载规范：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AMD&lt;/li&gt;
+&lt;li&gt;CMD&lt;/li&gt;
+&lt;li&gt;CommonJS&lt;/li&gt;
+&lt;li&gt;ES6模块&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最后延伸讲下Babel的编译和webpack的打包原理&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>ES6系列之私有变量的实现</title>
     <link href="https://memory-you.github.io/2019/09/20/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E7%A7%81%E6%9C%89%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
     <id>https://memory-you.github.io/2019/09/20/ES6系列之私有变量的实现/</id>
     <published>2019-09-20T08:36:04.000Z</published>
-    <updated>2019-09-20T09:54:58.925Z</updated>
+    <updated>2019-09-20T10:05:22.374Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
 &lt;p&gt;在阅读《ECMAScript6入门》的时候，零散的看到有私有变量的实现，所有在此总结一篇。&lt;/p&gt;
-&lt;h2 id=&quot;约定&quot;&gt;&lt;a href=&quot;#约定&quot; class=&quot;headerli
-        
-      
     
     </summary>
     
@@ -409,24 +427,6 @@ ES2017标准引入了async函数，使得异步操作变得更加方便。
 柯里化是函数的一个比较高级的应用，想要理解它并不简单。
 
 &lt;p&gt;柯里化是指一个函数（假设叫做createCurry），它接收函数A作为参数，运行后能够返回一个新的函数。并且这个新的函数能够处理函数A的剩余参数。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>函数与函数式编程</title>
-    <link href="https://memory-you.github.io/2019/09/01/%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    <id>https://memory-you.github.io/2019/09/01/函数与函数式编程/</id>
-    <published>2019-09-01T15:08:25.000Z</published>
-    <updated>2019-09-02T07:23:21.852Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;纵观JavaScript中所有必须需要掌握的重点知识中，函数时我们在初学的时候最容易忽视的一个知识点。在学习的过程中，可能会有很多人、很多文章告诉你面向对象很重要，原型很重要，可是却很少有人告诉你，面向对象中所有的重点难点，几乎都与函数息息相关。&lt;/p&gt;
     
     </summary>
     
