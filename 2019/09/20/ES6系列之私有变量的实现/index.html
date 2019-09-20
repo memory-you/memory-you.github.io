@@ -106,17 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。">
+  <meta name="description" content="在阅读《ECMAScript6入门》的时候，零散的看到有私有变量的实现，所有在此总结一篇。 约定实现： 123456789101112131415class Example &amp;#123;    constructor() &amp;#123;        this._private = &apos;private&apos;    &amp;#125;        getName() &amp;#123;        return">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP常见的状态码">
-<meta property="og:url" content="https://memory-you.github.io/2019/08/30/HTTP常见的状态码/index.html">
+<meta property="og:title" content="ES6系列之私有变量的实现">
+<meta property="og:url" content="https://memory-you.github.io/2019/09/20/ES6系列之私有变量的实现/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。">
+<meta property="og:description" content="在阅读《ECMAScript6入门》的时候，零散的看到有私有变量的实现，所有在此总结一篇。 约定实现： 123456789101112131415class Example &amp;#123;    constructor() &amp;#123;        this._private = &apos;private&apos;    &amp;#125;        getName() &amp;#123;        return">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-30T12:59:48.180Z">
+<meta property="og:updated_time" content="2019-09-20T09:54:58.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP常见的状态码">
-<meta name="twitter:description" content="状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。">
+<meta name="twitter:title" content="ES6系列之私有变量的实现">
+<meta name="twitter:description" content="在阅读《ECMAScript6入门》的时候，零散的看到有私有变量的实现，所有在此总结一篇。 约定实现： 123456789101112131415class Example &amp;#123;    constructor() &amp;#123;        this._private = &apos;private&apos;    &amp;#125;        getName() &amp;#123;        return">
 
 
 
@@ -126,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/08/30/HTTP常见的状态码/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/09/20/ES6系列之私有变量的实现/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>HTTP常见的状态码 | zeroXP</title>
+  <title>ES6系列之私有变量的实现 | zeroXP</title>
   
 
 
@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/08/30/HTTP常见的状态码/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/20/ES6系列之私有变量的实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -401,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP常见的状态码
+          <h1 class="post-title" itemprop="name headline">ES6系列之私有变量的实现
 
               
             
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-08-30 20:14:27 / 修改时间：20:59:48" itemprop="dateCreated datePublished" datetime="2019-08-30T20:14:27+08:00">2019-08-30</time>
+              <time title="创建时间：2019-09-20 16:36:04 / 修改时间：17:54:58" itemprop="dateCreated datePublished" datetime="2019-09-20T16:36:04+08:00">2019-09-20</time>
             
 
             
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2k</span>
+                <span title="本文字数">3.9k</span>
               
 
               
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -495,99 +495,113 @@
 
       
         <meta name="referrer" content="no-referrer">
-状态码的职责是当客户端向服务器发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端时正常处理了请求还是出现了错误。
 
-<a id="more"></a>
+<p>在阅读《ECMAScript6入门》的时候，零散的看到有私有变量的实现，所有在此总结一篇。</p>
+<h2 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h2><p>实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>._private = <span class="string">'private'</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._private</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ex = <span class="keyword">new</span> Example()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex.getName()) <span class="comment">// private</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex._private) <span class="comment">// private</span></span><br></pre></td></tr></table></figure>
 
-<p>状态码的类别：</p>
-<table>
-<thead>
-<tr>
-<th>123</th>
-<th>类别</th>
-<th align="center">原因短语</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1XX</td>
-<td>Informational (信息性状态码)</td>
-<td align="center">接受的请求正在处理</td>
-</tr>
-<tr>
-<td>2XX</td>
-<td>Success (成功状态码)</td>
-<td align="center">请求正常处理完毕</td>
-</tr>
-<tr>
-<td>3XX</td>
-<td>Redirection (重定向状态码)</td>
-<td align="center">需要进行附加操作以完成请求</td>
-</tr>
-<tr>
-<td>4XX</td>
-<td>Client Error (客户端错误状态码)</td>
-<td align="center">客户端请求出错</td>
-</tr>
-<tr>
-<td>5XX</td>
-<td>Server Error (服务器错误状态码)</td>
-<td align="center">服务器处理请求出错</td>
-</tr>
-</tbody></table>
-<p><strong>1XX——表明请求正在被处理</strong></p>
+<p>优点：</p>
 <ol>
-<li>100 Continue：客户端应继续其请求。</li>
-<li>101 Switching Protocols：服务器根据客户端请求切换协议。</li>
+<li>写法简单</li>
+<li>调试方便</li>
+<li>兼容性好</li>
 </ol>
-<p><strong>2XX——表明请求被正常处理了</strong></p>
+<p>缺点：</p>
 <ol>
-<li>200 OK：请求已正常处理。</li>
-<li>201 Created：成功请求并创建了新的资源。</li>
-<li>202 Accepted：已经接收请求，但未处理完成。</li>
-<li>203 Non-Authoritative Information：请求成功，但返回的meta信息不在原始的服务器，而是一个副本。</li>
-<li>204 No Content：请求处理成功，但没有任何资源可以返回给客户端。</li>
-<li>205 Reset Content：服务器处理成功，用户终端应重置文档视图。</li>
-<li>206 Partial Content：服务器成功处理了部分GET请求。</li>
+<li>外部可以访问和修改</li>
+<li>语言没有配合的机制，如for-in语句会将所有属性枚举出来</li>
+<li>命名冲突</li>
 </ol>
-<p><strong>3XX——表明要完成请求，需要进一步操作</strong></p>
+<hr>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>实现一：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>() </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">var</span> _private = <span class="string">''</span></span><br><span class="line">        _private = <span class="string">'private'</span></span><br><span class="line">        <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> _private &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ex = <span class="keyword">new</span> Example()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex.getName()) <span class="comment">// private</span></span><br><span class="line"><span class="built_in">console</span>.log(ex._private) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
 <ol>
-<li>300 Multiple Choices ：针对请求，服务器可执行多种操作。服务器可根据请求者选择一项操作。或提供操作列表供请求者选择。</li>
-<li>301 Moved Permanently：请求的资源已被永远的移动到新URL，返回信息会包括新的URI，浏览器会自动定向到新URI。</li>
-<li>302 Found：与301类似，但是资源只是临时被移动，客户端应继续使用原URI。</li>
-<li>303 See Other：查看其他地址。</li>
-<li>304 Not Modified：所请求的资源未修改，服务器返回此状态码，不会返回任何资源。</li>
-<li>305 Use Proxy：所请求的资源必须通过代理访问。</li>
-<li>307 Temporary Redirect：临时重定向，与302类似，使用FET请求重定向。</li>
+<li>无命名冲突</li>
+<li>外部无法访问和修改</li>
 </ol>
-<p><strong>4XX——表明请求出错</strong></p>
+<p>缺点：</p>
 <ol>
-<li>400 Bad Request：客户端请求的语法错误，服务器无法理解。</li>
-<li>401 Unauthorized：请求要求用户的身份认证。</li>
-<li>403 Forbidden：服务器理解请求客户端的请求，但是拒绝执行此请求。</li>
-<li>404 Not Found：服务器无法根据客户端的请求找到资源。</li>
-<li>405 Method Not Allowed：客户端请求中的方法被禁止。</li>
-<li>406 Not Acceptable：服务器无法根据客户端请求的内容特性完成请求。</li>
-<li>407 Proxy Authentication Required：请求要求代理的身份认证，与401类似。但请求者应当使用代理进行授权。</li>
-<li>408 Request Time-out：服务器等待客户端发送的请求时间过长，超时。</li>
-<li>409 Conflict：服务器完成客户端的PUT请求时可能返回此代码，服务器处理请求时发送了冲突。</li>
-<li>410 Cone：客户端请求的资源已经不存在。</li>
-<li>411 Length Required：服务器无法处理客户端发送的不带Content-Length的请求信息。</li>
-<li>412 Precondition Failed：客户端请求信息的先决条件错误。</li>
-<li>413 Request Entity Too Large：由于请求的实体过大，服务器无法处理，因此拒绝请求。</li>
-<li>414 Request-URI Too Large：请求的URI过长，服务器无法处理。</li>
-<li>415 Unsupported Media Type：服务器无法处理请求附带的媒体格式。</li>
-<li>416 Requested range not satisfiable：客户端请求的范围无效。</li>
-<li>417 Expectation Failed：服务器无法满足Expect的请求头信息。</li>
+<li>constructor的逻辑变得复杂。构造函数应该只做对象初始化的事情，现在为了实现私有变量，必须包含部分方法的实现，代码组织上略不清晰。</li>
+<li>方法存在于实例，而非原型上，子类也无法使用super调用。</li>
+<li>构建增加一点点开销。</li>
 </ol>
-<p><strong>5XX——表明服务器处理请求错误</strong></p>
+<p>实现二：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Examole = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _private = <span class="string">''</span></span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>() &#123;</span><br><span class="line">            _private = <span class="string">'private'</span></span><br><span class="line">        &#125;</span><br><span class="line">        getName() &#123;</span><br><span class="line">            <span class="keyword">return</span> _private</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> Example</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ex = <span class="keyword">new</span> Example()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex.getName()) <span class="comment">// private</span></span><br><span class="line"><span class="built_in">console</span>.log(ex._private) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
 <ol>
-<li>500 Internal Server Error：服务器内部错误，无法完成请求。</li>
-<li>501 Not Implemented：服务器不支持请求的功能，无法完成请求。</li>
-<li>502 Bad Gateway：作为网关或者代理工作的服务器尝试执行请求时，从远处服务器接收到了一个无效的响应。</li>
-<li>503 Service Unavailable：由于超载或系统维护，服务器暂时的无法处理客户端的请求。</li>
-<li>504 Gateway Time-out：充当网关或者代理的服务器未及时从远端服务器获取请求。</li>
-<li>505 HTTP Version not supported：服务器不支持请求的HTTP协议的版本，无法完成处理。</li>
+<li>无命名冲突</li>
+<li>外部无法访问和修改</li>
 </ol>
+<p>缺点：</p>
+<ol>
+<li>写法有一点复杂</li>
+<li>构建增加一点点开销</li>
+</ol>
+<hr>
+<h2 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h2><p>实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Example = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _private = <span class="built_in">Symbol</span>(<span class="string">'private'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>() &#123;</span><br><span class="line">            <span class="keyword">this</span>[_private] = <span class="string">'privatw'</span></span><br><span class="line">        &#125;</span><br><span class="line">        getName() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>[_private]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> Example</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ex = <span class="keyword">new</span> Example()</span><br><span class="line"><span class="built_in">console</span>.log(ex.getName()) <span class="comment">// private</span></span><br><span class="line"><span class="built_in">console</span>.log(ex.name) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
+<ol>
+<li>无命名冲突</li>
+<li>外部无法访问和修改</li>
+<li>无性能损失</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>写法稍微复杂</li>
+<li>兼容性也还好</li>
+</ol>
+<hr>
+<h2 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h2><p>实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _private = <span class="keyword">new</span> <span class="built_in">WeakMap</span>()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        _private.set(<span class="keyword">this</span>, <span class="string">'private'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> _private.get(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ex = <span class="keyword">new</span> Example()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex.getName()) <span class="comment">// private</span></span><br><span class="line"><span class="built_in">console</span>.log(ex.name) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>如果这样写，你可能觉得封装性不够，你也可以这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Example = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _private =  <span class="keyword">new</span> <span class="built_in">WeakMap</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>() &#123;</span><br><span class="line">            _private.set(<span class="keyword">this</span>, <span class="string">'private'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        getName() &#123;</span><br><span class="line">            <span class="keyword">return</span> _private.get(<span class="keyword">this</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> Example</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ex = <span class="keyword">new</span> Example()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex.getName()) <span class="comment">// private</span></span><br><span class="line"><span class="built_in">console</span>.log(ex.name) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
+<ol>
+<li>无命名冲突</li>
+<li>外部无法访问和修改</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>写法比较麻烦</li>
+<li>兼容性有点问题</li>
+<li>有一定性能代价</li>
+</ol>
+<hr>
+<h2 id="最新提案"><a href="#最新提案" class="headerlink" title="最新提案"></a>最新提案</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  #x;</span><br><span class="line">  #y;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(x, y) &#123;</span><br><span class="line">    this.#x = x;</span><br><span class="line">    this.#y = y;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  equals(point) &#123;</span><br><span class="line">    return this.#x === point.#x &amp;&amp; this.#y === point.#y;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么为什么不直接使用 private 字段呢？比如说这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  private value;</span><br><span class="line"></span><br><span class="line">  equals(foo) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.value === foo.value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简单点来说，就是嫌麻烦，当然也有性能上的考虑……</p>
+<p>举个例子，如果我们不使用 #，而是使用 private 关键字：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  private value = <span class="string">'1'</span>;</span><br><span class="line"></span><br><span class="line">  equals(foo) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.value === foo.value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo1 = <span class="keyword">new</span> Foo();</span><br><span class="line"><span class="keyword">var</span> foo2 = <span class="keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo1.equals(foo2));</span><br></pre></td></tr></table></figure>
+
+<p>在这里我们新建了两个实例，然后将 foo2 作为参数传入了 foo1 的实例方法中。</p>
+<p>那么我们可以获取 foo2.value 的值吗？如果我们直接 <code>foo2.value</code> 肯定是获取不到值的，毕竟是私有变量，可是 equals 是 Foo 的一个类方法，那么可以获取到的吗？</p>
+<p>答案是可以的。</p>
+<p>其实这点在其他语言，比如说 Java 和 C++ 中也是一样的，<strong>类的成员函数中可以访问同类型实例的私有变量</strong>，这是因为私有是为了实现“对外”的信息隐藏，在类自己内部，没有必要禁止私有变量的访问，你也可以理解为私有变量的限制是以类为单位，而不是以对象为单位，此外这样做也可以为使用者带来便利。</p>
+<p>既然获取值是可以的，那么打印的结果应该为 true，但是如果我们传入的值不是 Foo 的实例，而是一个其他对象呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo1 = <span class="keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo1.equals(&#123;</span><br><span class="line">  value: <span class="number">2</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
+<p>当然这里代码也是可以正常运行的，但是对于编译器来说，就有一点麻烦了，因为编译器不知道 value 到底是 foo 的正常属性还是私有属性，所以编译器需要做判断，先判断 foo 是不是 Foo 的实例，然后再接着获取值。</p>
+<p>这也意味着每次属性访问都需要做这样一个判断，而引擎已经围绕属性访问做了高度优化，懒得改，而且还降低速度。</p>
+<p>不过除了这个工作之外，还会有一些其他的内容需要考虑，比如说：</p>
+<ol>
+<li>你必须将私有的 key 编码进每个词法环境</li>
+<li>for in 可以遍历这些属性吗？</li>
+<li>私有属性和正常属性同名的时候，谁会屏蔽谁？</li>
+<li>怎么防止私有属性的名称不被探测出来。</li>
+</ol>
+<p>关于使用 # 而不使用 private 更多的讨论可以参考这个 <a href="https://github.com/tc39/proposal-private-fields/issues/14" target="_blank" rel="noopener">Issue</a>。</p>
+<p>当然这些问题都可以被解决啦，就是麻烦了点。</p>
+<p>而如果你选择 #，实现的方式将跟 JavaScript 对象属性完全没有关系，将会使用 <code>private slots</code> 的方式以及使用一个新的 slot 查找语法，总之就是会比 private 的实现方式简单很多。</p>
 
       
     </div>
@@ -618,8 +632,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/29/常见六大Web安全按攻防解析/" rel="next" title="常见六大Web安全按攻防解析">
-                <i class="fa fa-chevron-left"></i> 常见六大Web安全按攻防解析
+              <a href="/2019/09/19/ES6系列之defineProperty与proxy/" rel="next" title="ES6系列之defineProperty与proxy">
+                <i class="fa fa-chevron-left"></i> ES6系列之defineProperty与proxy
               </a>
             
           </div>
@@ -627,10 +641,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/30/Base64的原理与实现/" rel="prev" title="Base64的原理与实现">
-                Base64的原理与实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -674,8 +684,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -747,6 +766,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#约定"><span class="nav-number">1.</span> <span class="nav-text">约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">3.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WeakMap"><span class="nav-number">4.</span> <span class="nav-text">WeakMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最新提案"><span class="nav-number">5.</span> <span class="nav-text">最新提案</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
