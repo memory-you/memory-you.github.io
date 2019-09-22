@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-21T16:26:02.996Z</updated>
+  <updated>2019-09-22T11:52:31.029Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -21,19 +21,15 @@
     <link href="https://memory-you.github.io/2019/09/22/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     <id>https://memory-you.github.io/2019/09/22/JavaScript深入之词法作用域与动态作用域/</id>
     <published>2019-09-21T16:26:02.000Z</published>
-    <updated>2019-09-21T16:26:02.996Z</updated>
+    <updated>2019-09-22T11:52:31.029Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-
-        
-      
+&lt;h2 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h2&gt;&lt;p&gt;作用域是指程序源代码中定义变量的区域。&lt;/p&gt;
+&lt;p&gt;作用域规定了如何查找变量，也就是确定当前执行代码对变量的访问权限。&lt;/p&gt;
+&lt;p&gt;JavaScript采用词法作用域（lexical scoping），也就是静态作用域。&lt;/p&gt;
     
     </summary>
     
