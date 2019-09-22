@@ -106,25 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="初学JavaScript的时候，我在学习闭包上，走了很多弯路。而这次重新回过头来对基础知识进行梳理，要讲清楚闭包，也是一个非常大的挑战。">
+  <meta name="description" content="## 顺序执行？  如果要问到JavaScript代码执行顺序的话，想必写过JavaScript的开发者都会有个直观的印象，那就是顺序执行.毕竟： 123456789101112131415var foo = function () &amp;#123;    console.log(&apos;foo1&apos;);&amp;#125;foo();  // foo1var foo = function () &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图解作用域链与闭包">
-<meta property="og:url" content="https://memory-you.github.io/2019/09/01/图解作用域链与闭包/index.html">
+<meta property="og:title" content="JavaScript深入之执行上下文">
+<meta property="og:url" content="https://memory-you.github.io/2019/09/22/JavaScript深入之执行上下文/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="初学JavaScript的时候，我在学习闭包上，走了很多弯路。而这次重新回过头来对基础知识进行梳理，要讲清楚闭包，也是一个非常大的挑战。">
+<meta property="og:description" content="## 顺序执行？  如果要问到JavaScript代码执行顺序的话，想必写过JavaScript的开发者都会有个直观的印象，那就是顺序执行.毕竟： 123456789101112131415var foo = function () &amp;#123;    console.log(&apos;foo1&apos;);&amp;#125;foo();  // foo1var foo = function () &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-aacdb7b7ba2468da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-c850e91b12e88831.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-391af3aad043c028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-b5e7e00de7c9213a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-aacdb7b7ba2468da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-75ba724cb9e19b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-147ebb03cacc6609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
-<meta property="og:updated_time" content="2019-09-01T13:28:33.493Z">
+<meta property="og:updated_time" content="2019-09-22T13:18:50.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图解作用域链与闭包">
-<meta name="twitter:description" content="初学JavaScript的时候，我在学习闭包上，走了很多弯路。而这次重新回过头来对基础知识进行梳理，要讲清楚闭包，也是一个非常大的挑战。">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/599584-aacdb7b7ba2468da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
+<meta name="twitter:title" content="JavaScript深入之执行上下文">
+<meta name="twitter:description" content="## 顺序执行？  如果要问到JavaScript代码执行顺序的话，想必写过JavaScript的开发者都会有个直观的印象，那就是顺序执行.毕竟： 123456789101112131415var foo = function () &amp;#123;    console.log(&apos;foo1&apos;);&amp;#125;foo();  // foo1var foo = function () &amp;#123;">
 
 
 
@@ -134,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/09/01/图解作用域链与闭包/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/09/22/JavaScript深入之执行上下文/">
 
 
 
@@ -144,7 +136,7 @@
   };
 </script>
 
-  <title>图解作用域链与闭包 | zeroXP</title>
+  <title>JavaScript深入之执行上下文 | zeroXP</title>
   
 
 
@@ -392,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/01/图解作用域链与闭包/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/22/JavaScript深入之执行上下文/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -409,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图解作用域链与闭包
+          <h1 class="post-title" itemprop="name headline">JavaScript深入之执行上下文
 
               
             
@@ -435,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-09-01 20:33:01 / 修改时间：21:28:33" itemprop="dateCreated datePublished" datetime="2019-09-01T20:33:01+08:00">2019-09-01</time>
+              <time title="创建时间：2019-09-22 20:57:03 / 修改时间：21:18:50" itemprop="dateCreated datePublished" datetime="2019-09-22T20:57:03+08:00">2019-09-22</time>
             
 
             
@@ -468,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.8k</span>
+                <span title="本文字数">2.5k</span>
               
 
               
@@ -482,7 +474,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -503,84 +495,53 @@
 
       
         <meta name="referrer" content="no-referrer">
+## 顺序执行？
 
-<p>初学JavaScript的时候，我在学习闭包上，走了很多弯路。而这次重新回过头来对基础知识进行梳理，要讲清楚闭包，也是一个非常大的挑战。</p>
-<a id="more"></a>
+<p>如果要问到JavaScript代码执行顺序的话，想必写过JavaScript的开发者都会有个直观的印象，那就是顺序执行.毕竟：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo1'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();  <span class="comment">// foo1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo2'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// foo2</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="//upload-images.jianshu.io/upload_images/599584-aacdb7b7ba2468da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt></p>
-<h2 id="作用域与作用域链"><a href="#作用域与作用域链" class="headerlink" title="作用域与作用域链"></a>作用域与作用域链</h2><p>作用域</p>
-<ul>
-<li>在JavaScript中，我们可以将作用域定义为一套规则，这套规则用来管理引擎如何在当前作用域以及嵌套的子作用域中根据标识符进行变量查询。</li>
-<li>JavaScript中只有全局作用域与函数作用域（因为eval我们平时开发中几乎不会用到它，这里不讨论）。</li>
-<li>作用域与执行上下文是完全不同的两个概念。</li>
-</ul>
-<blockquote>
-<p>JavaScript代码的整个执行过程，分为两个阶段，代码编译阶段与代码执行阶段。编译阶段有编译器完成，将代码翻译成可执行代码，这个阶段作用域规则会确定。执行阶段由引擎完成，主要任务是执行可执行代码，执行上下文在这个阶段创建。</p>
-</blockquote>
-<p><img src="//upload-images.jianshu.io/upload_images/599584-c850e91b12e88831.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt></p>
-<p>作用域链</p>
-<p>回顾之前我们分析的执行上下文的生命周期，如下图。</p>
-<p><img src="//upload-images.jianshu.io/upload_images/599584-391af3aad043c028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt></p>
-<p>我们直到函数在调用激活时，会创建对应的执行上下文，在执行上下文生成的过程中，变量对象、作用域链和this的值会分别被去顶。</p>
-<p>作用域链，是由当前环境与上层环境的一系列变量对象组成，它保证了当前执行环境对符合访问权限的变量和函数的有序访问。</p>
-<p>为了帮助大家理解作用域链。我们结合一个例子，以及相应的图示来说明。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = a + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerTest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> c = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">return</span> b + c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> innerTest();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<p>然而去看这段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo1'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();  <span class="comment">// foo2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo2'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// foo2</span></span><br></pre></td></tr></table></figure>
 
-<p>在上面的列子中，全局、函数test、函数innerTest的执行上下文先后创建，我们设定它们的变量对象分别为VO(global),VO(test)和VO(innerTest)。而innerTest的作用域链则包含了这三个变量对象，所以innerTest的执行上下文可如下表示。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">innerTestEC = &#123;</span><br><span class="line">    VO: &#123;...&#125;,  <span class="comment">// 变量对象</span></span><br><span class="line">    scopeChain: [VO(innerTest), VO(test), VO(global)], <span class="comment">// 作用域链</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们可以直接用一个数组来表示作用域链，数组的第一项scopeChain[0]为作用域链的最前端，而数组的最后一项，为作用域链的最末端，所有的最末端都为全局变量对象。</p>
-<p>哼多人会误解为当前作用域与上层作用域为包含关系，但其实并不是。而是以最前端为起点，最末端为终点的单方向通道。</p>
-<p><img src="//upload-images.jianshu.io/upload_images/599584-b5e7e00de7c9213a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt></p>
-<blockquote>
-<p>注意：因为变量对象在执行上下文进入执行阶段时，变成了活动对象，所以用AO表示。</p>
-</blockquote>
+<p>打印的结果是两个foo2</p>
+<p>刷过面试题的都知道这是因为JavaScript引擎并发一行一行的分析和执行程序，而是一段一段地分析执行。当执行一段代码的时候，会进行一个‘准备工作’，比如第一个例子中的变量提升，和第二个例子中的函数提升。</p>
+<p>但是本文真正想让大家思考的是：这个‘一段一段’中的‘段’究竟是怎么划分的呢？</p>
+<p>到底JavaScript引擎遇到一段怎样的代码时才会做‘准备工作’呢？</p>
 <hr>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>对于那些有一点 JavaScript 使用经验但从未真正理解闭包概念的人来说，理解闭包可以看作是某种意义上的重生，突破闭包的瓶颈可以使你功力大增。</p>
-<ul>
-<li>闭包是一种特殊的对象。</li>
-<li>它由两部分组成，执行上下文（代号A），以及在该上下文中创建的函数（代号B）。</li>
-<li>当B执行时，如果访问了A中变量对象的值，那么闭包就产生了。</li>
-</ul>
-<p>在大多数理解中，包括许多书中，文章里都以函数B的名字代指这里产生的闭包。而在chrome中，则以执行上下文A的函数名代指闭包。</p>
-<p>因此我们只需要知道，一个闭包对象，由A、B共同组成，在以后的篇幅中，我将以chrome的标准来称呼。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demo01</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = foo();</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+<h2 id="可执行代码"><a href="#可执行代码" class="headerlink" title="可执行代码"></a>可执行代码</h2><p>这就要说到JavaScript的可执行代码(executable code)的类型有哪些了？</p>
+<p>其实很简单，就三种，全局代码、函数代码、eval代码。</p>
+<p>举个例子，当执行到一个函数的时候，就会准备工作，这里的‘准备工作’，让我们用一个更专业的说法，就是执行上下文(execution context)。</p>
+<hr>
+<h2 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h2><p>接下来问题来了，我们写的函数多了去了，如何管理创建的那么多执行上下文呢？</p>
+<p>所以JavaScript引擎创建了执行上下文栈(Execution context stack, ECS)来管理执行上下文。</p>
+<p>为了模拟执行上下文栈的行为，让我们定义执行上下文栈是一个数组：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = []</span><br></pre></td></tr></table></figure>
 
-<p>上面的例子，首先有执行上下文foo，在foo中定义了函数bar，而通过对外返回bar的方式让bar得以执行。当bar执行时，访问了foo内部的变量a，b。因此这个时候闭包产生。</p>
-<p>我们知道，函数的执行上下文，在执行完毕之后也就是生命周期结束，该函数的执行上下文就会失去引用。其占用的内存空间很快就会被垃圾回收器释放。可是闭包的存在，会阻止这一过程。</p>
-<p>先来一个简单的例子。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="literal">null</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innnerFoo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    fn = innnerFoo; <span class="comment">// 将 innnerFoo的引用，赋值给全局变量中的fn</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fn(); <span class="comment">// 此处的保留的innerFoo的引用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line">bar(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>试想当JavaScript开始要解释执行代码的时候，最先遇到的就是全局代码，所以初始化的时候首先就会向执行上下文栈压入一个全局执行上下文，我们用globalContext表示它，并且只有当整个应用程序结束的时候，ECStack才会被清空，所以程序结束之前，ECStack最底部永远有个globalContext：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [</span><br><span class="line">    globalContext</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<p>在上面的例子中，<code>foo()</code>执行完毕之后，按照常理、其执行环境生命周期结束，所占内存被垃圾收集器释放，但是通过<code>fn = innerFoo</code>，函数innerFoo的引用被保留了下来，复制给了全局变量fn。这个行为，导致了foo的变量对象，也被保留了下来。于是，函数fn在函数bar内部执行时，依然可以访问这个被保留下来的变量对象。所以此刻仍然能够访问到变量a的值。</p>
-<p>这样，我们就可以称为foo为闭包。</p>
-<p>下面展示闭包foo的作用域链。</p>
-<p><img src="//upload-images.jianshu.io/upload_images/599584-aacdb7b7ba2468da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt></p>
-<p>我们可以在chrome浏览器的开发者工具中查看这段代码运行时产生的函数调用栈与作用域链的生成情况。</p>
-<p><img src="//upload-images.jianshu.io/upload_images/599584-75ba724cb9e19b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt></p>
-<p>在上面的图上，红色箭头所指的正是闭包。其中Call Stack为当前的函数调用栈，Scope为当前正在被执行的函数的作用域链，Local为当前的局部变量。</p>
-<p>所以通过闭包，我们可以在其他的执行上下文中访问函数的内部变量。比如上面例子中。我们在函数bar的执行环境中访问到了函数foo的变量a。个人认为，从应用层面，这是闭包的重要特性。利用这个特性，我们可以实现很多有意思的东西。</p>
-<p>不过读者朋友们需要注意的是，虽然例子中的闭包被保存在了全局变量中，但是闭包的作用域链并不会发生任何改变。在闭包中，能访问到的变量，仍然是作用域链上能够查询到的变量。</p>
-<p>对上面的例子稍作修改，如果我们在函数bar中声明一个变量c，并在闭包fn中试图访问该变量，运行结果会抛出错误。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="literal">null</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innnerFoo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(c); <span class="comment">// 在这里，试图访问函数bar中的c变量，会抛出错误</span></span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    fn = innnerFoo; <span class="comment">// 将 innnerFoo的引用，赋值给全局变量中的fn</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="number">100</span>;</span><br><span class="line">    fn(); <span class="comment">// 此处的保留的innerFoo的引用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+<p>现在JavaScript遇到下面的这段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fun3'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fun3()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fun2()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun1()</span><br></pre></td></tr></table></figure>
 
-<p>闭包的应用场景</p>
-<p>除了面试，在实践中，闭包有两个非常重要的应用场景。分别是模块化与柯里化。</p>
-<ul>
-<li>柯里化</li>
-</ul>
-<p>在函数式编程中，利用闭包能够实现很多炫酷的功能，柯里化便是其中很重要的一种。</p>
-<ul>
-<li>模块</li>
-</ul>
-<p>在我看来，模块是闭包最强大的一个应用场景。如果你是初学者，对于模块的了解可以暂时不用放在心上，因为理解模块需要更多的基础知识。但是如果你已经有了很多JavaScript的使用经验，在彻底了解了闭包之后，不妨借助本文介绍的作用域链与闭包的思路，重新理一理关于模块的知识。这对于我们理解各种各样的设计模式具有莫大的帮助。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> num1 = !!num1 ? num1 : a;</span><br><span class="line">        <span class="keyword">var</span> num2 = !!num2 ? num2 : b;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> num1 + num2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>.add = add;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">add(<span class="number">10</span>, <span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+<p>当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出，知道了这样的工作原理，让我们来看看如何处理上面的这段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 伪代码</span></span><br><span class="line"><span class="comment">// fun1()</span></span><br><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">fun1</span>&gt;</span> functionContext)</span></span><br><span class="line"><span class="xml">// fun1中竟然调用了fun2，还要创建fun2的执行上下文</span></span><br><span class="line">ECStack.push(&lt;fun2&gt; functionContext)</span><br><span class="line">// fun2还调用了fun3</span><br><span class="line">ECStack.push(&lt;fun3&gt; functionContext)</span><br><span class="line"></span><br><span class="line">// fun3执行完毕</span><br><span class="line">ECStack.pop();</span><br><span class="line"></span><br><span class="line">// fun2执行完毕</span><br><span class="line">ECStack.pop();</span><br><span class="line"></span><br><span class="line">// fun1执行完毕</span><br><span class="line">ECStack.pop();</span><br><span class="line"></span><br><span class="line">// javascript接着执行下面的代码，但是ECStack底层永远有个globalContext</span><br></pre></td></tr></table></figure>
 
-<p>在上面的例子中，我使用函数自执行的方式，创建了一个模块。add是模块对外暴露的一个公共方法。而变量a，b被作为私有变量。在面向对象的开发中，我们常常需要考虑是将变量作为私有变量，还是放在构造函数中的this中，因此理解闭包，以及原型链是一个非常重要的事情。模块十分重要，因此我会在以后的文章专门介绍，这里就暂时不多说啦。</p>
-<p><img src="//upload-images.jianshu.io/upload_images/599584-147ebb03cacc6609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt></p>
-<p>为了验证自己有没有搞懂作用域链与闭包，这里留下一个经典的思考题，常常也会在面试中被问到。</p>
-<p>利用闭包，修改下面的代码，让循环输出的结果依次为1， 2， 3， 4， 5</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++) &#123;</span><br><span class="line">    setTimeout( <span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;, i*<span class="number">1000</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="解答思考题"><a href="#解答思考题" class="headerlink" title="解答思考题"></a>解答思考题</h2><p>好啦，现在我们已经了解了执行上下文栈是如何处理执行上下文的，所以让我们看看上篇文章<a href>《JavaScript深入之词法作用域和动态作用域》</a>最后的问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">"local scope"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> scope;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f();</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">"local scope"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> scope;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line">checkscope()();</span><br></pre></td></tr></table></figure>
+
+<p>两段代码执行的结果一样，但是两段代码究竟有哪些不同呢？</p>
+<p>答案就是执行上下文栈的变化不一样。</p>
+<p>让我们模拟第一段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">checkscope</span>&gt;</span> functionContext)</span></span><br><span class="line">ECStack.push(&lt;f&gt; functionContext)</span><br><span class="line">ECStack.pop()</span><br><span class="line">ECStack.pop()</span><br></pre></td></tr></table></figure>
+
+<p>让我们模拟第二段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">checkscope</span>&gt;</span> functionContext);</span></span><br><span class="line"><span class="xml">ECStack.pop();</span></span><br><span class="line">ECStack.push(&lt;f&gt; functionContext);</span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
+
+<p>是不是有些不同呢？</p>
+<p>当然了，这样概括的回答执行上下文栈的变化不同，是不是依然有一种意犹未尽的感觉呢，为了更详细讲解两个函数执行上的区别，我们需要探究一下执行上下文到底包含了哪些内容，所以欢迎阅读下一篇《JavaScript深入之变量对象》。</p>
 
       
     </div>
@@ -611,8 +572,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/01/变量对象图解/" rel="next" title="变量对象图解">
-                <i class="fa fa-chevron-left"></i> 变量对象图解
+              <a href="/2019/09/22/JavaScript深入之词法作用域与动态作用域/" rel="next" title="JavaScript深入之词法作用域与动态作用域">
+                <i class="fa fa-chevron-left"></i> JavaScript深入之词法作用域与动态作用域
               </a>
             
           </div>
@@ -620,10 +581,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/01/全方位解读this/" rel="prev" title="全方位解读this">
-                全方位解读this <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -760,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域与作用域链"><span class="nav-number">1.</span> <span class="nav-text">作用域与作用域链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可执行代码"><span class="nav-number">1.</span> <span class="nav-text">可执行代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行上下文栈"><span class="nav-number">2.</span> <span class="nav-text">执行上下文栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答思考题"><span class="nav-number">3.</span> <span class="nav-text">解答思考题</span></a></li></ol></div>
             
 
           </div>
