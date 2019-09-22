@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-20T15:44:57.850Z</updated>
+  <updated>2019-09-21T16:26:02.996Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript深入之词法作用域与动态作用域</title>
+    <link href="https://memory-you.github.io/2019/09/22/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>https://memory-you.github.io/2019/09/22/JavaScript深入之词法作用域与动态作用域/</id>
+    <published>2019-09-21T16:26:02.000Z</published>
+    <updated>2019-09-21T16:26:02.996Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之从原型到原型链</title>
+    <link href="https://memory-you.github.io/2019/09/20/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E4%BB%8E%E5%8E%9F%E5%9E%8B%E5%88%B0%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>https://memory-you.github.io/2019/09/20/JavaScript深入之从原型到原型链/</id>
+    <published>2019-09-20T15:49:00.000Z</published>
+    <updated>2019-09-21T16:24:57.304Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## 构建函数创建对象
+
+&lt;p&gt;我们先使用构造函数创建一个对象：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Person&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; person = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Person()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;person.name = &lt;span class=&quot;string&quot;&gt;&#39;Kevin&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(person.name) &lt;span class=&quot;comment&quot;&gt;// Kevin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在这个例子中，Person就是一个构造函数，我们使用new创建了一个实例对象person。&lt;/p&gt;
+&lt;p&gt;很简单吧，接下来进入正题：&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ES6系列之模块加载方案</title>
@@ -389,44 +436,6 @@ ES2017标准引入了async函数，使得异步操作变得更加方便。
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 在实际的使用中，有非常多的应用场景我们不能立即知道应该如何继续往下执行。最重要也是最主要的一个场景就是ajax场景。通俗的说，由于网速的不同，可能你得到的返回值时间也是不同的，这个时候我们就需要等待，结果出来了之后才知道怎么样继续下来。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>详解面向对象、构造函数、原型与原型链</title>
-    <link href="https://memory-you.github.io/2019/09/02/%E8%AF%A6%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
-    <id>https://memory-you.github.io/2019/09/02/详解面向对象、构造函数、原型与原型链/</id>
-    <published>2019-09-02T08:22:43.000Z</published>
-    <updated>2019-09-02T13:53:05.271Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-## 对象的定义
-
-&lt;p&gt;在ECMAScript-262中，对象被定义为“无无序属性的集合，其属性可以包含基本值、对象或者函数”。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>深入理解函数的柯里化</title>
-    <link href="https://memory-you.github.io/2019/09/02/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E7%9A%84%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
-    <id>https://memory-you.github.io/2019/09/02/深入理解函数的柯里化/</id>
-    <published>2019-09-02T08:05:10.000Z</published>
-    <updated>2019-09-02T08:19:29.181Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-柯里化是函数的一个比较高级的应用，想要理解它并不简单。
-
-&lt;p&gt;柯里化是指一个函数（假设叫做createCurry），它接收函数A作为参数，运行后能够返回一个新的函数。并且这个新的函数能够处理函数A的剩余参数。&lt;/p&gt;
     
     </summary>
     
