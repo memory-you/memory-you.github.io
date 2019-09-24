@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-22T14:30:39.666Z</updated>
+  <updated>2019-09-23T15:30:33.860Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://memory-you.github.io/2019/09/22/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E4%BB%8EECMAScript%E8%A7%84%E8%8C%83%E8%A7%A3%E8%AF%BBthis/"/>
     <id>https://memory-you.github.io/2019/09/22/JavaScript深入之从ECMAScript规范解读this/</id>
     <published>2019-09-22T14:30:39.000Z</published>
-    <updated>2019-09-22T14:30:39.666Z</updated>
+    <updated>2019-09-23T15:30:33.860Z</updated>
     
     <summary type="html">
     
@@ -31,7 +31,7 @@
         
           &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-
+&lt;p&gt;在《JavaScript深入之执行上下文栈》中讲到，当JavaScript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution co
         
       
     
@@ -45,19 +45,20 @@
     <link href="https://memory-you.github.io/2019/09/22/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/"/>
     <id>https://memory-you.github.io/2019/09/22/JavaScript深入之作用域链/</id>
     <published>2019-09-22T14:30:07.000Z</published>
-    <updated>2019-09-22T14:30:07.586Z</updated>
+    <updated>2019-09-23T15:09:54.001Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+在[《JavaScript深入之执行上下文栈》]()中讲到，当JavaScript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
 
-
-        
-      
+&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量对象(Variable object，VO)&lt;/li&gt;
+&lt;li&gt;作用域链(Scope chain)&lt;/li&gt;
+&lt;li&gt;this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今天重点讲讲作用域链。&lt;/p&gt;
     
     </summary>
     
