@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-23T15:30:33.860Z</updated>
+  <updated>2019-09-24T13:58:50.848Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,225 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript深入之继承的多种方式及其优缺点</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E7%BB%A7%E6%89%BF%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之继承的多种方式及其优缺点/</id>
+    <published>2019-09-24T13:58:50.000Z</published>
+    <updated>2019-09-24T13:58:50.848Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之创建对象的多种方式及其优缺点</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之创建对象的多种方式及其优缺点/</id>
+    <published>2019-09-24T13:58:37.000Z</published>
+    <updated>2019-09-24T13:58:37.625Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之类数组对象与arguments</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8Earguments/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之类数组对象与arguments/</id>
+    <published>2019-09-24T13:58:14.000Z</published>
+    <updated>2019-09-24T13:58:14.594Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之new的模拟实现</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之new的模拟实现/</id>
+    <published>2019-09-24T13:57:59.000Z</published>
+    <updated>2019-09-24T13:57:59.751Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之bind的模拟实现</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bbind%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之bind的模拟实现/</id>
+    <published>2019-09-24T13:57:50.000Z</published>
+    <updated>2019-09-24T13:57:50.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之call和apply的模拟实现</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bcall%E5%92%8Capply%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之call和apply的模拟实现/</id>
+    <published>2019-09-24T13:57:37.000Z</published>
+    <updated>2019-09-24T13:57:37.864Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之参数按值传递</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E5%8F%82%E6%95%B0%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之参数按值传递/</id>
+    <published>2019-09-24T13:57:20.000Z</published>
+    <updated>2019-09-24T13:57:20.777Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之闭包</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E9%97%AD%E5%8C%85/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之闭包/</id>
+    <published>2019-09-24T13:57:05.000Z</published>
+    <updated>2019-09-24T14:28:00.341Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+在[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
+
+&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量对象(Variable object，VO)&lt;/li&gt;
+&lt;li&gt;作用域链(Scope chain)&lt;/li&gt;
+&lt;li&gt;this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后分别在&lt;a href&gt;《JavaScript深入之变量对象》&lt;/a&gt;、&lt;a href&gt;《JavaScript深入之作用域链》&lt;/a&gt;、&lt;a href&gt;《JavaScript深入之从ECMAScript规范解读this》&lt;/a&gt;中讲解了这三个属性。&lt;/p&gt;
+&lt;p&gt;阅读本文前，如果对以上的概念不是很清楚，希望先阅读这些文章。&lt;/p&gt;
+&lt;p&gt;因为，这一篇，我们会结合着所有内容，讲讲执行上下文的具体处理过程。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript深入之执行上下文</title>
+    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87-1/"/>
+    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之执行上下文-1/</id>
+    <published>2019-09-24T13:56:57.000Z</published>
+    <updated>2019-09-24T14:03:03.943Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaScript深入之从ECMAScript规范解读this</title>
@@ -253,189 +472,6 @@
 ES2017标准引入了async函数，使得异步操作变得更加方便。
 
 &lt;p&gt;在异步处理上，async函数就是Generator的语法糖。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6系列之Generator的自动执行</title>
-    <link href="https://memory-you.github.io/2019/09/16/ES6%E7%B3%BB%E5%88%97%E4%B9%8BGenerator%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C/"/>
-    <id>https://memory-you.github.io/2019/09/16/ES6系列之Generator的自动执行/</id>
-    <published>2019-09-16T12:27:55.000Z</published>
-    <updated>2019-09-16T14:19:32.227Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;##　单个异步任务&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fetch = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;node-fetch&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;* &lt;span class=&quot;title&quot;&gt;gen&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; url = &lt;span class=&quot;string&quot;&gt;&#39;https://api.github.com/users/github&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; fetch(url)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(result.bio)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;为了获得最终的执行结果，你需要这样做：&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6之Promise</title>
-    <link href="https://memory-you.github.io/2019/09/16/ES6%E4%B9%8BPromise/"/>
-    <id>https://memory-you.github.io/2019/09/16/ES6之Promise/</id>
-    <published>2019-09-16T07:33:59.000Z</published>
-    <updated>2019-09-16T11:23:08.917Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;说起Promise，我们一般都会从回调或者回调地狱说起，那么使用回调到底会导致哪些不好的地方呢？&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6系列值WeakMap</title>
-    <link href="https://memory-you.github.io/2019/09/16/ES6%E7%B3%BB%E5%88%97%E4%B9%8BWeakMap/"/>
-    <id>https://memory-you.github.io/2019/09/16/ES6系列之WeakMap/</id>
-    <published>2019-09-16T06:29:55.000Z</published>
-    <updated>2019-09-16T07:22:22.951Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;我们先从WeakMap的特性说起，然后聊聊WeakMap的一些应用场景。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6系列之迭代器与for...of</title>
-    <link href="https://memory-you.github.io/2019/09/15/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8Efor-of/"/>
-    <id>https://memory-you.github.io/2019/09/15/ES6系列之迭代器与for-of/</id>
-    <published>2019-09-15T05:34:57.000Z</published>
-    <updated>2019-09-16T06:17:50.650Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-## 起源
-
-&lt;p&gt;一段标准的for循环代码：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; color = [&lt;span class=&quot;string&quot;&gt;&#39;red&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;green&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, len = color.length; i &amp;lt; len; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(color[i])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Symbol的使用场景</title>
-    <link href="https://memory-you.github.io/2019/09/14/Symbol%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
-    <id>https://memory-you.github.io/2019/09/14/Symbol的使用场景/</id>
-    <published>2019-09-14T14:40:33.000Z</published>
-    <updated>2019-09-15T05:27:26.526Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-## ES6第7中数据类型——Symbol
-
-&lt;p&gt;已经有的6中数据类型：&lt;code&gt;Undefined&lt;/code&gt;、&lt;code&gt;Null&lt;/code&gt;、&lt;code&gt;布尔值&lt;/code&gt;、
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6系列之模拟Symbol类型</title>
-    <link href="https://memory-you.github.io/2019/09/14/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E6%A8%A1%E6%8B%9FSymbol%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://memory-you.github.io/2019/09/14/ES6系列之模拟Symbol类型/</id>
-    <published>2019-09-14T10:01:47.000Z</published>
-    <updated>2019-09-16T14:20:41.932Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-实际上，Symbol的很多特性都无法模拟实现，所以先让我们回顾下有哪些特性，然后挑点能实现的。当然在看的过程中，你也可以思想这个特性是否能实现，如果能实现，该如何实现。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6系列之箭头函数</title>
-    <link href="https://memory-you.github.io/2019/09/13/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-    <id>https://memory-you.github.io/2019/09/13/ES6系列之箭头函数/</id>
-    <published>2019-09-13T15:35:12.000Z</published>
-    <updated>2019-09-14T09:53:32.197Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-我们先来回顾下箭头函数的基本语法。
-
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; func = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;value&lt;/span&gt; =&amp;gt;&lt;/span&gt; value&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;相当于：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; func = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;value&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; value&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>模板字符串</title>
-    <link href="https://memory-you.github.io/2019/09/13/ES6%E7%B3%BB%E5%88%97%E4%B9%8B%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    <id>https://memory-you.github.io/2019/09/13/ES6系列之模板字符串/</id>
-    <published>2019-09-13T13:23:27.000Z</published>
-    <updated>2019-09-13T15:32:07.226Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-## 基础语法
-
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; message = &lt;span class=&quot;string&quot;&gt;`Hello World`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(message)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;如果需要在字符串中使用反撇号，可以使用反斜杠转义：&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6系列之let和const</title>
-    <link href="https://memory-you.github.io/2019/09/13/ES6%E7%B3%BB%E5%88%97%E4%B9%8Blet%E5%92%8Cconst/"/>
-    <id>https://memory-you.github.io/2019/09/13/ES6系列之let和const/</id>
-    <published>2019-09-13T08:05:48.000Z</published>
-    <updated>2019-09-13T10:26:23.921Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;通过 &lt;code&gt;var&lt;/code&gt;声明的变量存在变量提升的特性：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (condition) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; value = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(value)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：&lt;/p&gt;
     
     </summary>
     
