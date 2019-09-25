@@ -117,19 +117,22 @@
     <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bbind%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
     <id>https://memory-you.github.io/2019/09/24/JavaScript深入之bind的模拟实现/</id>
     <published>2019-09-24T13:57:50.000Z</published>
-    <updated>2019-09-24T13:57:50.250Z</updated>
+    <updated>2019-09-25T06:05:26.806Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## bind
 
-
-        
-      
+&lt;p&gt;一句话介绍bind：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;bind()方法会创建一个新函数。当这个新函数被调用，bind()的第一个参数将作为它运行时的this，之后的一系列参数将会在传递的实参前传入作为它的参数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由此我们可以先得到bind函数的两个特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;返回一个函数&lt;/li&gt;
+&lt;li&gt;可以传参数&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -141,13 +144,14 @@
     <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bcall%E5%92%8Capply%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
     <id>https://memory-you.github.io/2019/09/24/JavaScript深入之call和apply的模拟实现/</id>
     <published>2019-09-24T13:57:37.000Z</published>
-    <updated>2019-09-24T15:57:23.708Z</updated>
+    <updated>2019-09-25T05:31:39.103Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## call
 
-&lt;h2 id=&quot;call&quot;&gt;&lt;a href=&quot;#call&quot; class=&quot;headerlink&quot; title=&quot;call&quot;&gt;&lt;/a&gt;call&lt;/h2&gt;&lt;p&gt;一句话介绍call：&lt;/p&gt;
+&lt;p&gt;一句话介绍call：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;call()方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法。&lt;/p&gt;
 &lt;/blockquote&gt;
