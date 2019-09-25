@@ -69,19 +69,17 @@
     <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8Earguments/"/>
     <id>https://memory-you.github.io/2019/09/24/JavaScript深入之类数组对象与arguments/</id>
     <published>2019-09-24T13:58:14.000Z</published>
-    <updated>2019-09-24T13:58:14.594Z</updated>
+    <updated>2019-09-25T10:43:09.648Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## 类数组对象
 
-
-        
-      
+&lt;p&gt;所谓类数组对象：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拥有一个length属性和若干索引属性的对象。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
