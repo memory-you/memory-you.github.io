@@ -106,17 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="在[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象(Variable object，VO) 作用域链(Scope chain) this  然后分别在《JavaScript深入之变量对象">
+  <meta name="description" content="MDN对闭包的定义为：   闭包是指那些能够访问自由变量的函数  那什么是自由变量呢？  自由变量是指在函数中使用的，但既不是函数参数也不是函数的局部变量的变量  由此，我们可以看出闭包由两部分组成： 函数 + 函数能访问到的自由变量">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript深入之闭包">
 <meta property="og:url" content="https://memory-you.github.io/2019/09/24/JavaScript深入之闭包/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="在[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象(Variable object，VO) 作用域链(Scope chain) this  然后分别在《JavaScript深入之变量对象">
+<meta property="og:description" content="MDN对闭包的定义为：   闭包是指那些能够访问自由变量的函数  那什么是自由变量呢？  自由变量是指在函数中使用的，但既不是函数参数也不是函数的局部变量的变量  由此，我们可以看出闭包由两部分组成： 函数 + 函数能访问到的自由变量">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-24T14:28:00.341Z">
+<meta property="og:updated_time" content="2019-09-24T15:06:15.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript深入之闭包">
-<meta name="twitter:description" content="在[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象(Variable object，VO) 作用域链(Scope chain) this  然后分别在《JavaScript深入之变量对象">
+<meta name="twitter:description" content="MDN对闭包的定义为：   闭包是指那些能够访问自由变量的函数  那什么是自由变量呢？  自由变量是指在函数中使用的，但既不是函数参数也不是函数的局部变量的变量  由此，我们可以看出闭包由两部分组成： 函数 + 函数能访问到的自由变量">
 
 
 
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-09-24 21:57:05 / 修改时间：22:28:00" itemprop="dateCreated datePublished" datetime="2019-09-24T21:57:05+08:00">2019-09-24</time>
+              <time title="创建时间：2019-09-24 21:57:05 / 修改时间：23:06:15" itemprop="dateCreated datePublished" datetime="2019-09-24T21:57:05+08:00">2019-09-24</time>
             
 
             
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.7k</span>
+                <span title="本文字数">3.1k</span>
               
 
               
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -495,94 +495,96 @@
 
       
         <meta name="referrer" content="no-referrer">
-在[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
+MDN对闭包的定义为：
 
-<p>对于每个执行上下文，都有三个重要属性：</p>
-<ul>
-<li>变量对象(Variable object，VO)</li>
-<li>作用域链(Scope chain)</li>
-<li>this</li>
-</ul>
-<p>然后分别在<a href>《JavaScript深入之变量对象》</a>、<a href>《JavaScript深入之作用域链》</a>、<a href>《JavaScript深入之从ECMAScript规范解读this》</a>中讲解了这三个属性。</p>
-<p>阅读本文前，如果对以上的概念不是很清楚，希望先阅读这些文章。</p>
-<p>因为，这一篇，我们会结合着所有内容，讲讲执行上下文的具体处理过程。</p>
+<blockquote>
+<p>闭包是指那些能够访问自由变量的函数</p>
+</blockquote>
+<p>那什么是自由变量呢？</p>
+<blockquote>
+<p>自由变量是指在函数中使用的，但既不是函数参数也不是函数的局部变量的变量</p>
+</blockquote>
+<p>由此，我们可以看出闭包由两部分组成： 函数 + 函数能访问到的自由变量</p>
 <a id="more"></a>
 
-<hr>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p>在<a href>《JavaScript深入之词法作用域和动态作用域》</a>中，提出这样一道思考题：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">'global scope'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">'local scope'</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> scope</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">checkscope()</span><br></pre></td></tr></table></figure>
+<p>举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">'global scope'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">'local scope'</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> scope</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">checkscope()()</span><br></pre></td></tr></table></figure>
-
-<p>两段代码都会打印‘local scope’，虽然两端代码执行的结果一样，但是两段代码究竟有哪些不同呢？</p>
-<p>紧接着就在下一篇<a href>《JavaScript深入之执行上下文栈》</a>中，讲到了两者的区别在于执行上下文栈的变化不一样，然而，如果是这样笼统的回答，依然显得不够详细，本篇就会详细的解析执行上下文栈和执行上下文的具体变化过程</p>
-<hr>
-<h2 id="具体执行分析"><a href="#具体执行分析" class="headerlink" title="具体执行分析"></a>具体执行分析</h2><p>我们分析第一段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">'global scope'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">'local scope'</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> scope</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">checkscope()</span><br></pre></td></tr></table></figure>
-
-<p>执行过程如下：</p>
+<p>foo 函数可以访问访问变量a， 但是a既不是foo的局部变量，也不是foo函数的参数，所有a就是自由变量。</p>
+<p>那么，函数foo与foo函数访问的自由变量a不就是构成了一个闭包？</p>
+<p>真是这样的！在《JavaScript权威指南》中讲到：从技术的角度讲，所有的JavaScript函数都是闭包。</p>
+<p>咦，这怎么跟我们平时看到的讲到的闭包不一样呢！？</p>
+<p>别着急，这是理论上的闭包，其实还有一个实践角度上的闭包，让我们看看汤姆大叔翻译的关于闭包的文章中的定义：</p>
+<p>ECMAScript中，闭包指的是：</p>
 <ol>
-<li>执行全局代码，创建全局执行上下文，全局上下文被压入执行上下文栈。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [</span><br><span class="line">    globalContext</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>全局上下文初始化</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">globalContext = &#123;</span><br><span class="line">    VO: [global],</span><br><span class="line">    Scope: [globalContext.VO],</span><br><span class="line">    <span class="keyword">this</span>: globalContext.VO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>初始化的同时，checkscope函数被创建，保存作用域链到函数的内部属性[[scope]]</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">checkscope.[[scope]] = [</span><br><span class="line">    globalContext.VO</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>执行checkscope函数，创建checkscope函数执行上下文，checkscope函数执行上下文被压入执行上文栈</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack = &#123;</span><br><span class="line">    checkscopeContext,</span><br><span class="line">    globalContext</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>checkscope函数执行上下文初始化：<ol>
-<li>复制函数[[scope]]属性创建作用域链</li>
-<li>用arguments创建活动对象</li>
-<li>初始化活动对象，即加入形参、函数声明、变量对象</li>
-<li>将活动对象压入checkscope作用域链顶端</li>
+<li>从理论角度：所有的函数。因为它们都在创建的时候就将上层上下文的数据保存起来了。哪怕是简单的全局变量也是如此，因为函数中访问全局变量就相当于是在访问自由变量，这个时候使用最外层的作用域。</li>
+<li>从实践角度：以下函数才算是闭包：<ol>
+<li>即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回）</li>
+<li>在代码中引用了自由变量</li>
 </ol>
 </li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">checkscopeContext = &#123;</span><br><span class="line">    AO: &#123;</span><br><span class="line">    	<span class="built_in">arguments</span>: &#123;</span><br><span class="line">    		length: <span class="number">0</span></span><br><span class="line">    	&#125;,</span><br><span class="line">        scope: <span class="literal">undefined</span>,</span><br><span class="line">        f: reference to <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Scope: [AO, globalContext.VO],</span><br><span class="line">    <span class="keyword">this</span>: <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来就来讲讲实践上的闭包。</p>
+<hr>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>让我们先写个例子，例子依然是来自《JavaScript权威指南》，稍微做点改动：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">'global scope'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">'local scope'</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> scope</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = checkscope()</span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
 
-<ol start="5">
-<li>执行f函数，创建函数执行上下文，f函数执行上下文被压入执行上下文栈</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [</span><br><span class="line">    fContext,</span><br><span class="line">    checkscopeContext,</span><br><span class="line">    globalContext</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>f函数执行上下文初始化，以下跟第4步相同：<ol>
-<li>复制函数[[scope]]属性创建作用域链</li>
-<li>用arguments创建活动对象</li>
-<li>初始化活动对象，即加入形参、函数声明、变量对象</li>
-<li>将活动对象压入f作用域链顶端</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fContext = &#123;</span><br><span class="line">    AO: &#123;</span><br><span class="line">        <span class="built_in">arguments</span>: &#123;</span><br><span class="line">            length: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Scope: [AO, checkscopeContext.AO, globalContext.AO],</span><br><span class="line">    <span class="keyword">this</span>: <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>f函数执行，沿着作用域链查找scope值，返回scope值</li>
+<p>首先我们来分析一下这段代码中执行上下文栈和执行上下文的变化情况。</p>
+<p>这里直接给出简要的执行过程：</p>
+<ol>
+<li>进入全局代码，创建全局执行上下文，全局执行上下文压入执行上下文栈</li>
+<li>全局执行上下文初始化</li>
+<li>执行checkscope函数，创建checkscope函数执行上下文，checkscope执行上下文被压入执行上下文栈</li>
+<li>checkscope执行上下文初始化，创建变量对象、作用域链、this等</li>
+<li>checkscope函数执行完毕，checkscope执行上下文从执行上下文栈中弹出。</li>
+<li>执行f函数，创建f函数执行上下文，f执行上下文被压入执行上下文栈</li>
+<li>f执行上下文初始化，创建变量对象、作用域链、this等</li>
 <li>f函数执行完毕，f函数上下文从执行上下文栈中弹出</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [</span><br><span class="line">    checkscopeContext,</span><br><span class="line">    globalContext</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>了解到这个过程，我们应该思考一个问题，那就是：</p>
+<p>当f函数执行时，checkscope函数上下文已经被销毁了，那怎么还能读取到checkscope作用域下的scope指呢？</p>
+<p>当我们了解了具体的执行过程后，我们知道f执行上下文维护了一个作用域链：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fContext = &#123;</span><br><span class="line">    Scope: [AO, checkscopeContext.AO, globalContext.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ol start="9">
-<li>checkscope函数执行完毕，checkscope执行上下文从执行上下文栈中弹出</li>
+<p>对的，就是因为这个作用域链，f函数依然可以读取到checkscopeContext.AO的值，说明当f函数引用了checkscopeContext.AO中的值的时候，即使checkscopeContext被销毁了，但是JavaScript依然会让checkscopeContext.AO活在内存中，f函数依然可以通过f函数的作用域链找到它，正是因为JavaScript做到了这一点，从而实现闭包这个概念。</p>
+<p>所有，让我们再看一遍实践角度上闭包的定义：</p>
+<ol>
+<li>即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回）</li>
+<li>在代码中引用了自由变量</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [</span><br><span class="line">    globalContext</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>在这里再补充一个《JavaScript权威指南》英文原版对闭包的定义:</p>
+<blockquote>
+<p>This combination of a function object and a scope (a set of variable bindings) in which the function’s variables are resolved is called a closure in the computer science literature.</p>
+</blockquote>
+<p>闭包在计算机科学中也只是一个普通的概念，大家不要去想得太复杂。</p>
+<hr>
+<h2 id="必刷题"><a href="#必刷题" class="headerlink" title="必刷题"></a>必刷题</h2><p>接下来，看这道刷题必刷，面试必考的闭包题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    data[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]()</span><br><span class="line">data[<span class="number">1</span>]()</span><br><span class="line">data[<span class="number">2</span>]()</span><br></pre></td></tr></table></figure>
 
-<p>第二段代码就留给大家去尝试模拟它的执行过程。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var scope = &quot;global scope&quot;;</span><br><span class="line">function checkscope()&#123;</span><br><span class="line">    var scope = &quot;local scope&quot;;</span><br><span class="line">    function f()&#123;</span><br><span class="line">        return scope;</span><br><span class="line">    &#125;</span><br><span class="line">    return f;</span><br><span class="line">&#125;</span><br><span class="line">checkscope()();</span><br></pre></td></tr></table></figure>
+<p>答案都是3，让我们分析一下原因：</p>
+<p>当执行到data[0]函数之前，此时全局上下文的VO为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">globalContext = &#123;</span><br><span class="line">    VO: &#123;</span><br><span class="line">        data: [...],</span><br><span class="line">        i: <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>不过，在下一篇《JavaScript深入之闭包》中也会提及这段代码的执行过程。</p>
+<p>当执行data[0]函数的时候，data[0]函数的作用域链为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="number">0</span>]Context = &#123;</span><br><span class="line">    Scope: [AO, globalContext.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>data[0]Context的AO并没有i值，所有会从globalContext.VO中查找，i为3，蓑衣打印的结果就是3。</p>
+<p>data[1]和data[2]是一样的道理。</p>
+<p>所有让我们改成闭包看看：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    data[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]();</span><br><span class="line">data[<span class="number">1</span>]();</span><br><span class="line">data[<span class="number">2</span>]();</span><br></pre></td></tr></table></figure>
+
+<p>当执行到data[0]函数之前，此时全局上下文的VO为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">globalContext = &#123;</span><br><span class="line">    VO: &#123;</span><br><span class="line">        data: [...],</span><br><span class="line">        i: <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>跟没改之前一模一样。</p>
+<p>当执行data[0]函数的时候，data[0]函数的作用域链发送了改变：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="number">0</span>]Context = &#123;</span><br><span class="line">    Scope: [AO, 匿名函数Context.AO, globalContext.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>匿名函数执行上下文的AO为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">匿名函数COntext = &#123;</span><br><span class="line">    AO: &#123;</span><br><span class="line">        <span class="built_in">arguments</span>: &#123;</span><br><span class="line">            <span class="number">0</span>: <span class="number">0</span>,</span><br><span class="line">            length:<span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        i: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>data[0]Context的AO并没有i值，所有会沿着作用域链从匿名函数Context.AO中查找，这时候就会找i为0，找到了就不会往 globalContext.VO 中查找了，即使 globalContext.VO 也有 i 的值(值为3)，所以打印的结果就是0。</p>
+<p>data[1] 和 data[2] 是一样的道理。</p>
 
       
     </div>
@@ -762,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">1.</span> <span class="nav-text">思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体执行分析"><span class="nav-number">2.</span> <span class="nav-text">具体执行分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#必刷题"><span class="nav-number">2.</span> <span class="nav-text">必刷题</span></a></li></ol></div>
             
 
           </div>
@@ -795,7 +797,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">255k</span>
+    <span title="站点总字数">263k</span>
   
 
   
@@ -804,7 +806,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:51</span>
+    <span title="站点阅读时长">3:59</span>
   
 </div>
 
