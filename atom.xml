@@ -93,19 +93,13 @@
     <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E6%83%B0%E6%80%A7%E5%87%BD%E6%95%B0/"/>
     <id>https://memory-you.github.io/2019/09/26/JavaScript专题之惰性函数/</id>
     <published>2019-09-26T05:47:41.000Z</published>
-    <updated>2019-09-26T05:47:41.732Z</updated>
+    <updated>2019-09-26T11:10:07.119Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-
-        
-      
+&lt;p&gt;我们现在需要写一个foo函数，这个函数返回首次调用时的Data对象，注意是首次。&lt;/p&gt;
     
     </summary>
     
