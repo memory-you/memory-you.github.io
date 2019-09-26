@@ -106,14 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="扁平化数组的扁平化，就是将一个嵌套多层的数组array（嵌套可以是任何层数）转化为只有一层的数组。 举个例子，假如有个名为flatten的函数可以做到数组扁平化，效果就会如下： 12var arr = [1, [2, [3, 4]]]console.log(flatten(arr)) // [1, 2, 3, 4]  知道了效果是什么样的了，我们可以去尝试写这个flatten函数了。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript专题之数组扁平化">
 <meta property="og:url" content="https://memory-you.github.io/2019/09/26/JavaScript专题之数组扁平化/index.html">
 <meta property="og:site_name" content="zeroXP">
+<meta property="og:description" content="扁平化数组的扁平化，就是将一个嵌套多层的数组array（嵌套可以是任何层数）转化为只有一层的数组。 举个例子，假如有个名为flatten的函数可以做到数组扁平化，效果就会如下： 12var arr = [1, [2, [3, 4]]]console.log(flatten(arr)) // [1, 2, 3, 4]  知道了效果是什么样的了，我们可以去尝试写这个flatten函数了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-26T07:10:34.639Z">
+<meta property="og:updated_time" content="2019-09-26T07:41:16.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript专题之数组扁平化">
+<meta name="twitter:description" content="扁平化数组的扁平化，就是将一个嵌套多层的数组array（嵌套可以是任何层数）转化为只有一层的数组。 举个例子，假如有个名为flatten的函数可以做到数组扁平化，效果就会如下： 12var arr = [1, [2, [3, 4]]]console.log(flatten(arr)) // [1, 2, 3, 4]  知道了效果是什么样的了，我们可以去尝试写这个flatten函数了。">
 
 
 
@@ -424,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-09-26 13:47:10 / 修改时间：15:10:34" itemprop="dateCreated datePublished" datetime="2019-09-26T13:47:10+08:00">2019-09-26</time>
+              <time title="创建时间：2019-09-26 13:47:10 / 修改时间：15:41:16" itemprop="dateCreated datePublished" datetime="2019-09-26T13:47:10+08:00">2019-09-26</time>
             
 
             
@@ -457,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2</span>
+                <span title="本文字数">1.6k</span>
               
 
               
@@ -492,6 +495,35 @@
 
       
         <meta name="referrer" content="no-referrer">
+
+<h2 id="扁平化"><a href="#扁平化" class="headerlink" title="扁平化"></a>扁平化</h2><p>数组的扁平化，就是将一个嵌套多层的数组array（嵌套可以是任何层数）转化为只有一层的数组。</p>
+<p>举个例子，假如有个名为flatten的函数可以做到数组扁平化，效果就会如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]]</span><br><span class="line"><span class="built_in">console</span>.log(flatten(arr)) <span class="comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p>知道了效果是什么样的了，我们可以去尝试写这个flatten函数了。</p>
+<a id="more"></a>
+
+<hr>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>我们最一开始能想到的莫过于循环数组元素，如果还是一个数组，就递归调用该方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法 1</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len= arr.length; i &lt; len: i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr[i])) &#123;</span><br><span class="line">            result = result.concat(flatten(arr[i]))</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result.push(arr[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(flatten(arr))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h2><p>如果数组的元素都是数字，那么我们可以考虑使用toStirng方法，因为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]].toString() <span class="comment">// '1, 2, 3, 4'</span></span><br></pre></td></tr></table></figure>
+
+<p>调用toString方法，返回一个逗号分隔的扁平的字符串，这时候我们再split，软后转成数字不就实现扁平化了吗？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法 2</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr.toString().split(<span class="string">','</span>).map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> +item</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(flatten(arr))</span><br></pre></td></tr></table></figure>
+
+<p>然而这种方法使用的场景却非常有限，如果数组是[1, ‘1’, 2, ‘2’]的话，这种方法就会产生错误的结果。</p>
+<hr>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><p>既然是对数组进行处理，最终返回一个值，我们就可以考虑使用reduce来简化代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法 3</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">perv, next</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> perv.concat(<span class="built_in">Array</span>.isArray(next) ? flatten(next) : next)</span><br><span class="line">    &#125;, [])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(flatten(arr))</span><br></pre></td></tr></table></figure>
+
+<p>ES6增加了扩展运算符，用于取出参数的所有可遍历属性，拷贝在当前对象之中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]]</span><br><span class="line"><span class="built_in">console</span>.log([].concata(...arr)) <span class="comment">// [1, 2, [3, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p>我们用这种方法只可以扁平一层，但是顺着这个方法一直思考，我们可以写成这样的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法 4</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (arr.some(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">Array</span>.isArray(item))) &#123;</span><br><span class="line">        arr = [].concat(...arr)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(flatten(arr))</span><br></pre></td></tr></table></figure>
 
 
       
@@ -579,8 +611,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -653,6 +694,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#扁平化"><span class="nav-number">1.</span> <span class="nav-text">扁平化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归"><span class="nav-number">2.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">3.</span> <span class="nav-text">toString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduce"><span class="nav-number">4.</span> <span class="nav-text">reduce</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -679,7 +737,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">286k</span>
+    <span title="站点总字数">288k</span>
   
 
   
@@ -688,7 +746,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">4:20</span>
+    <span title="站点阅读时长">4:21</span>
   
 </div>
 
