@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-26T05:48:06.727Z</updated>
+  <updated>2019-09-27T04:42:45.162Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript专题之类型判断</title>
+    <link href="https://memory-you.github.io/2019/09/27/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/"/>
+    <id>https://memory-you.github.io/2019/09/27/JavaScript专题之类型判断/</id>
+    <published>2019-09-27T04:42:45.000Z</published>
+    <updated>2019-09-27T04:42:45.162Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript专题之从零实现jQuery的extend</title>
+    <link href="https://memory-you.github.io/2019/09/27/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0jQuery%E7%9A%84extend/"/>
+    <id>https://memory-you.github.io/2019/09/27/JavaScript专题之从零实现jQuery的extend/</id>
+    <published>2019-09-27T04:42:14.000Z</published>
+    <updated>2019-09-27T13:15:30.734Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起看jQuery的extend特性，一边实现一个extend。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaScript专题之乱序</title>
@@ -111,19 +152,19 @@
     <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%81%8F%E5%87%BD%E6%95%B0/"/>
     <id>https://memory-you.github.io/2019/09/26/JavaScript专题之偏函数/</id>
     <published>2019-09-26T05:47:28.000Z</published>
-    <updated>2019-09-26T05:47:28.492Z</updated>
+    <updated>2019-09-26T11:12:46.944Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-
-        
-      
+&lt;p&gt;维基百科中对偏函数 (Partial application) 的定义为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In computer science, partial application (or partial function application) refers to the process of fixing a number of arguments to a function, producing another function of smaller arity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;翻译成中文：&lt;/p&gt;
+&lt;p&gt;在计算机科学中，局部应用是指固定一个函数的一些参数，然后产生另一个更小元的函数。&lt;/p&gt;
+&lt;p&gt;什么是元？元是指函数参数的个数，比如一个带有两个参数的函数被称为二元函数。&lt;/p&gt;
     
     </summary>
     
@@ -435,56 +476,6 @@ MDN对闭包的定义为：
 &lt;p&gt;在《JavaScript深入之执行上下文栈》中讲到，当JavaScript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution co
         
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript深入之作用域链</title>
-    <link href="https://memory-you.github.io/2019/09/22/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/"/>
-    <id>https://memory-you.github.io/2019/09/22/JavaScript深入之作用域链/</id>
-    <published>2019-09-22T14:30:07.000Z</published>
-    <updated>2019-09-23T15:09:54.001Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-在[《JavaScript深入之执行上下文栈》]()中讲到，当JavaScript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
-
-&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;变量对象(Variable object，VO)&lt;/li&gt;
-&lt;li&gt;作用域链(Scope chain)&lt;/li&gt;
-&lt;li&gt;this&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;今天重点讲讲作用域链。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript深入之变量对象</title>
-    <link href="https://memory-you.github.io/2019/09/22/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/"/>
-    <id>https://memory-you.github.io/2019/09/22/JavaScript深入之变量对象/</id>
-    <published>2019-09-22T14:29:43.000Z</published>
-    <updated>2019-09-22T15:19:26.720Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
-
-&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;变量对象（Variable object， VO）&lt;/li&gt;
-&lt;li&gt;作用域链（Scope Chain）&lt;/li&gt;
-&lt;li&gt;this&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;今天重点讲讲创建变量对象的过程。&lt;/p&gt;
     
     </summary>
     
