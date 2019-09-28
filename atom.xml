@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-28T07:18:45.022Z</updated>
+  <updated>2019-09-28T12:00:16.336Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -21,19 +21,14 @@
     <link href="https://memory-you.github.io/2019/09/28/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%9C%A8%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0/"/>
     <id>https://memory-you.github.io/2019/09/28/JavaScript专题之在数组中查找指定元素/</id>
     <published>2019-09-28T07:18:45.000Z</published>
-    <updated>2019-09-28T07:18:45.022Z</updated>
+    <updated>2019-09-28T12:00:16.336Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-
-        
-      
+&lt;p&gt;在开发中，我们经常会遇到在数组中查找指定元素的需求，可能大家觉得这个需求过于简单，然而如何优雅的去实现一个findIndex和findLastIndex、indexOf和lastIndexOf方法确实很少人思考的。&lt;/p&gt;
+&lt;p&gt;在实现前，先看看ES6的findIndex方法，让大家了解findIndex的使用方法。&lt;/p&gt;
     
     </summary>
     

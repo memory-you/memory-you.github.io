@@ -106,14 +106,17 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="在开发中，我们经常会遇到在数组中查找指定元素的需求，可能大家觉得这个需求过于简单，然而如何优雅的去实现一个findIndex和findLastIndex、indexOf和lastIndexOf方法确实很少人思考的。 在实现前，先看看ES6的findIndex方法，让大家了解findIndex的使用方法。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript专题之在数组中查找指定元素">
 <meta property="og:url" content="https://memory-you.github.io/2019/09/28/JavaScript专题之在数组中查找指定元素/index.html">
 <meta property="og:site_name" content="zeroXP">
+<meta property="og:description" content="在开发中，我们经常会遇到在数组中查找指定元素的需求，可能大家觉得这个需求过于简单，然而如何优雅的去实现一个findIndex和findLastIndex、indexOf和lastIndexOf方法确实很少人思考的。 在实现前，先看看ES6的findIndex方法，让大家了解findIndex的使用方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-28T07:18:45.022Z">
+<meta property="og:updated_time" content="2019-09-28T12:00:16.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript专题之在数组中查找指定元素">
+<meta name="twitter:description" content="在开发中，我们经常会遇到在数组中查找指定元素的需求，可能大家觉得这个需求过于简单，然而如何优雅的去实现一个findIndex和findLastIndex、indexOf和lastIndexOf方法确实很少人思考的。 在实现前，先看看ES6的findIndex方法，让大家了解findIndex的使用方法。">
 
 
 
@@ -424,9 +427,13 @@
                 
               
 
-              <time title="创建时间：2019-09-28 15:18:45" itemprop="dateCreated datePublished" datetime="2019-09-28T15:18:45+08:00">2019-09-28</time>
+              <time title="创建时间：2019-09-28 15:18:45 / 修改时间：20:00:16" itemprop="dateCreated datePublished" datetime="2019-09-28T15:18:45+08:00">2019-09-28</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -453,7 +460,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2</span>
+                <span title="本文字数">7.3k</span>
               
 
               
@@ -467,7 +474,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -489,6 +496,78 @@
       
         <meta name="referrer" content="no-referrer">
 
+<p>在开发中，我们经常会遇到在数组中查找指定元素的需求，可能大家觉得这个需求过于简单，然而如何优雅的去实现一个findIndex和findLastIndex、indexOf和lastIndexOf方法确实很少人思考的。</p>
+<p>在实现前，先看看ES6的findIndex方法，让大家了解findIndex的使用方法。</p>
+<a id="more"></a>
+
+<h2 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h2><p>ES6对数组新增了findIndex方法，它会返回数组中满足提供的函数的第一个元素的索引，否则返回-1.举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> element &gt;= <span class="number">15</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].findIndex(isBigEnough) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>findIndex会找出 第一个大于15的元素的下标，所以最后返回3。</p>
+<p>是不是很简单，其实我们自己实现一个findIndex也很简单。</p>
+<hr>
+<h2 id="实现findIndex"><a href="#实现findIndex" class="headerlink" title="实现findIndex"></a>实现findIndex</h2><p>思路自然明了，遍历一遍，返回符合要求的值的下标。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findIndex</span>(<span class="params">array, predicate, context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (predicate.call(context, array[i], i, array)) <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(findIndex([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="function"><span class="keyword">function</span>(<span class="params">item, i, array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (item == <span class="number">3</span>) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;)) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="findLastIndex"><a href="#findLastIndex" class="headerlink" title="findLastIndex"></a>findLastIndex</h2><p>findIndex是正序查找，但如indexOf还有一个对应的lastIndexOf方法，我们夜宵写一个倒序查找的findLastIndex函数，实现自然也很简单，只要修改下循环即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLastIndex</span>(<span class="params">array, predicate, context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> length = array.length</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (predicate.call(context, array[i], i, array)) <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(findLastIndex([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (item == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;)) <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="createIndexFindert"><a href="#createIndexFindert" class="headerlink" title="createIndexFindert"></a>createIndexFindert</h2><p>然而为你在于，findIndex和findLasIndex其实有很多重复的部分，如何精简冗余的内容呢？这便是我们要学习的地方。</p>
+<p>underscope的思路就是利用传参的不同，返回不同的函数，这个自然简单，但是如何根据参数的不同。在同一个循环中，实现正序和倒序遍历呢？</p>
+<p>让我们直接模仿underscore的实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createIndexFinder</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">array, predicate, context</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> length = array.length</span><br><span class="line">        <span class="keyword">var</span> index = dir &gt; <span class="number">0</span> ? <span class="number">0</span> : length - <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (; index &gt;= <span class="number">0</span> &amp;&amp; index &lt; length; index += dir) &#123;</span><br><span class="line">            <span class="keyword">if</span> (perdicate.call(context, array[index], index, array)) <span class="keyword">return</span> index</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> findIndex = createIndexFinder(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">var</span> findLastIndex = createIndexFinder(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="sortedIndex"><a href="#sortedIndex" class="headerlink" title="sortedIndex"></a>sortedIndex</h2><p>findIndex 和findLastIndex的需求算是结束了，但是又来了个一个新需求：在一个排好序的数组中找到value对应的位置，保证插入数组后，依然保持有序的状态。</p>
+<p>假设该函数名为sortedIndex，效果为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sortedIndex([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>], <span class="number">25</span>) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p>也就是说如果，注意是如果，25 按照此下标插入数组后，数组变成 [10, 20, 25, 30]，数组依然是有序的状态。</p>
+<p>那么这个又该如何实现呢？</p>
+<p>既然是有序的数组，那我们就不需要遍历，大可以使用二分查找法，确定值的位置。让我们尝试着去写一版：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// version one</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortedIndex</span>(<span class="params">array, obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> low = <span class="number">0</span>, high = array.length</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="keyword">var</span> mid = <span class="built_in">Math</span>.floor((low + high) / <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (array[mid] &lt; obj) low = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span> high = mid</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> high</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sortedIndex([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>], <span class="number">35</span>)) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>现在的方法虽然能用，但通用性不够，比如我们希望能处理这样的情况：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// stooges 配角</span></span><br><span class="line"><span class="keyword">var</span> stooges = [&#123;<span class="attr">name</span>: <span class="string">'stooge1'</span>, <span class="attr">age</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">name</span>: <span class="string">'stooge2'</span>, <span class="attr">age</span>: <span class="number">30</span>&#125;]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = sortedIndex(stooges, &#123; <span class="attr">name</span>: <span class="string">'stooge3'</span>, <span class="attr">age</span>: <span class="number">20</span> &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">stooge</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> stooge.age</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>所以我们还需要再加上一个参数iteratee函数对数组的每个元素进行处理，一般这个时候，还会涉及this指向的问题，所以我们再传一个context来让我们可以指定this，那么这样一个函数又该如何写呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// version two</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cb</span>(<span class="params">func, context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (context === <span class="keyword">void</span> <span class="number">0</span>) <span class="keyword">return</span> func</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func.apply(context, <span class="built_in">arguments</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortedIndex</span>(<span class="params">array, obj, iteratee, context</span>) </span>&#123;</span><br><span class="line">    iteratee = cb(iteratee, context)</span><br><span class="line">    <span class="keyword">var</span> low = <span class="number">0</span>, high = array.length</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">         <span class="keyword">var</span> mid = <span class="built_in">Math</span>.floor((low + high) / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span> (iteratee(array[mid]) &lt; iteratee(obj)) low = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> high = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> high</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h2><p>sortedIndex也完成了，现在我们尝试着去写一个indexOf和lastIndexOf函数，学习findIndex和findLastIndex的方式，我们写一版：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// version one</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createIndexOfFinder</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">array, item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> length = array.length</span><br><span class="line">        <span class="keyword">var</span> index = dir &gt; <span class="number">0</span> ? <span class="number">0</span> : length <span class="number">-2</span></span><br><span class="line">        <span class="keyword">for</span> (; index &gt;= <span class="number">0</span> &amp;&amp; index &lt; length; index += dir) &#123;</span><br><span class="line">            <span class="keyword">if</span> (array[index] === item) <span class="keyword">return</span> index</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> indexOf = createIndexOfFinder(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> lastIndexOf = createIndexOfFinder(<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = indexOf([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="fromIndex"><a href="#fromIndex" class="headerlink" title="fromIndex"></a>fromIndex</h2><p>但是即使是数组的 indexOf 方法也可以多传递一个参数 fromIndex，从 MDN 中看到 fromIndex 的讲究可有点多：</p>
+<blockquote>
+<p>设定开始查找的位置。如果该索引值大于或等于数组长度，意味着不会在数组里查找，返回 -1。如果参数中提供的索引值是一个负值，则将其作为数组末尾的一个抵消，即 -1 表示从最后一个元素开始查找，-2 表示从倒数第二个元素开始查找 ，以此类推。 注意：如果参数中提供的索引值是一个负值，仍然从前向后查询数组。如果抵消后的索引值仍小于 0，则整个数组都将会被查询。其默认值为 0。</p>
+</blockquote>
+<p>再看看 lastIndexOf 的 fromIndex：</p>
+<blockquote>
+<p>从此位置开始逆向查找。默认为数组的长度减 1，即整个数组都被查找。如果该值大于或等于数组的长度，则整个数组会被查找。如果为负值，将其视为从数组末尾向前的偏移。即使该值为负，数组仍然会被从后向前查找。如果该值为负时，其绝对值大于数组长度，则方法返回 -1，即数组不会被查找。</p>
+</blockquote>
+<p>按照这么多的规则，我们尝试着去写第二版：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createIndexOfFinder</span>(<span class="params">dir</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">array, item, idx</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> length = array.length</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> idx == <span class="string">'number'</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dir &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                i = idx &gt;= <span class="number">0</span> ? idx : <span class="built_in">Math</span>.max(length + idx, <span class="number">0</span>)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                length = idx &gt;= <span class="number">0</span> : <span class="built_in">Math</span>.min(idx + <span class="number">1</span>, length) : idx +length + <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (idx = dir &gt; <span class="number">0</span> ? i : length - <span class="number">1</span>; idx &gt;= <span class="number">0</span> &amp;&amp; idx &lt; length; idx += dir) &#123;</span><br><span class="line">            <span class="keyword">if</span> (array[idx] === item) <span class="keyword">return</span> idx</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> indexOf = createIndexOfFinder(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">var</span> lastIndexOf = createIndexOfFinder(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>到处为此，已经很接近原生的 indexOf 函数了，但是 underscore 在此基础上还做了两点优化。</p>
+<p>第一个优化是支持查找 NaN。</p>
+<p>因为 NaN 不全等于 NaN，所以原生的 indexOf 并不能找出 NaN 的下标。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="literal">NaN</span>].indexOf(<span class="literal">NaN</span>) <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+
+<p>那么我们该如何实现这个功能呢？</p>
+<p>就是从数组中找到符合条件的值的下标嘛，不就是我们最一开始写的 findIndex 吗？</p>
+<p>我们来写一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// version three</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createIndexOfFinder</span>(<span class="params">dir, predicate</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">array, item, idx</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> () &#123; ..... &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 判断元素是否是NaN</span></span><br><span class="line">        <span class="keyword">if</span> (item !== item) &#123;</span><br><span class="line">            <span class="comment">// 在截取好的数组中查找第一个满足isNaN函数的元素的下标</span></span><br><span class="line">            idx = predicate(array.slice(i, length), <span class="built_in">isNaN</span>)</span><br><span class="line">            <span class="keyword">return</span> idx &gt;= <span class="number">0</span> ? idx + i : <span class="number">-1</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> () &#123; ..... &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> indexOf = createIndexOfFinder(<span class="number">1</span>, findIndex);</span><br><span class="line"><span class="keyword">var</span> lastIndexOf = createIndexOfFinder(<span class="number">-1</span>, findLastIndex);</span><br></pre></td></tr></table></figure>
+
+<p>第二个优化是支持对有序的数组进行更快的二分查找。</p>
+<p>如果 indexOf 第三个参数不传开始搜索的下标值，而是一个布尔值 true，就认为数组是一个排好序的数组，这时候，就会采用更快的二分法进行查找，这个时候，可以利用我们写的 sortedIndex 函数。</p>
+<p>在这里直接给最终的源码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第四版</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createIndexOfFinder</span>(<span class="params">dir, predicate, sortedIndex</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">array, item, idx</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> length = array.length;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> idx == <span class="string">"number"</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dir &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                i = idx &gt;= <span class="number">0</span> ? idx : <span class="built_in">Math</span>.max(length + idx, <span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                length = idx &gt;= <span class="number">0</span> ? <span class="built_in">Math</span>.min(idx + <span class="number">1</span>, length) : idx + length + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sortedIndex &amp;&amp; idx &amp;&amp; length) &#123;</span><br><span class="line">            idx = sortedIndex(array, item);</span><br><span class="line">            <span class="comment">// 如果该插入的位置的值正好等于元素的值，说明是第一个符合要求的值</span></span><br><span class="line">            <span class="keyword">return</span> array[idx] === item ? idx : <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断是否是 NaN</span></span><br><span class="line">        <span class="keyword">if</span> (item !== item) &#123;</span><br><span class="line">            idx = predicate(array.slice(i, length), <span class="built_in">isNaN</span>)</span><br><span class="line">            <span class="keyword">return</span> idx &gt;= <span class="number">0</span> ? idx + i: <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (idx = dir &gt; <span class="number">0</span> ? i : length - <span class="number">1</span>; idx &gt;= <span class="number">0</span> &amp;&amp; idx &lt; length; idx += dir) &#123;</span><br><span class="line">            <span class="keyword">if</span> (array[idx] === item) <span class="keyword">return</span> idx;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> indexOf = createIndexOfFinder(<span class="number">1</span>, findIndex, sortedIndex);</span><br><span class="line"><span class="keyword">var</span> lastIndexOf = createIndexOfFinder(<span class="number">-1</span>, findLastIndex);</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是：在 underscore 的实现中，只有 indexOf 是支持有序数组使用二分查找，lastIndexOf 并不支持。</p>
 
       
     </div>
@@ -571,8 +650,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -645,6 +733,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.</span> <span class="nav-text">findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现findIndex"><span class="nav-number">2.</span> <span class="nav-text">实现findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">3.</span> <span class="nav-text">findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#createIndexFindert"><span class="nav-number">4.</span> <span class="nav-text">createIndexFindert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndex"><span class="nav-number">5.</span> <span class="nav-text">sortedIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">6.</span> <span class="nav-text">indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromIndex"><span class="nav-number">7.</span> <span class="nav-text">fromIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化"><span class="nav-number">8.</span> <span class="nav-text">优化</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -671,7 +776,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">309k</span>
+    <span title="站点总字数">316k</span>
   
 
   
@@ -680,7 +785,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">4:41</span>
+    <span title="站点阅读时长">4:48</span>
   
 </div>
 
