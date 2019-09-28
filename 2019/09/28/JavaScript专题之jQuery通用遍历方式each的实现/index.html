@@ -106,17 +106,20 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="本文讲解JavaScript各种继承方式和优缺点/   原型链继承  1234567891011121314151617function Parent() &amp;#123;    this.name = &apos;kevin&apos;&amp;#125;Parent.prototype.getName = function() &amp;#123;    console.log(this.name)&amp;#125;function C">
+  <meta name="description" content="jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和数组 语法是： 1jQuery.each(object, [ callback ])  回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。 12345678// 遍历数组$.each([0, 1, 2], function(i, n) &amp;#123;    console.log(&quot;Item #&quot; +">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript深入之继承的多种方式及其优缺点">
-<meta property="og:url" content="https://memory-you.github.io/2019/09/24/JavaScript深入之继承的多种方式及其优缺点/index.html">
+<meta property="og:title" content="JavaScript专题之jQuery通用遍历方式each的实现">
+<meta property="og:url" content="https://memory-you.github.io/2019/09/28/JavaScript专题之jQuery通用遍历方式each的实现/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="本文讲解JavaScript各种继承方式和优缺点/   原型链继承  1234567891011121314151617function Parent() &amp;#123;    this.name = &apos;kevin&apos;&amp;#125;Parent.prototype.getName = function() &amp;#123;    console.log(this.name)&amp;#125;function C">
+<meta property="og:description" content="jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和数组 语法是： 1jQuery.each(object, [ callback ])  回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。 12345678// 遍历数组$.each([0, 1, 2], function(i, n) &amp;#123;    console.log(&quot;Item #&quot; +">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-25T15:06:49.476Z">
+<meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/each/each1.png">
+<meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/each/each2.png">
+<meta property="og:updated_time" content="2019-09-28T12:30:00.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript深入之继承的多种方式及其优缺点">
-<meta name="twitter:description" content="本文讲解JavaScript各种继承方式和优缺点/   原型链继承  1234567891011121314151617function Parent() &amp;#123;    this.name = &apos;kevin&apos;&amp;#125;Parent.prototype.getName = function() &amp;#123;    console.log(this.name)&amp;#125;function C">
+<meta name="twitter:title" content="JavaScript专题之jQuery通用遍历方式each的实现">
+<meta name="twitter:description" content="jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和数组 语法是： 1jQuery.each(object, [ callback ])  回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。 12345678// 遍历数组$.each([0, 1, 2], function(i, n) &amp;#123;    console.log(&quot;Item #&quot; +">
+<meta name="twitter:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/each/each1.png">
 
 
 
@@ -126,7 +129,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/09/24/JavaScript深入之继承的多种方式及其优缺点/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/09/28/JavaScript专题之jQuery通用遍历方式each的实现/">
 
 
 
@@ -136,7 +139,7 @@
   };
 </script>
 
-  <title>JavaScript深入之继承的多种方式及其优缺点 | zeroXP</title>
+  <title>JavaScript专题之jQuery通用遍历方式each的实现 | zeroXP</title>
   
 
 
@@ -384,7 +387,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/24/JavaScript深入之继承的多种方式及其优缺点/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/28/JavaScript专题之jQuery通用遍历方式each的实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -401,7 +404,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript深入之继承的多种方式及其优缺点
+          <h1 class="post-title" itemprop="name headline">JavaScript专题之jQuery通用遍历方式each的实现
 
               
             
@@ -427,24 +430,12 @@
                 
               
 
-              <time title="创建时间：2019-09-24 21:58:50" itemprop="dateCreated datePublished" datetime="2019-09-24T21:58:50+08:00">2019-09-24</time>
+              <time title="创建时间：2019-09-28 20:02:37 / 修改时间：20:30:00" itemprop="dateCreated datePublished" datetime="2019-09-28T20:02:37+08:00">2019-09-28</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-25 23:06:49" itemprop="dateModified" datetime="2019-09-25T23:06:49+08:00">2019-09-25</time>
               
             
           </span>
@@ -472,7 +463,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.4k</span>
+                <span title="本文字数">4.1k</span>
               
 
               
@@ -507,88 +498,74 @@
 
       
         <meta name="referrer" content="no-referrer">
-本文讲解JavaScript各种继承方式和优缺点/
 
-<ol>
-<li>原型链继承</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'kevin'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child1.getName()) <span class="comment">// kevin</span></span><br></pre></td></tr></table></figure>
+<p>jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和数组</p>
+<p>语法是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.each(object, [ callback ])</span><br></pre></td></tr></table></figure>
 
-<p>问题：</p>
-<ol>
-<li>引用类型的属性被所有实例共享，举个例子</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.names = [<span class="string">'kevin'</span>, <span class="string">'daisy'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child()</span><br><span class="line">child1.names.push(<span class="string">'yayu'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child1.names) <span class="comment">// ["kevin", "daisy", "yayu"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child2 = <span class="keyword">new</span> Child()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child2.names) <span class="comment">//["kevin", "daisy", "yayu"]</span></span><br></pre></td></tr></table></figure>
+<p>回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历数组</span></span><br><span class="line">$.each([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], <span class="function"><span class="keyword">function</span>(<span class="params">i, n</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Item #"</span> + i + <span class="string">": "</span> + n)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Item #0: 0</span></span><br><span class="line"><span class="comment">// Item #1: 1</span></span><br><span class="line"><span class="comment">// Item #2: 2</span></span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li><p>创建Child的实例时，不能向Parent传参</p>
-</li>
-<li><p>借用构造函数（经典继承）</p>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.names = [<span class="string">'kevin'</span>, <span class="string">'daisy'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    Parent.call(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child()</span><br><span class="line">child1.names.push(<span class="string">'yayu'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child1.names) <span class="comment">// ['kevin', 'daisy', 'yayu']</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child2 = <span class="keyword">new</span> Child()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child2.names) <span class="comment">// ['kevin', 'daisy']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历对象</span></span><br><span class="line">$.each(&#123; <span class="attr">name</span>: <span class="string">"John"</span>, <span class="attr">lang</span>: <span class="string">"JS"</span> &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">i, n</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Name: "</span> + i + <span class="string">", Value: "</span> + n);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// Name: name, Value: John</span></span><br><span class="line"><span class="comment">// Name: lang, Value: JS</span></span><br></pre></td></tr></table></figure>
 
-<p>优点：</p>
-<ol>
-<li>避免了引用类型的属性被所有实例共享</li>
-<li>可以在Child中向Parent传参</li>
-</ol>
-<p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    Parent.call(<span class="keyword">this</span>, name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child(<span class="string">'kevin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child1.name) <span class="comment">// kevin</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child2 = <span class="keyword">new</span> Child(<span class="string">'daisy'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child2.name) <span class="comment">// daisy</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="退出循环"><a href="#退出循环" class="headerlink" title="退出循环"></a>退出循环</h2><p>尽管ES5提供了forEach方法，但是forEach没有办法中止或者跳出forEach循环，除了抛出一个异常。但是对于jQuery的each函数，如果需要退出each循环可使回调函数返回false，其它返回值将被忽略。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.each([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], <span class="function"><span class="keyword">function</span>(<span class="params">i , n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Item #"</span> + i + <span class="string">": "</span> + n)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Item #0: 0</span></span><br><span class="line"><span class="comment">// Item #1: 1</span></span><br><span class="line"><span class="comment">// Item #2: 2</span></span><br></pre></td></tr></table></figure>
 
-<p>缺点：</p>
-<p>方法都在构造函数中定义，每次创建实例都会创建一遍方法。</p>
-<ol start="3">
-<li>组合继承</li>
-</ol>
-<p>原型链继承与经典继承双剑合璧</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    Parent.call(<span class="keyword">this</span>, name)</span><br><span class="line">    <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line">Child.prototype.constructor = Child</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child(<span class="string">'kevin'</span>, <span class="string">'18'</span>);</span><br><span class="line"></span><br><span class="line">child1.colors.push(<span class="string">'black'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child1.name); <span class="comment">// kevin</span></span><br><span class="line"><span class="built_in">console</span>.log(child1.age); <span class="comment">// 18</span></span><br><span class="line"><span class="built_in">console</span>.log(child1.colors); <span class="comment">// ["red", "blue", "green", "black"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child2 = <span class="keyword">new</span> Child(<span class="string">'daisy'</span>, <span class="string">'20'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child2.name); <span class="comment">// daisy</span></span><br><span class="line"><span class="built_in">console</span>.log(child2.age); <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(child2.colors); <span class="comment">// ["red", "blue", "green"]</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="第一版"><a href="#第一版" class="headerlink" title="第一版"></a>第一版</h2><p>那我们该如何实现这个each方法呢？</p>
+<p>首先，我们坑爹要根据参数的类型进行判断，如果是数组，就调用for循环，如果是对象，就使用for-in循环，有个例外是类数组对象，对于类数组对象，我们依然可以使用for循环。</p>
+<p>更多关于类数组对象的知识，我们可以查看<a href>《JavaScript专题之类数组对象与arguments》</a></p>
+<p>那么又该如何判断类数组对象和数组呢？实际上，我们在<a href>《JavaScript专题之类型判断(下)》</a>就讲过jQuery 数组和类数组对象判断函数 isArrayLike 的实现。</p>
+<p>所以，我们可以轻松写出第一版：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// version one</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eah</span>(<span class="params">obj, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> length, i = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (isArrayLike(obj)) &#123;</span><br><span class="line">        length = obj.length</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">            callback(i, obj[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">            callback(i, obj[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>优点：融合原型链继承和构造函数继承的优点，是JavaScript中最常用的继承模式</p>
-<ol start="4">
-<li>原型式继承</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObject</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    F.prototype = o</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="中止循环"><a href="#中止循环" class="headerlink" title="中止循环"></a>中止循环</h2><p>现在已经可以遍历对象和数组了，但是依然有一个效果没有实现，就是中止循环，按照jQuery each的实现，当回调函数返回false的时候，我们就中止循环，这个实现也很简单：</p>
+<p>我们只用把：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">callback(i, obj[i])</span><br></pre></td></tr></table></figure>
 
-<p>这就是ES5 Object.create的模拟实现，将传入的对象作为创建的对象的原型。</p>
-<p>缺点：</p>
-<p>包含引用类似的属性始终会共享相应的值，这点跟原型链继承一样。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'kevin'</span>,</span><br><span class="line">    friends: [<span class="string">'daisy'</span>, <span class="string">'kelly'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = createObj(person);</span><br><span class="line"><span class="keyword">var</span> person2 = createObj(person);</span><br><span class="line"></span><br><span class="line">person1.name = <span class="string">'person1'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person2.name); <span class="comment">// kevin</span></span><br><span class="line"></span><br><span class="line">person1.firends.push(<span class="string">'taylor'</span>);</span><br></pre></td></tr></table></figure>
+<p>替换成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (callback(i, obj[i]) === <span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ol start="5">
-<li>寄生式继承</li>
-</ol>
-<p>创建一个仅用于封装继承过程的函数，该函数在内部以某种形式来做增强对象，最后返回对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObj</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> clone = <span class="built_in">Object</span>.create(o)</span><br><span class="line">    clone.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hi'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> clone</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>我们在实际的开发中，我们有时会在callback函数中用到this，先举个不怎么恰当的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们给每个人添加一个age 属性，age 的值为 18 + index</span></span><br><span class="line"><span class="keyword">var</span> person = [</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'kevin'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'daisy'</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">$.each(person, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span> + index</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person)</span><br></pre></td></tr></table></figure>
 
-<p>缺点： 跟构造函数模式一样，每次创建对象都会创建一遍方法。</p>
-<ol start="6">
-<li>寄生组合式继承</li>
-</ol>
-<p>为了方便大家阅读，在这里重复一下组合继承的代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.color = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getName = fuction() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    Parent.call(<span class="keyword">this</span>, name)</span><br><span class="line">    <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child(<span class="string">'kevin'</span>, <span class="string">'18'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child1)</span><br></pre></td></tr></table></figure>
+<p>这个时候，我们就希望 this 能指向当前遍历的元素，然后给每个元素添加 age 属性。</p>
+<p>指定 this，我们可以使用 call 或者 apply，其实也很简单：</p>
+<p>我们把：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (callback(i, obj[i]) === <span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>组合继承最大的缺点式会调用两次父构造函数。</p>
-<p>一次是设置子类型实例的原型的时候</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br></pre></td></tr></table></figure>
+<p>替换成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (callback.call(obj[i], i, obj[i]) === <span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>一次是在创建子类型实例的时候</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child(<span class="string">'kevin'</span>, <span class="string">'18'</span>)</span><br></pre></td></tr></table></figure>
+<p>关于 this，我们再举个常用的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.each($(&quot;p&quot;), function()&#123;</span><br><span class="line">   $(this).hover(function()&#123; ... &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>回想下new的模拟实现，其实在这句中，我们会执行：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Parent.call(<span class="keyword">this</span>, name)</span><br></pre></td></tr></table></figure>
+<p>虽然我们经常会这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; ... &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>在这里我们又会调用一次Parent函数。</p>
-<p>所以，在这个例子中，如果我们打印child1对象，我们会发现Child.prototype和child1都有一个属性<code>colors</code>，属性值为<code>[&#39;red&#39;, &#39;blue&#39;, &#39;green&#39;]</code>。</p>
-<p>那么我们该如何精益求精，避免这一次重复调用呢？</p>
-<p>如果我们不使用Child.prototype = new Parent(),而是间接的让Child.prototype访问到Parent.prototype呢？<br>看看如何实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    Parent.call(<span class="keyword">this</span>, name)</span><br><span class="line">    <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关键的三步</span></span><br><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">F.prototype = Parent.prototype</span><br><span class="line">Child.prototype = <span class="keyword">new</span> F()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child(<span class="string">'kevin'</span>, <span class="string">'18'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(child1)</span><br></pre></td></tr></table></figure>
+<p>但是因为 $(“p”).each() 方法是定义在 jQuery 函数的 prototype 对象上面的，而 $.each()方法是定义 jQuery 函数上面的，调用的时候不从复杂的 jQuery 对象上调用，速度快得多。所以我们推荐使用第一种写法。</p>
+<p>回到第一种写法上，就是因为将 this 指向了当前 DOM 元素，我们才能使用 $(this)将当前 DOM 元素包装成 jQuery 对象，优雅的使用 hover 方法。</p>
+<p>所以最终的 each 源码为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">each</span>(<span class="params">obj, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> length, i = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (isArrayLike(obj)) &#123;</span><br><span class="line">        length = obj.length</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (callback.call(obj[i], i, obj[i]) === <span class="literal">false</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">            <span class="keyword">if</span> (callback.call(obj[i], i, obj[i]) === <span class="literal">false</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>最后我们封装一下这个继承方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    F.prototype = o</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">prototype</span>(<span class="params">child, parent</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prototype = object(parent.prototype)</span><br><span class="line">    prototype.constructor = child</span><br><span class="line">    child.prototype = prototype</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当我们使用的时候：</span></span><br><span class="line">prototype(Child, Parent)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>##　性能比较</p>
+<p>我们在性能上比较下 for 循环和 each 函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>: <span class="number">1000000</span>&#125;, (v, i) =&gt; i);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'for'</span>)</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (; i &lt; arr.length; i++) &#123;</span><br><span class="line">    i += arr[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'for'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'each'</span>)</span><br><span class="line"><span class="keyword">var</span> j = <span class="number">0</span>;</span><br><span class="line">$.each(arr, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123;</span><br><span class="line">    j += item;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'each'</span>)</span><br></pre></td></tr></table></figure>
 
-<p>引用《JavaScript高级程序设计》中对寄生组合式继承的夸赞就是：</p>
-<p>这种方式的高效率体现它只调用了一次 Parent 构造函数，并且因此避免了在 Parent.prototype 上面创建不必要的、多余的属性。与此同时，原型链还能保持不变；因此，还能够正常使用 instanceof 和 isPrototypeOf。开发人员普遍认为寄生组合式继承是引用类型最理想的继承范式。</p>
+<p>这里显示一次运算的结果：</p>
+<p><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/each/each1.png" alt="性能比较"></p>
+<p>从上图可以看出，for 循环的性能是明显好于 each 函数的，each 函数本质上也是用的 for 循环，到底是慢在了哪里呢？</p>
+<p>我们再看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">each</span>(<span class="params">obj, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> length = obj.length</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">        value = callback(i, obj[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eachWithCall</span>(<span class="params">obj, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> length = obj.length</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">        value = callback.call(obj[i], i, obj[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>: <span class="number">1000000</span>&#125;, (v, i) =&gt; i);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'each'</span>)</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">each(arr, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123;</span><br><span class="line">    i += item;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'each'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'eachWithCall'</span>)</span><br><span class="line"><span class="keyword">var</span> j = <span class="number">0</span>;</span><br><span class="line">eachWithCall(arr, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123;</span><br><span class="line">    j += item;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'eachWithCall'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这里显示一次运算的结果：</p>
+<p><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/each/each2.png" alt="性能比较"></p>
+<p>each 函数和 eachWithCall 函数唯一的区别就是 eachWithCall 调用了 call，从结果我们可以推测出，call 会导致性能损失，但也正是 call 的存在，我们才能将 this 指向循环中当前的元素。</p>
+<p>有舍有得吧。</p>
 
       
     </div>
@@ -619,8 +596,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/24/JavaScript深入之创建对象的多种方式及其优缺点/" rel="next" title="JavaScript深入之创建对象的多种方式及其优缺点">
-                <i class="fa fa-chevron-left"></i> JavaScript深入之创建对象的多种方式及其优缺点
+              <a href="/2019/09/28/JavaScript专题之在数组中查找指定元素/" rel="next" title="JavaScript专题之在数组中查找指定元素">
+                <i class="fa fa-chevron-left"></i> JavaScript专题之在数组中查找指定元素
               </a>
             
           </div>
@@ -628,10 +605,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/26/JavaScript专题之深浅拷贝/" rel="prev" title="JavaScript专题之深浅拷贝">
-                JavaScript专题之深浅拷贝 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -675,8 +648,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -748,6 +730,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#退出循环"><span class="nav-number">1.</span> <span class="nav-text">退出循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一版"><span class="nav-number">2.</span> <span class="nav-text">第一版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中止循环"><span class="nav-number">3.</span> <span class="nav-text">中止循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">4.</span> <span class="nav-text">this</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-28T12:00:16.336Z</updated>
+  <updated>2019-09-28T12:30:00.135Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript专题之jQuery通用遍历方式each的实现</title>
+    <link href="https://memory-you.github.io/2019/09/28/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8BjQuery%E9%80%9A%E7%94%A8%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8Feach%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://memory-you.github.io/2019/09/28/JavaScript专题之jQuery通用遍历方式each的实现/</id>
+    <published>2019-09-28T12:02:37.000Z</published>
+    <updated>2019-09-28T12:30:00.135Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和数组&lt;/p&gt;
+&lt;p&gt;语法是：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;t
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaScript专题之在数组中查找指定元素</title>
@@ -430,32 +456,6 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
 &lt;blockquote&gt;
 &lt;p&gt;也就是说，把函数外部的值复制给函数内部的参数，就和把值从一个变量复制到另一个变量一样。&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript深入之闭包</title>
-    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E9%97%AD%E5%8C%85/"/>
-    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之闭包/</id>
-    <published>2019-09-24T13:57:05.000Z</published>
-    <updated>2019-09-24T15:06:15.409Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-MDN对闭包的定义为：
-
-&lt;blockquote&gt;
-&lt;p&gt;闭包是指那些能够访问自由变量的函数&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;那什么是自由变量呢？&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自由变量是指在函数中使用的，但既不是函数参数也不是函数的局部变量的变量&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;由此，我们可以看出闭包由两部分组成： 函数 + 函数能访问到的自由变量&lt;/p&gt;
     
     </summary>
     
