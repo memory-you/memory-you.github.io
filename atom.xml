@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-09-29T09:22:26.350Z</updated>
+  <updated>2019-09-29T07:27:56.519Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>JavaScript专题之函数组合</title>
-    <link href="https://memory-you.github.io/2019/09/28/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88/"/>
-    <id>https://memory-you.github.io/2019/09/28/JavaScript专题之函数组合/</id>
-    <published>2019-09-28T12:02:37.000Z</published>
-    <updated>2019-09-29T09:22:26.350Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;我们需要写一个函数，输入’Kevin’，返回’HELLO, KEVIN’。&lt;/p&gt;
-&lt;h2 id=&quot;尝试&quot;&gt;&lt;a href=&quot;#尝试&quot; class=&quot;headerlink&quot; title=&quot;尝试&quot;&gt;&lt;/a&gt;尝试&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCase = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;X&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x.toUpperCase() &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hello = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;HELLO&#39;&lt;/span&gt; + x &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; greet = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; hello(toUpperCase(x))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;greet(&lt;span class=&quot;string&quot;&gt;&#39;kevin&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;还哈皮我们只有两个步骤，首先小写转大写，然后凭借拼接字符串。如果有更多的操作，greet函数里就需要更多的的嵌套，类似于fn3(fu2(fn1(fn0())))&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>JavaScript专题之jQuery通用遍历方式each的实现</title>
@@ -57,6 +36,27 @@ jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和�
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;t
         
       
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript专题之函数组合</title>
+    <link href="https://memory-you.github.io/2019/09/28/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88/"/>
+    <id>https://memory-you.github.io/2019/09/28/JavaScript专题之函数组合/</id>
+    <published>2019-09-28T12:02:37.000Z</published>
+    <updated>2019-09-29T09:22:26.350Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;我们需要写一个函数，输入’Kevin’，返回’HELLO, KEVIN’。&lt;/p&gt;
+&lt;h2 id=&quot;尝试&quot;&gt;&lt;a href=&quot;#尝试&quot; class=&quot;headerlink&quot; title=&quot;尝试&quot;&gt;&lt;/a&gt;尝试&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCase = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;X&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x.toUpperCase() &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hello = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;HELLO&#39;&lt;/span&gt; + x &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; greet = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; hello(toUpperCase(x))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;greet(&lt;span class=&quot;string&quot;&gt;&#39;kevin&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;还哈皮我们只有两个步骤，首先小写转大写，然后凭借拼接字符串。如果有更多的操作，greet函数里就需要更多的的嵌套，类似于fn3(fu2(fn1(fn0())))&lt;/p&gt;
     
     </summary>
     
@@ -164,7 +164,7 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
     <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E9%80%92%E5%BD%92/"/>
     <id>https://memory-you.github.io/2019/09/26/JavaScript专题之递归/</id>
     <published>2019-09-26T05:47:56.000Z</published>
-    <updated>2019-09-26T05:47:56.914Z</updated>
+    <updated>2019-09-29T10:55:42.033Z</updated>
     
     <summary type="html">
     
@@ -174,7 +174,8 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
         
           &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-
+&lt;p&gt;程序调用自身的编程技巧称为递归（recursion）。&lt;/p&gt;
+&lt;h2 id=&quot;阶乘&quot;&gt;&lt;a href=&quot;#阶乘&quot; class=&quot;headerlink&quot; title=&quot;阶乘&quot;&gt;&lt;/a
         
       
     

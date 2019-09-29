@@ -381,200 +381,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/28/JavaScript专题之函数组合/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero XP">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=107844747,2223636535&fm=26&gp=0.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zeroXP">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/28/JavaScript专题之函数组合/" class="post-title-link" itemprop="url">JavaScript专题之函数组合</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-28 20:02:37" itemprop="dateCreated datePublished" datetime="2019-09-28T20:02:37+08:00">2019-09-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-29 17:22:26" itemprop="dateModified" datetime="2019-09-29T17:22:26+08:00">2019-09-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">8.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">8 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <meta name="referrer" content="no-referrer">
-
-<p>我们需要写一个函数，输入’Kevin’，返回’HELLO, KEVIN’。</p>
-<h2 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> toUpperCase = <span class="function"><span class="keyword">function</span>(<span class="params">X</span>) </span>&#123; <span class="keyword">return</span> x.toUpperCase() &#125;</span><br><span class="line"><span class="keyword">var</span> hello = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> <span class="string">'HELLO'</span> + x &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> greet = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> hello(toUpperCase(x))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(<span class="string">'kevin'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>还哈皮我们只有两个步骤，首先小写转大写，然后凭借拼接字符串。如果有更多的操作，greet函数里就需要更多的的嵌套，类似于fn3(fu2(fn1(fn0())))</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/28/JavaScript专题之函数组合/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/28/JavaScript专题之jQuery通用遍历方式each的实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -772,6 +578,200 @@ jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和�
 <p>有舍有得吧。</p>
 
           
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/28/JavaScript专题之函数组合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero XP">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=107844747,2223636535&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zeroXP">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/28/JavaScript专题之函数组合/" class="post-title-link" itemprop="url">JavaScript专题之函数组合</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-28 20:02:37" itemprop="dateCreated datePublished" datetime="2019-09-28T20:02:37+08:00">2019-09-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-29 17:22:26" itemprop="dateModified" datetime="2019-09-29T17:22:26+08:00">2019-09-29</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">8 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <meta name="referrer" content="no-referrer">
+
+<p>我们需要写一个函数，输入’Kevin’，返回’HELLO, KEVIN’。</p>
+<h2 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> toUpperCase = <span class="function"><span class="keyword">function</span>(<span class="params">X</span>) </span>&#123; <span class="keyword">return</span> x.toUpperCase() &#125;</span><br><span class="line"><span class="keyword">var</span> hello = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> <span class="string">'HELLO'</span> + x &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> greet = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> hello(toUpperCase(x))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(<span class="string">'kevin'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>还哈皮我们只有两个步骤，首先小写转大写，然后凭借拼接字符串。如果有更多的操作，greet函数里就需要更多的的嵌套，类似于fn3(fu2(fn1(fn0())))</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/28/JavaScript专题之函数组合/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1771,6 +1771,22 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-29 18:55:42" itemprop="dateModified" datetime="2019-09-29T18:55:42+08:00">2019-09-29</time>
+              
+            
           </span>
 
           
@@ -1796,7 +1812,7 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -1810,7 +1826,7 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -1833,6 +1849,59 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
         
           
             <meta name="referrer" content="no-referrer">
+
+<p>程序调用自身的编程技巧称为递归（recursion）。</p>
+<h2 id="阶乘"><a href="#阶乘" class="headerlink" title="阶乘"></a>阶乘</h2><p>以阶乘为例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> n * factorial(n <span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(factorial(<span class="number">5</span>)) <span class="comment">// 5 * 4 * 3 * 2 * 1 = 120</span></span><br></pre></td></tr></table></figure>
+
+<p>示意图(图片来自 <a href="https://github.com/mqyqingfeng/Blog/issues/wwww.penjee.com" target="_blank" rel="noopener">wwww.penjee.com</a>)：</p>
+<p><a href="https://github.com/mqyqingfeng/Blog/raw/master/Images/recursion/factorial.gif" target="_blank" rel="noopener"><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/recursion/factorial.gif" alt="阶乘"></a></p>
+<hr>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>在<a href>《JavaScript专题之函数记忆》</a>中讲到过的斐波那契数列也使用了递归：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n &lt; <span class="number">2</span> ? n : fibonacci(n - <span class="number">1</span>) + fibonacci(n - <span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fibonacci(<span class="number">5</span>)) <span class="comment">// 1 1 2 3 5</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="递归条件"><a href="#递归条件" class="headerlink" title="递归条件"></a>递归条件</h2><p>从这两个例子中，我们可以看出：</p>
+<p>构成递归需要具备边界条件，递归前进段和递归返回段，当边界条件不满足时，递归前进，当边界条件满足时，递归返回。阶乘中的<code>n == 1</code> 和 斐波那契数列中的 <code>n &lt; 2</code> 都是边界条件。</p>
+<p>总结一下递归的特点：</p>
+<ol>
+<li>子问题须与原始问题为同样的事，且更为简单；</li>
+<li>不能无限制地调用本身，须有个出口，化简为非递归状况处理。</li>
+</ol>
+<p>了解这些特点可以帮助我们更好的编写递归函数。</p>
+<h2 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h2><p>在<a href="https://github.com/mqyqingfeng/Blog/issues/4" target="_blank" rel="noopener">《JavaScript深入之执行上下文栈》</a>中，我们知道：</p>
+<p>当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出。</p>
+<p>试着对阶乘函数分析执行的过程，我们会发现，JavaScript 会不停的创建执行上下文压入执行上下文栈，对于内存而言，维护这么多的执行上下文也是一笔不小的开销呐！那么，我们该如何优化呢？</p>
+<p>答案就是尾调用。</p>
+<h2 id="尾调用"><a href="#尾调用" class="headerlink" title="尾调用"></a>尾调用</h2><p>尾调用，是指函数内部的最后一个动作是函数调用，该调用的返回值，直接返回给函数。</p>
+<p>举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 尾调用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> g(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然而</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非尾调用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> g(x) + <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>并不是尾调用，因为g(x)的返回值还需要跟1进行计算后，f(x)才会返回值。</p>
+<p>两者又有什么区别呢？但按时执行上下文栈的变化不一样。</p>
+<p>为了模拟执行上下文栈的行为，我们定义执行上下文栈是一个数组：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = []</span><br></pre></td></tr></table></figure>
+
+<p>我们模拟下第一个尾调用函数执行时的执行上下文栈变化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">f</span>&gt;</span> functionContext);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">ECStack.pop();</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line">ECStack.push(&lt;g&gt; functionContext);</span><br><span class="line"></span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
+
+<p>我们再来模拟一下第二个非尾调用函数执行时的执行上下文栈变化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">f</span>&gt;</span> functionContext);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line">ECStack.push(&lt;g&gt; functionContext);</span><br><span class="line"></span><br><span class="line">ECStack.pop();</span><br><span class="line"></span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
+
+<p>也就是说尾调用函数执行，虽然也调用了一个函数，但是因为原来的函数执行完毕，执行上下文会被弹出，执行上下文栈中相当于只多压入了一个执行上下文。然而非尾调用函数，就会创建多个执行上下文压入执行上下文栈。</p>
+<p>函数调用自身，称为递归。如果尾调用自身，就称为尾调用。</p>
+<p>所以我们只用把阶乘函数改造成一个尾递归形式，就可以避免创建那么多的执行上下文。但是我们该怎么做呢？</p>
+<hr>
+<h2 id="阶乘函数优化"><a href="#阶乘函数优化" class="headerlink" title="阶乘函数优化"></a>阶乘函数优化</h2><p>我们需要做的就是把所以用得到的内部遍历改成函数的参数，以阶乘函数为例：</p>
+<p>我们需要做的就是把所有用到的内部变量改写成函数的参数，以阶乘函数为例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">return</span> factorial(n - <span class="number">1</span>, n * res)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(factorial(<span class="number">4</span>, <span class="number">1</span>)) <span class="comment">// 24</span></span><br></pre></td></tr></table></figure>
+
+<p>然而这个很奇怪呐……我们计算 4 的阶乘，结果函数要传入 4 和 1，我就不能只传入一个 4 吗？</p>
+<p>这个时候就要用到我们在<a href="https://github.com/mqyqingfeng/Blog/issues/43" target="_blank" rel="noopener">《JavaScript专题之偏函数》</a>中编写的 partial 函数了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newFactorial = partial(factorial, _, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">newFactorial(<span class="number">4</span>) <span class="comment">// 24</span></span><br></pre></td></tr></table></figure>
 
 
           
@@ -2377,7 +2446,7 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">344k</span>
+    <span title="站点总字数">345k</span>
   
 
   
@@ -2386,7 +2455,7 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">5:12</span>
+    <span title="站点阅读时长">5:14</span>
   
 </div>
 
