@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-02T11:57:46.234Z</updated>
+  <updated>2019-11-02T17:18:45.202Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,24 +17,86 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Grid布局</title>
+    <link href="https://memory-you.github.io/2019/11/02/Grid%E5%B8%83%E5%B1%80/"/>
+    <id>https://memory-you.github.io/2019/11/02/Grid布局/</id>
+    <published>2019-11-02T14:52:56.000Z</published>
+    <updated>2019-11-02T17:18:45.202Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+网格布局（Grid）是最强大的CSS布局方案。
+
+&lt;p&gt;它将网页划分为一个个网格，可以任意组合不同的网格，作出各种各样的布局。以前，只能通过复杂的CSS框架达到的效果，现在浏览器内置了。&lt;/p&gt;
+&lt;p&gt;Flex布局与Grid布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。&lt;/p&gt;
+&lt;p&gt;Flex布局是轴线布局，只能指定“项目”针对轴线的位置，可以看作一维布局。Grid布局则是将容器划分成“行”和“列”，产生单元格，然后指定“项目所在”的单元格，可以看作是二维布局。Grid布局远比FLex布局强大。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Flex布局</title>
+    <link href="https://memory-you.github.io/2019/11/02/Flex%E5%B8%83%E5%B1%80/"/>
+    <id>https://memory-you.github.io/2019/11/02/Flex布局/</id>
+    <published>2019-11-02T12:02:39.000Z</published>
+    <updated>2019-11-02T17:19:10.854Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;网页布局（layout）是CSS的一个重点应用。&lt;/p&gt;
+&lt;p&gt;传统的布局解决方案，基于盒状模式，依赖display属性+position属性+float属性。它对于那些特殊布局非常不方便，比如垂直居中就很不容易实现。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>CSS样式规范</title>
     <link href="https://memory-you.github.io/2019/11/02/CSS%E6%A0%B7%E5%BC%8F%E8%A7%84%E8%8C%83/"/>
     <id>https://memory-you.github.io/2019/11/02/CSS样式规范/</id>
     <published>2019-11-02T10:20:19.000Z</published>
-    <updated>2019-11-02T11:57:46.234Z</updated>
+    <updated>2019-11-02T17:19:45.418Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## 代码风格
 
-&lt;h2 id=&quot;代码风格&quot;&gt;&lt;a href=&quot;#代码风格&quot; class=&quot;headerlink&quot; title=&quot;代码风格&quot;&gt;&lt;/a&gt;代码风格&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;采用UTF-8编码，
-        
-      
+&lt;ol&gt;
+&lt;li&gt;采用UTF-8编码，在CSS头部引用&lt;code&gt;@charset &amp;quot;utf-8&amp;quot;&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;使用4个空格作为一个缩进层级，不允许使用两个空格或者tab字符；&lt;/li&gt;
+&lt;li&gt;每行不得超过120个字符，除非单行不可分割；&lt;/li&gt;
+&lt;li&gt;选择器嵌套层级不大于3级，位置靠后的限定条件应尽可能精确；&lt;/li&gt;
+&lt;li&gt;尽量不要使用&lt;code&gt;@import&lt;/code&gt;，与&lt;code&gt;&amp;lt;links&amp;gt;&lt;/code&gt;相比，&lt;code&gt;@import&lt;/code&gt;速度较慢，增加了额外的页面请求，并可能导致其他无法预料的问题；&lt;/li&gt;
+&lt;li&gt;Media Query不得单独编排，必须与相关的规则一起定义；&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript专题之函数组合</title>
+    <link href="https://memory-you.github.io/2019/09/28/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88/"/>
+    <id>https://memory-you.github.io/2019/09/28/JavaScript专题之函数组合/</id>
+    <published>2019-09-28T12:02:37.000Z</published>
+    <updated>2019-09-29T09:22:26.350Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;我们需要写一个函数，输入’Kevin’，返回’HELLO, KEVIN’。&lt;/p&gt;
+&lt;h2 id=&quot;尝试&quot;&gt;&lt;a href=&quot;#尝试&quot; class=&quot;headerlink&quot; title=&quot;尝试&quot;&gt;&lt;/a&gt;尝试&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCase = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;X&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x.toUpperCase() &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hello = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;HELLO&#39;&lt;/span&gt; + x &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; greet = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; hello(toUpperCase(x))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;greet(&lt;span class=&quot;string&quot;&gt;&#39;kevin&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;还哈皮我们只有两个步骤，首先小写转大写，然后凭借拼接字符串。如果有更多的操作，greet函数里就需要更多的的嵌套，类似于fn3(fu2(fn1(fn0())))&lt;/p&gt;
     
     </summary>
     
@@ -57,27 +119,6 @@ jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和�
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;jQuery.each(object, [ callback ])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript专题之函数组合</title>
-    <link href="https://memory-you.github.io/2019/09/28/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88/"/>
-    <id>https://memory-you.github.io/2019/09/28/JavaScript专题之函数组合/</id>
-    <published>2019-09-28T12:02:37.000Z</published>
-    <updated>2019-09-29T09:22:26.350Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;我们需要写一个函数，输入’Kevin’，返回’HELLO, KEVIN’。&lt;/p&gt;
-&lt;h2 id=&quot;尝试&quot;&gt;&lt;a href=&quot;#尝试&quot; class=&quot;headerlink&quot; title=&quot;尝试&quot;&gt;&lt;/a&gt;尝试&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCase = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;X&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x.toUpperCase() &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hello = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;HELLO&#39;&lt;/span&gt; + x &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; greet = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; hello(toUpperCase(x))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;greet(&lt;span class=&quot;string&quot;&gt;&#39;kevin&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;还哈皮我们只有两个步骤，首先小写转大写，然后凭借拼接字符串。如果有更多的操作，greet函数里就需要更多的的嵌套，类似于fn3(fu2(fn1(fn0())))&lt;/p&gt;
     
     </summary>
     
@@ -380,55 +421,6 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
 &lt;block
         
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript深入之bind的模拟实现</title>
-    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bbind%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之bind的模拟实现/</id>
-    <published>2019-09-24T13:57:50.000Z</published>
-    <updated>2019-09-25T06:05:26.806Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-## bind
-
-&lt;p&gt;一句话介绍bind：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;bind()方法会创建一个新函数。当这个新函数被调用，bind()的第一个参数将作为它运行时的this，之后的一系列参数将会在传递的实参前传入作为它的参数。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;由此我们可以先得到bind函数的两个特点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;返回一个函数&lt;/li&gt;
-&lt;li&gt;可以传参数&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript深入之call和apply的模拟实现</title>
-    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bcall%E5%92%8Capply%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之call和apply的模拟实现/</id>
-    <published>2019-09-24T13:57:37.000Z</published>
-    <updated>2019-09-25T05:31:39.103Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-## call
-
-&lt;p&gt;一句话介绍call：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;call()方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法。&lt;/p&gt;
-&lt;/blockquote&gt;
     
     </summary>
     

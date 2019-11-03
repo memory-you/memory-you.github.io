@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<!-- 添加DaoVioce -->
+
+
+  <meta name="description" content="网格布局（Grid）是最强大的CSS布局方案。  它将网页划分为一个个网格，可以任意组合不同的网格，作出各种各样的布局。以前，只能通过复杂的CSS框架达到的效果，现在浏览器内置了。 Flex布局与Grid布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。 Flex布局是轴线布局，只能指定“项目”针对轴线的位置，可以看作一维布局。Grid布局则是将容器划分成“行”和“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grid布局">
+<meta property="og:url" content="https://memory-you.github.io/2019/11/02/Grid布局/index.html">
+<meta property="og:site_name" content="zeroXP">
+<meta property="og:description" content="网格布局（Grid）是最强大的CSS布局方案。  它将网页划分为一个个网格，可以任意组合不同的网格，作出各种各样的布局。以前，只能通过复杂的CSS框架达到的效果，现在浏览器内置了。 Flex布局与Grid布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。 Flex布局是轴线布局，只能指定“项目”针对轴线的位置，可以看作一维布局。Grid布局则是将容器划分成“行”和“">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032502.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032503.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032504.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032505.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032506.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032507.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032508.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032509.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032510.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032511.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032506.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032512.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032513.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032514.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032515.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032516.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032517.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032519.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032518.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032520.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032521.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032522.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032523.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032524.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032525.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032526.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032527.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032528.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032529.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032530.png">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201903/bg2019032532.png">
+<meta property="og:updated_time" content="2019-11-02T17:18:45.202Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Grid布局">
+<meta name="twitter:description" content="网格布局（Grid）是最强大的CSS布局方案。  它将网页划分为一个个网格，可以任意组合不同的网格，作出各种各样的布局。以前，只能通过复杂的CSS框架达到的效果，现在浏览器内置了。 Flex布局与Grid布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。 Flex布局是轴线布局，只能指定“项目”针对轴线的位置，可以看作一维布局。Grid布局则是将容器划分成“行”和“">
+<meta name="twitter:image" content="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032502.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zeroXP" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://memory-you.github.io/2019/11/02/Grid布局/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Grid布局 | zeroXP</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <!-- fork me on github -->
+    <a href="https://github.com/memory-you" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zeroXP</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/11/02/Grid布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero XP">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=107844747,2223636535&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zeroXP">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Grid布局
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-02 22:52:56" itemprop="dateCreated datePublished" datetime="2019-11-02T22:52:56+08:00">2019-11-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-03 01:18:45" itemprop="dateModified" datetime="2019-11-03T01:18:45+08:00">2019-11-03</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <meta name="referrer" content="no-referrer">
+网格布局（Grid）是最强大的CSS布局方案。
+
+<p>它将网页划分为一个个网格，可以任意组合不同的网格，作出各种各样的布局。以前，只能通过复杂的CSS框架达到的效果，现在浏览器内置了。</p>
+<p>Flex布局与Grid布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。</p>
+<p>Flex布局是轴线布局，只能指定“项目”针对轴线的位置，可以看作一维布局。Grid布局则是将容器划分成“行”和“列”，产生单元格，然后指定“项目所在”的单元格，可以看作是二维布局。Grid布局远比FLex布局强大。</p>
+<a id="more"></a>
+
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
+<li>容器和项目</li>
+</ol>
+<p>采用网格布局的区域，称为“容器”（container）。容器内部采用网格定位的子元素，称为“项目”（item）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，最外层的<code>&lt;div&gt;</code>元素就是容器，内层的三个<code>&lt;div&gt;</code>元素就是项目。</p>
+<p>注意：项目只能是容器的顶层子元素，不包含项目的子元素，比如上面代码的<code>&lt;p&gt;</code>元素就不是项目。Grid布局只对项目生效。</p>
+<ol start="2">
+<li>行与列</li>
+</ol>
+<p>容器里面的水平区域称为“行”（row），垂直区域称为“列”（column）。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032502.png" alt></p>
+<p>上图中，水平的深色区域就是“行”，垂直的深色区域就是“列”。</p>
+<ol start="3">
+<li>单元格</li>
+</ol>
+<p>行与列的交叉区域，称为“单元格”（cell）.</p>
+<p>正常情况下，n行与m列会产生n x m 个单元格。比如，3行3列会产生9个单元格。</p>
+<ol start="4">
+<li>网格线</li>
+</ol>
+<p>划分网格的线，称为“网格线”（grid line）。水平网格线划分为行，垂直网格线划分为列。</p>
+<p>正常情况下，n行有n + 1根水平网格线，m列有m + 1根垂直网格线，比如三行就有四根水平网格线。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032503.png" alt></p>
+<p> 上图是一个 4 x 4 的网格，共有5根水平网格线和5根垂直网格线。 </p>
+<hr>
+<h2 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h2><p>Grid布局的属性分为两类。一类定义在容器上面，称为容器属性；另一类定义在项目上面，称为项目属性。这部分先介绍容器属性。</p>
+<ol>
+<li>display属性</li>
+</ol>
+<p>display：grid指定一个容器采用网格布局</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032504.png" alt></p>
+<p>上图就是display：grid 的效果。</p>
+<p>默认情况下，容器元素都是块级元素，但也可以设为行内元素。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 上面代码指定<code>div</code>是一个行内元素，该元素内部采用网格布局。 </p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032505.png" alt></p>
+<p>上图是display：inline-grid 的效果。</p>
+<p>注意，设为网格布局以后，容器子元素（项目）的float、display：inline-block、display：table-cell、vertical-align和column-*等设置都会失效。</p>
+<ol start="2">
+<li>grid-template-columns属性与grid-template-rows属性</li>
+</ol>
+<p>容器指定了网格布局以后，接着就要划分行和列。grid-template-columns属性定义每一列的列宽，grid-template-rows属性定义了每一行的行高。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码指定了一个三行三列的网格，列宽和行高都是100px。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032506.png" alt></p>
+<p>除了使用绝对单位，也可以使用百分比。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">33.33%</span> <span class="number">33.33%</span> <span class="number">33.33%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">33.33%</span> <span class="number">33.33%</span> <span class="number">33.33%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(1) repeat()</p>
+<p>有时候，重复写同样的值非常麻烦，尤其网格很多时，这时，就可以使用repeat()函数，简化重复的值。上面的代码用repeat()改写如下。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(3, 33.33%);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(3, 33.33%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>repeat()接受两个参数，第一个参数是重复的次数（上例是3），第二个参数是所要重复的值。</p>
+<p>repeat()重复某种模式也是可以的。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: <span class="selector-tag">repeat</span>(2, 100<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 80<span class="selector-tag">px</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面代码定义了6列，第一列和第四列的宽度为100px，第二列和第五列为20px，第三列和第六列为80px。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032507.png" alt></p>
+<p>(2) auto-fill关键字</p>
+<p>有时，单元格的大小固定的，但是容器的大小不确定，如果希望每一行（或每一列）容纳尽可能多的单元格，这是可以使用auto-fill关键字表示自动填充，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fill, 100px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示每列宽度100px，然后自动填充，直到容器不能放置更多的列。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032508.png" alt></p>
+<p>(3) fr关键字</p>
+<p>为了方便表示比例关系，网格布局提高了fr关键字(fraction的缩写，意为“片段”)。如果两列的宽度分别为1fr和2fr，就表示后者是前者的两边。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-colum</span>: <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示两个相同宽度的列。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032509.png" alt></p>
+<p>fr可以与绝对长度的单位结合使用，这时会非常方便。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">gird-template-columns</span>: <span class="number">150px</span> <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示，第一列的宽度为150px，第二列的宽度是第三列的一半。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032510.png" alt></p>
+<p>(4) minmax()</p>
+<p>minmax()函数产生一个长度范围，表示长度就在这个范围执政，它接受两个参数，分别为最小值和最大值。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: 1<span class="selector-tag">fr</span> 1<span class="selector-tag">fr</span> <span class="selector-tag">minmax</span>(100<span class="selector-tag">px</span>, 1<span class="selector-tag">fr</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示中，minmax(100px, 1fr)表示列宽不小于100px，不大于1fr。</p>
+<p>(5) auto关键字</p>
+<p>auto关键字表示有浏览器自己决定长度。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: 100<span class="selector-tag">px</span> <span class="selector-tag">auto</span> 100<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，第二列的宽度，基本上等于该列单元格的最大宽度，除非单元格内容设置了min-width，且这个值大于最大宽度。</p>
+<p>（6） 网格线的名称</p>
+<p>grid-template-columns属性和grid-template-rows属性里面，还可以使用方括号，指定每一根网格线的名字方便以后的引用。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: [c1] <span class="number">100px</span> [c2] <span class="number">100px</span> [c3] auto [c4];</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: [r1] <span class="number">100px</span> [r2] <span class="number">100px</span> [r3] auto [r4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码指定网格布局为3行 x 3列，因此有4根垂直网格线和4根水平网格线。方括号里面依次是这八根线的名字。</p>
+<p>网格布局允许同一根线有多个名字，比如[fifth-line row-5]</p>
+<p>(7) 布局实例</p>
+<p>grid-template-columns属性对于网页布局非常有用。两栏式布局只需要一行代码。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">70%</span> <span class="number">30%</span>:</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码将左边栏设为70%，右边栏设为30%。</p>
+<p>传统的十二网格布局，写起来也很容易。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: <span class="selector-tag">repeat</span>(12, 1<span class="selector-tag">fr</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>grid-row-gap属性、grid-column-gap属性、grid-gap属性</li>
+</ol>
+<p>grid-row-gap属性设置行与行的间隔（行间距），grid-column-gap属性设置列于列的间隔（列间距）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-row-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">gird-column-gap</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，grid-row-gap用于设置行间距，grid-column-gap用于设置列间距。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032511.png" alt></p>
+<p>grid-gap属性式grid-column-gap和gird-row-gap的合并简写形式，语法如下。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-gap</span>: &lt;<span class="selector-tag">grid-row-gap</span>&gt; &lt;<span class="selector-tag">grid-column-gap</span>&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>因此，上面一段CSS代码等同于下面的代码。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-gap</span>: <span class="number">20px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果grid-gap省略了第二个值，浏览器认为第二个值等于第一个值。</p>
+<p>注意：根据最新标志，上面三个属性名的grid-前缀已经删除，grid-column-gap和grid-row-gap写成column-gap和row-gap，grid-gap写成gap。</p>
+<ol start="4">
+<li>grid-template-areas属性</li>
+</ol>
+<p>网格布局允许指定“区域”（area），一个区域由单个或多个单元格组成。grid-template-areas属性用于定义区域。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">gird-template-rows</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">grid-template-areas</span>: <span class="string">'a b c'</span></span><br><span class="line">        				<span class="string">'d e f'</span></span><br><span class="line">        				<span class="string">'g h i'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码先划分出9个单元格，然后将其命名为a到i的九个区域，分别对应这九个单元格。</p>
+<p>多个单元格合并成一个区域的写法如下。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas: 'a a a'</span><br><span class="line">					'b b b'</span><br><span class="line">					'c c c'</span><br></pre></td></tr></table></figure>
+
+<p>上面代码将9个单元格分成a、b、c三个区域。</p>
+<p>下面是一个布局实例。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-areas</span>: "<span class="selector-tag">header</span> <span class="selector-tag">header</span> <span class="selector-tag">header</span>"</span><br><span class="line">                     "<span class="selector-tag">main</span> <span class="selector-tag">main</span> <span class="selector-tag">sidebar</span>"</span><br><span class="line">                     "<span class="selector-tag">footer</span> <span class="selector-tag">footer</span> <span class="selector-tag">footer</span>";</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，顶部是页面区域header，底部是页脚区域footer，中间部分则为main和sidebar。</p>
+<p>如果某些区域不需要利用，则使用“点（.）”来表示。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas: 'a . c'</span><br><span class="line">                     'd . f'</span><br><span class="line">                     'g . i';</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，中间一列为点，便是没有用到该单元格，或者该单元格不属于任何区域。</p>
+<p>注意，区域的命名会影响到网格线，每个区域的起始网格线会自动命名为区域名-start，终止网格线自动命名为区域名-end。比如区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end。</p>
+<ol start="5">
+<li>grid-auto-flow属性</li>
+</ol>
+<p>划分网格以后，容器的子元素会按照顺序，自动放置在每一个网格。默认的放置顺序是“先行后列”，即先填满第一行，再开始放入第二行，即下图数字的顺序。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032506.png" alt></p>
+<p>这个顺序由grid-auto-flow属性决定，默认值是row，即“先行后列”。也可以将它设为column，变成“先列后行”。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-auto-flow</span>: <span class="selector-tag">column</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码设置列column以后，放置顺序就变成了下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032512.png" alt></p>
+<p>grid-auto-flow属性除了设置为row和column，还可以设为row dense和column dense。这两个值主要用于，某些项目指定位置以后，剩余的项目怎么自动放置。</p>
+<p>下面的例子将1号项目和2号项目各占据两个单元格，然后在默认的grid-auto-flow：row情况下，会产生下面这样的布局。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032513.png" alt></p>
+<p>上图中，1号项目后面的位置是空的，这是因为3号项目默认跟2号项目，所以会排在2号项目后面。</p>
+<p>现在修改设置，设为row dense，表示”先行后列“，并且尽可能紧密填满，尽量不出现空格。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-auto-flow</span>: <span class="selector-tag">row</span> <span class="selector-tag">dense</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码的效果如下：</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032514.png" alt></p>
+<p>上图会先填满第一行，再填满第二行，所以3号项目就会紧跟在1号项目的后面。8号项目和9号项目就会排到第四行。</p>
+<p>如果将设置改为column dense，表示”先列后行”，并且尽量填满空格。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-auto-fill</span>: <span class="selector-tag">column</span> <span class="selector-tag">dense</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码的效果如下。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032515.png" alt></p>
+<p>上图会先填满第一列，再填满第二列，所以3号项目在第一列，4号项目在第二列。8 号项目和9号项目被挤到了第四列。 </p>
+<ol start="6">
+<li>justify-items属性、align-items属性、place-items属性</li>
+</ol>
+<p>justify-items属性设置单元格内容的水平位置（左中右），align-items属性设置单元格内容的垂直位置（上中下）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">justify-items</span>: start | end | center | stretch;</span><br><span class="line">    <span class="attribute">align-items</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 这两个属性的写法完全相同，都可以取下面这些值。 </p>
+<ul>
+<li>start：对齐单元格的起始边缘。</li>
+<li>end：对齐单元格的结束边缘。</li>
+<li>center：单元格内部居中。</li>
+<li>stretch：拉伸，占满单元格的整个宽度（默认值）。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">justify-items</span>: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示，单元格内内容左对齐，效果如下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032516.png" alt></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">align-items</span>: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示，单元格的内容头部对齐，效果如下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032517.png" alt></p>
+<p>place-items属性是align-items属性和justify-items属性的合并简写形式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">place-items</span>: &lt;<span class="selector-tag">align-items</span>&gt; &lt;<span class="selector-tag">justify-items</span>&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>下面是一个例子。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">place-items</span>: <span class="selector-tag">start</span> <span class="selector-tag">end</span>;</span><br></pre></td></tr></table></figure>
+
+<p> 如果省略第二个值，则浏览器认为与第一个值相等。 </p>
+<ol start="7">
+<li>justify-content属性、align-content属性、place-content属性</li>
+</ol>
+<p>justify-content属性是整个内容区域在容器里面的水平位置（左中右），align-content属性是整个内容区域的垂直位置（上中下）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;</span><br><span class="line">    <span class="attribute">align-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 这两个属性的写法完全相同，都可以取下面这些值。（下面的图都以justify-content属性为例，align-content属性的图完全一样，只是将水平方向改成垂直方向。） </p>
+<ul>
+<li>start - 对齐容器的起始边框。</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032519.png" alt></p>
+<ul>
+<li>end - 对齐容器的结束边框</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032518.png" alt></p>
+<ul>
+<li>center - 容器内部居中</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032520.png" alt></p>
+<ul>
+<li>stretch - 项目大小没有指定时， 拉伸占据整个网格容器。</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032521.png" alt></p>
+<ul>
+<li>space-around - 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与容器边框的间隔大一倍。</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032522.png" alt="img"></p>
+<ul>
+<li>space-between - 项目与项目的间隔相等，项目与容器边框之间没有间隔。</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032523.png" alt="img"></p>
+<ul>
+<li>space-evenly - 项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔。</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032524.png" alt="img"></p>
+<p>place-content属性时align-content属性和justify-content属性的合并简写形式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">place-content</span>: &lt;<span class="selector-tag">align-content</span>&gt; &lt;<span class="selector-tag">justify-content</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面是一个例子。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">place-content</span>: <span class="selector-tag">space-around</span> <span class="selector-tag">space-evenly</span>;</span><br></pre></td></tr></table></figure>
+
+<p> 如果省略第二个值，浏览器就会假定第二个值等于第一个值。 </p>
+<ol start="8">
+<li>grid-auto-columns属性、grid-auto-rows属性</li>
+</ol>
+<p>有时候，一些项目的指定位置，在现有网格的外部。比如网格只有3列，但是某一个项目指定在第5行。这时，浏览器会自动生成多余的网格，以便放置项目。</p>
+<p>grid-auto-column属性和grid-auto-rows属性用来设置，浏览器自动创建的多余网格的列宽和行高。它们的写法于grid-template-columns和grid-template-rows完全相同。如果不指定这两个属性，浏览器完全根据单元格内容的大小，决定新增网格的列宽和行高。</p>
+<p>下面的例子里面，划分好的网格是3行x3列，但是，8号项目指定在第5行，9号项目指定在第5行。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>:<span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>:<span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">grid-auto-rows</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 上面代码指定新增的行高统一为50px（原始的行高为100px）。 </p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032525.png" alt></p>
+<ol start="9">
+<li>grid-template属性、grid属性</li>
+</ol>
+<p>grid-template属性是grid-template-columns、grid-template-rows、和grid-template-areas这三个属性的合并简写形式。</p>
+<p>grid属性是 grid-template-rows、grid-template-columns、grid-template-areas、 grid-auto-rows、grid-auto-columns、grid-auto-flow这六个属性的合并简写形式。 </p>
+<p> 从易读易写的角度考虑，还是建议不要合并属性，所以这里就不详细介绍这两个属性了。</p>
+<hr>
+<h2 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h2><p>下面这些属性定义在项目上面。</p>
+<ol>
+<li>grid-column-start属性、grid-column-end属性、grid-row-start属性、grid-row-end属性。</li>
+</ol>
+<p>项目的位置是可以指定的，具体方法就是指定项目的四个边框，分别定位在哪根网格线。</p>
+<ul>
+<li>grid-colum-start属性：左边框所在的垂直网格线。</li>
+<li>grid-colum-end属性：右边框所在的垂直网格线。</li>
+<li>grid-row-start属性：上边框所在的垂直网格线。</li>
+<li>grid-row-end属性：下边框所在的垂直网格线。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码指定，1号项目的左边框是第二根垂直网格线，有边框是第四个垂直网格线。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032526.png" alt></p>
+<p>上面中，只指定1号项目的左右边框，没有指定上下边框，所以会采用默认位置，即上边框是第一个水平网格线，下边框是第二个水平网格线。</p>
+<p>除了1号项目以外，其他项目都没有指定位置，由浏览器自动布局，这时它们的位置由容器的grid-auto-flow属性决定。这个属性的默认值是row，因此会“先行后列”进行排列。</p>
+<p>下面的例子是指定四个边框位置的效果。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: <span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-row-start</span>: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032527.png" alt></p>
+<p>这四个属性的值，除了指定为第几个网格线，还可以指定为网格线的名字。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: header-start;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: header-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 上面代码中，左边框和右边框的位置，都指定为网格线的名字。 </p>
+<p> 这四个属性的值还可以使用span关键字，表示”跨越”，即左右边框（上下边框）之间跨越多少个网格。 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示，1号项目的左边框距离右边框跨越2个网格。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032528.png" alt></p>
+<p>这与下面的代码效果完全一样。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用这4个属性，如果产生了项目的重叠，则使用z-index属性指定项目的重叠顺序。</p>
+<ol start="2">
+<li>grid-column属性、grid-row属性</li>
+</ol>
+<p>grid-column属性是grid-column-start和grid-column-end的合并简写形式，grid-row属性是grid-row-start属性和grid-row-end的合并简写形式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column</span>:  / ;</span><br><span class="line">    <span class="attribute">grid-row</span>:  / ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 下面是一个例子。 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span> / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: <span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-row-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，项目item-1占据第一行，从第一根列线到第三根列线。</p>
+<p>这两个属性之中，也可以使用span关键字，表示跨越多少个网格。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#bc03532</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#bc03532</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span> / span <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span> / span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，项目item-1占据的区域，包括第一行 + 第二行、第一列 + 第二列。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032529.png" alt></p>
+<p>斜杠以及后面的部分可以省略，默认跨越一个网格。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，项目item-1占据左上角第一个网络。</p>
+<ol start="3">
+<li>grid-area属性</li>
+</ol>
+<p>grid-area属性指定项目放在哪一个区域。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，1号项目位于e区域，效果如下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032530.png" alt></p>
+<p>grid-area属性还可用作grid-row-start、grid-column-start、grid-row-end、grid-row-end的合并简写形式，直接指定项目的位置。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是一个例子。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">    <span class="attribute">grid-are</span>: <span class="number">1</span> / <span class="number">1</span> / <span class="number">3</span> / <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>justify-self属性、align-self属性、place-self属性</li>
+</ol>
+<p>justify-self属性设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目。</p>
+<p>align-self属性设置单元格内容的垂直位置（上中下），跟align-items属性的用法完全一致，也是只作用于单个项目。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">justify-self</span>: start | end | center | stretch;</span><br><span class="line">    <span class="attribute">align-slef</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 这两个属性都可以取下面四个值。 </p>
+<ul>
+<li>start：对齐单元格的起始边缘。</li>
+<li>end：对齐单元格的结束边缘。</li>
+<li>center：单元格内部居中。</li>
+<li>stretch：拉伸，占满单元格的整个宽度（默认值）。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span>  &#123;</span><br><span class="line">  <span class="attribute">justify-self</span>: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032532.png" alt></p>
+<p>place-self属性是align-slef属性和justify-self属性的合并简写形式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">place-self</span>: &lt;<span class="selector-tag">align-self</span>&gt; &lt;<span class="selector-tag">justify-self</span>&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>下面是一个例子。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">place-self</span>: <span class="selector-tag">center</span> <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure>
+
+<p>如果省略第二个值，<code>place-self</code>属性会认为这两个值相等。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/02/Flex布局/" rel="next" title="Flex布局">
+                <i class="fa fa-chevron-left"></i> Flex布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=107844747,2223636535&fm=26&gp=0.jpg" alt="zero XP">
+            
+              <p class="site-author-name" itemprop="name">zero XP</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">70</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器属性"><span class="nav-number">2.</span> <span class="nav-text">容器属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目属性"><span class="nav-number">3.</span> <span class="nav-text">项目属性</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zero XP</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">362k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">5:29</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 站点上线时间 -->
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+  var now = new Date();
+  function createtime() {
+      var grt= new Date("06/011/2019 11:11:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  }
+setInterval("createtime()",250);
+</script>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"log":false});</script></body>
+</html>
+
+<!-- 崩溃欺骗 -->
+<script type="text/javascript" src="/js/src/custom_title.js"></script>
+
+ <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- 页面点击烟花爆炸 -->
+ 
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script type="text/javascript" src="/js/src/fireworks.js"></script>
+ 
+
+ <!-- 音频播放 -->
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
