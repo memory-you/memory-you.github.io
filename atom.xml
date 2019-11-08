@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-02T17:18:45.202Z</updated>
+  <updated>2019-11-08T17:01:42.182Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://memory-you.github.io/2019/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://memory-you.github.io/2019/11/08/正则表达式/</id>
+    <published>2019-11-08T15:09:05.000Z</published>
+    <updated>2019-11-08T17:01:42.182Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a到z之间的字母）和特殊字符（称为元字符）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Grid布局</title>
@@ -396,31 +414,6 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
 &lt;blockquote&gt;
 &lt;p&gt;拥有一个length属性和若干索引属性的对象。&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript深入之new的模拟实现</title>
-    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之new的模拟实现/</id>
-    <published>2019-09-24T13:57:59.000Z</published>
-    <updated>2019-09-25T06:56:00.643Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;h2 id=&quot;new&quot;&gt;&lt;a href=&quot;#new&quot; class=&quot;headerlink&quot; title=&quot;new&quot;&gt;&lt;/a&gt;new&lt;/h2&gt;&lt;p&gt;一句话介绍new：&lt;/p&gt;
-&lt;block
-        
-      
     
     </summary>
     

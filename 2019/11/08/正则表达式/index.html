@@ -106,17 +106,19 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
+  <meta name="description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a到z之间的字母）和特殊字符（称为元字符）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6系列之let和const">
-<meta property="og:url" content="https://memory-you.github.io/2019/09/13/ES6系列之let和const/index.html">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="https://memory-you.github.io/2019/11/08/正则表达式/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
+<meta property="og:description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a到z之间的字母）和特殊字符（称为元字符）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T10:26:23.921Z">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2014/03/CEBB49BB-B1AD-4539-AC7A-B40DDC62D1B2.jpg">
+<meta property="og:updated_time" content="2019-11-08T17:01:42.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6系列之let和const">
-<meta name="twitter:description" content="通过 var声明的变量存在变量提升的特性： 12345if (condition) &amp;#123;    var value = 1&amp;#125;console.log(value)  初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a到z之间的字母）和特殊字符（称为元字符）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2014/03/CEBB49BB-B1AD-4539-AC7A-B40DDC62D1B2.jpg">
 
 
 
@@ -126,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/09/13/ES6系列之let和const/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/11/08/正则表达式/">
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>ES6系列之let和const | zeroXP</title>
+  <title>正则表达式 | zeroXP</title>
   
 
 
@@ -384,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/13/ES6系列之let和const/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/11/08/正则表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -401,7 +403,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6系列之let和const
+          <h1 class="post-title" itemprop="name headline">正则表达式
 
               
             
@@ -427,12 +429,24 @@
                 
               
 
-              <time title="创建时间：2019-09-13 16:05:48 / 修改时间：18:26:23" itemprop="dateCreated datePublished" datetime="2019-09-13T16:05:48+08:00">2019-09-13</time>
+              <time title="创建时间：2019-11-08 23:09:05" itemprop="dateCreated datePublished" datetime="2019-11-08T23:09:05+08:00">2019-11-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-09 01:01:42" itemprop="dateModified" datetime="2019-11-09T01:01:42+08:00">2019-11-09</time>
               
             
           </span>
@@ -460,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.1k</span>
+                <span title="本文字数">4.2k</span>
               
 
               
@@ -496,106 +510,373 @@
       
         <meta name="referrer" content="no-referrer">
 
-<p>通过 <code>var</code>声明的变量存在变量提升的特性：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)</span><br></pre></td></tr></table></figure>
-
-<p>初学者可能会觉得只有condition为true的时候，才会创建value，如果condition为false，结果应该是报错，然而因为变量提升的原因，代码相当于：</p>
+<p>正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a到z之间的字母）和特殊字符（称为元字符）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
 <a id="more"></a>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value</span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)</span><br></pre></td></tr></table></figure>
-
-<p>如果condition为false，结果会是undefined。</p>
-<p>除此之外，在for循环中：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i)</span><br></pre></td></tr></table></figure>
-
-<p>为了加强对变量生命周期的控制，ECMAScript6引入块级作用域。</p>
-<p>块级作用域存在于：</p>
+<p>正则表达式的使用，可以通过简单的办法来实现强大的功能，下面先给出一个简单的示例：</p>
+<p><img src="//www.runoob.com/wp-content/uploads/2014/03/CEBB49BB-B1AD-4539-AC7A-B40DDC62D1B2.jpg" alt></p>
 <ul>
-<li>函数内部</li>
-<li>块中（字符 { 和 } 之间的区域）</li>
+<li><code>^</code>为匹配输入字符串的开始位置。</li>
+<li><code>[0-9]+</code>匹配多个数字，<code>[0-9]</code>匹配单个数字,<code>+</code>匹配一个或者多个。</li>
+<li><code>abc$</code>匹配字母<code>abc</code>并以<code>abc</code>结尾，<code>$</code>为匹配输入字符串的开始位置。</li>
 </ul>
-<hr>
-<h2 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h2><p>块级声明用于声明在指定块的作用域之外无法访问的变量。</p>
-<p>let和const都是块级声明的一种。</p>
-<p>我们来回顾下let和const的特点。</p>
-<ol>
-<li>不会被提升</li>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>正则表达式描述了一种字符串匹配的模式(pattern)，可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的字串等。</p>
+<p>普通字符：没有显式指定为元字符的所有可打印和不可打印字符。这包括所有大写和小写字母、所有数字、所有标点符号和一些其他符号。</p>
+<p>特殊字符：所谓特殊字符就是一些由特殊含义的字符。当要匹配元字符的时候，我们需要先将字符”转义”。即，将反斜杠字符<code>\</code>放在元字符前面。</p>
+<p>限定符：指定正则表达式的一个给定嘴贱必须要出现多少次才能满足匹配。由<code>*</code>或<code>+</code>或<code>?</code>或<code>{n}</code>或<code>{n, }</code>或<code>{n, m}</code>共6种。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。* 相当于{0，}</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。+ 相当于{1，}</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配前面的子表达式零次或一次。？相当于{0，1}</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n是一个非负整数，匹配确定的n次。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n是一个非法整数，至少匹配n次。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>n和m均为非负整数，其中n &lt;= m。最少匹配n次且最多匹配m次。</td>
+</tr>
+</tbody></table>
+<p>注意：在逗号和两个数之间不能有空格。</p>
+<p>定位符：能够将正则表达式固定固定到行首或者行尾。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^</td>
+<td>匹配输入字符串开始的位置.</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串结尾的位置.</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个单词边界，即字与空格间的位置。</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>非单词边界匹配</td>
+</tr>
+</tbody></table>
+<p>注意：不要将限定符与定位符一起使用。由于在紧靠换行或者单词边界的前面或后面不能有一个以上位置。</p>
+<p>选择：用圆括号将所有选择项括起来，相邻的选择项之间用 | 分隔。但用圆括号会有一个副作用，使相关的匹配会被缓存，此时可用 ?: 放在第一个选项前来消除这种副作用。</p>
+<p>其中 <code>?:</code>是非捕获元之一， 还有两个非捕获元是 <strong>?=</strong> 和 <strong>?!</strong>，这两个还有更多的含义，前者为正向预查，在任何开始匹配圆括号内的正则表达式模式的位置来匹配搜索字符串，后者为负向预查，在任何开始不匹配该正则表达式模式的位置来匹配搜索字符串。 </p>
+<p>反向引用： 对一个正则表达式模式或部分模式两边添加圆括号将导致相关匹配存储到一个临时缓冲区中，所捕获的每个子匹配都按照在正则表达式模式中从左到右出现的顺序存储。 最多可存储 99 个捕获的子表达式。每个缓冲区都可以使用 <strong>\n</strong> 访问，其中 n 为一个标识特定缓冲区的一位或两位十进制数。 </p>
+<p> 可以使用非捕获元字符 <strong>?:</strong>、<strong>?=</strong> 或 <strong>?!</strong> 来重写捕获，忽略对相关匹配的保存。 </p>
+<h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><p>正则表达式从左到右进行计算，并遵循优先级顺序。相同优先级的从左到右进行元素，不同优先级的运算先高后低。</p>
+<p>下表从高到低说明了各类正则表达式运算符的优先级顺序。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>转义符</td>
+</tr>
+<tr>
+<td>(), (?:), (?=), []</td>
+<td>圆括号和方括号</td>
+</tr>
+<tr>
+<td>*, +, ?, {n}, {n, }, {n, m}</td>
+<td>限定符</td>
+</tr>
+<tr>
+<td>^, $, \ 任何元字符、任何字符</td>
+<td>定位符和序列</td>
+</tr>
+<tr>
+<td>|</td>
+<td>替换，“或”操作</td>
+</tr>
+</tbody></table>
+<h2 id="匹配规则"><a href="#匹配规则" class="headerlink" title="匹配规则"></a>匹配规则</h2><ol>
+<li>基本匹配规则</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> valur = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(value)  <span class="comment">// Uncaught ReferenceError: value is not defined</span></span><br></pre></td></tr></table></figure>
+<p>一起从最基本的开始。模式，是正则表达式最基本的元素，它们是一组描述字符串特征的字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^once</span><br></pre></td></tr></table></figure>
+
+<p>这个模式包含一个特殊字符 ^ ，表示该模式只匹配那些以once开头的字符串。</p>
+<p>在该模式中的字母(o-n-c-e)是字母的字符，也就是说，它们表示该字母本身，数字也是一样的。其他一些稍微复杂的字符，如标点字符和白字符，要用到转义序列。所有的转义序列都用反斜杠()打头，制表符的转义序列是<code>\t</code>。所以如果我们要检测一个字符串是否以制表符开头，可以用这个模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\t</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>重复声明报错</li>
+<li>字符簇</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> value = <span class="number">2</span>  <span class="comment">// Uncaught SyntaxError: Identifier 'value' has already been declared</span></span><br></pre></td></tr></table></figure>
+<p>我们常常用正则表达式来验证用户的输入，当用户提交一个form以后，要判断输入的电话号码、地址、EMAIL地址、信用卡号码等是否有效，用普通的基于字面的字符是不够的。</p>
+<p>所以要用一组更自由的描述我们要的模式的办法，它就是字符簇。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[a-z] //匹配所有的小写字母 </span><br><span class="line">[A-Z] //匹配所有的大写字母 </span><br><span class="line">[a-zA-Z] //匹配所有的字母 </span><br><span class="line">[0-9] //匹配所有的数字 </span><br><span class="line">[0-9\.\-] //匹配所有的数字，句号和减号 </span><br><span class="line">[ \f\r\t\n] //匹配所有的白字符</span><br></pre></td></tr></table></figure>
 
+<p>这些只能表示一个字符，这是非常重要的。如果要匹配一个由一个小写字母和一个数字组成的字符串的话，用这个模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[a-z][0-9]$</span><br></pre></td></tr></table></figure>
+
+<p>尽管[a-z]代表26个字母的范围，但在这里它只能与第一个字符是小写的字符的字符串匹配。</p>
+<p>在这里使用的 ^ ，表示字符串的开头。但它还有一个含义，当在一组方括号里面使用<code>^</code>，它表示“非”或“排除”的意思，常常用来剔除某个字符，还有前面的例子，我们要求第一个字符不能是数字：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[^0-9][0-9]$</span><br></pre></td></tr></table></figure>
+
+<p> 这个模式与”&amp;5”、”g7”及”-2”是匹配的，但与”12”、”66”是不匹配的。下面是几个排除特定字符的例子： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[^a-z] // 除了小写字母以外的所有字符</span><br><span class="line">[^\\\/\^] //除了(\)(/)(^)之外的所有字符 </span><br><span class="line">[^\&quot;\&apos;] //除了双引号(&quot;)和单引号(&apos;)之外的所有字符</span><br></pre></td></tr></table></figure>
+
+<p>特殊字符<code>.</code>在正则表达式中用来表示除了“新行”以外的所有字符。 所以模式 <strong>^.5$</strong> 与任何两个字符的、以数字5结尾和以其他非”新行”字符开头的字符串匹配。模式 <strong>.</strong> 可以匹配任何字符串，除了空串和只包括一个<strong>“新行”</strong>的字符串 </p>
 <ol start="3">
-<li>不绑定全局作用域</li>
+<li>确认重复出现</li>
 </ol>
-<p>当在全局作用域中使用var声明的时候，会创建一个新的全局变量作为全局对象的属性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.value)  <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-
-<p>然而，let和const不会：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> value = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.value)  <span class="comment">//  undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>再来说下let和const的区别：</p>
-<p>const用于声明常量，其值一旦被设定不能再被修改，否则会报错</p>
-<p>值得一提的是：const声明不允许修改绑定，但允许修改值，这意味着当用const声明对象时：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">    value: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 没问题</span></span><br><span class="line">data.value = <span class="number">2</span></span><br><span class="line">data.num = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line">data = &#123;&#125;  <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="暂时死区"><a href="#暂时死区" class="headerlink" title="暂时死区"></a>暂时死区</h2><p>临时死区（Temporal Dead Zone），简称为TDZ。</p>
-<p>let和const声明的变量不会被提升到作用域顶部，如果在声明之前访问这些变量，会导致报错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> value) <span class="comment">// Uncaught ReferenceError: value is not defined</span></span><br><span class="line"><span class="keyword">let</span> value = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>这是因为JavaScript引擎在扫描代码发现变量声明时，要么将它们提升到作用域顶部（遇到var声明），要么将声明放在TDZ中（遇到let和const声明）。访问TDZ中的变量会触发运行时错误。只有执行过变量声明语句后，变量才会从TDZ中移除，然后方可访问。</p>
-<p>看似很好理解，不保证不会犯错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="string">'global'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">    <span class="keyword">let</span> value = <span class="string">'local'</span></span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">    <span class="keyword">const</span> value = <span class="string">'local'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>两个例子中，结果并不会打印’global’，而是报错<code>Uncaught ReferenceError: value is not defined</code>，就是因为 TDZ 的缘故。</p>
-<hr>
-<h2 id="循环中的块级作用域"><a href="#循环中的块级作用域" class="headerlink" title="循环中的块级作用域"></a>循环中的块级作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-
-<p>一个老生常谈的面试题，解决方案如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(i))</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-
-<p>ES6的let为这个问题提供了新的解决方案：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    function[i] = function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-
-<p>问题在于，上面讲了let不提升，不能重复声明，不能绑定全局作用域等等特性，可是为什么在这里就能正确打印出i值呢？</p>
-<p>如果是不重复声明，在循环第二次的时候，又用let声明了i，应该报错呀，就算因为某种原因，重复声明不报错，一遍一遍迭代，i的值最终还应该是3呀。</p>
-<p>设置循环变量的那个部分是一个单独的作用域，就比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
-
-<p>这个例子是对的，如果我们把let改成var呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
-
-<p>为什么结果就不一样了呢，如果有单独的作用域，结果应该是相同的</p>
-<p>如果要追究这个问题，就要抛弃掉之前所讲的这些特性！这是因为 let 声明在循环内部的行为是标准中专门定义的，不一定就与 let 的不提升特性有关，其实，在早期的 let 实现中就不包含这一行为。</p>
-<p>我们会发现，在for循环中使用let和var，底层会使用不同的处理方式。</p>
-<p>那么当使用let的时候底层到底是怎样做的呢？</p>
-<p>简单的来说，就是在 <code>for (let i = 0; i &lt; 3; i++)</code> 中，即圆括号之内建立一个隐藏的作用域，这就可以解释为什么：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">'abc'</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
-
-<p>然后每次迭代循环时都创建一个新变量，并以之前迭代中同名变量的值将其初始化。这样对于下面这样一段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-
-<p>就相当于：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 伪代码</span></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">0</span>) &#123;</span><br><span class="line">    funcs[<span class="number">0</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">1</span>) &#123;</span><br><span class="line">    funcs[<span class="number">1</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">let</span> i = <span class="number">2</span>) &#123;</span><br><span class="line">    funcs[<span class="number">2</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>当执行函数的时候，根据词法作用域就可以找到正确的值，其实也可以理解为let声明模仿了闭包的做法来简化循环过程。</p>
-<hr>
-<h2 id="循环中的let和const"><a href="#循环中的let和const" class="headerlink" title="循环中的let和const"></a>循环中的let和const</h2><p>不过到这里还没有结束，如果我们把let改成const呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    funcs[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">funcs[<span class="number">0</span>](); <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-
-<p>结果会是报错，因为虽然我们每次都创建了一个新的变量，然而我们在迭代中尝试修改const的值，所有最终会报错。</p>
-<p>说完了普通的for循环，我们还有for in 循环。</p>
-<p>那下面的结果时什么呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = [], object = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    funcs.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(key)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcs[<span class="number">0</span>]()</span><br></pre></td></tr></table></figure>
-
-<p>结果是’c’</p>
-<p>那如果把 var 改成 let 或者 const 呢？</p>
-<p>使用 let，结果自然会是 ‘a’，const 呢？ 报错还是 ‘a’?</p>
-<p>结果是正确打印 ‘a’，这是因为在 for in 循环中，每次迭代不会修改已有的绑定，而是会创建一个新的绑定。</p>
+<p>在现在为止，我们知道了如何取匹配一个字母或数字，但更多的情况下，可能匹配一个单词或一组数字。一个单词由若干个字母组成，一组数字有若干个单数组成。跟在字符或字符簇后面的花括号({})用来确定前面的内容的重复出现的次数。</p>
+<table>
+<thead>
+<tr>
+<th align="left">字符簇</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">^[a-zA-Z_]$</td>
+<td align="left">所有的字母和下划线</td>
+</tr>
+<tr>
+<td align="left">^[[:alpha:]]{3}$</td>
+<td align="left">所有的3个字母的单词</td>
+</tr>
+<tr>
+<td align="left">^a$</td>
+<td align="left">字母a</td>
+</tr>
+<tr>
+<td align="left">^a{4}$</td>
+<td align="left">aaaa</td>
+</tr>
+<tr>
+<td align="left">^a{2,4}$</td>
+<td align="left">aa,aaa或aaaa</td>
+</tr>
+<tr>
+<td align="left">^a{1,3}$</td>
+<td align="left">a,aa或aaa</td>
+</tr>
+<tr>
+<td align="left">^a{2,}$</td>
+<td align="left">包含多于两个a的字符串</td>
+</tr>
+<tr>
+<td align="left">^a{2,}</td>
+<td align="left">如：aardvark和aaab，但apple不行</td>
+</tr>
+<tr>
+<td align="left">a{2,}</td>
+<td align="left">如：baad和aaa，但Nantucket不行</td>
+</tr>
+<tr>
+<td align="left">\t{2}</td>
+<td align="left">两个制表符</td>
+</tr>
+<tr>
+<td align="left">.{2}</td>
+<td align="left">所有的两个字符</td>
+</tr>
+</tbody></table>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置。</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结束位置。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配前面的子表达式零次或一次。</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n是一个非负整数，匹配确定的n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n是一个非负整数，至少匹配n次。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>n,m均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。</td>
+</tr>
+<tr>
+<td>？</td>
+<td>当该字符紧跟在任何一个限定符(*, +, ?, {n}, {n,}, {n,m})后面时，匹配模式时非坦然的。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符（\n、\r）之外的任何单个字符</td>
+</tr>
+<tr>
+<td>(pattern)</td>
+<td>匹配pattern并获取这一匹配，所获取的匹配可以从产生的Matches集合得到。</td>
+</tr>
+<tr>
+<td>(?:pattern)</td>
+<td>匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。</td>
+</tr>
+<tr>
+<td>(?=pattern)</td>
+<td>正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配。</td>
+</tr>
+<tr>
+<td>(?!pattern)</td>
+<td>正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配。</td>
+</tr>
+<tr>
+<td>(?&lt;=pattern)</td>
+<td>反向肯定预查，与正向肯定预查类似，只是方向相反。</td>
+</tr>
+<tr>
+<td>(?&lt;!pattern)</td>
+<td>反向否定预查，与正向否定预查类似，只是方向相反。</td>
+</tr>
+<tr>
+<td>x|y</td>
+<td>匹配x或y。</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>字符集合，匹配所包含的任意一个字符。</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>负值字符集合，匹配未包含的任意字符。</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>字符范围，匹配指定范围内的任意字符。</td>
+</tr>
+<tr>
+<td>[^a-z]</td>
+<td>负值字符范围，匹配任何不在指定范围内的任意字符。</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界。</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td>匹配由x指明的控制字符。</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字字符，等价于[0-9]。</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符，等价于<code>[^0-9]</code>。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符，等价于 \x0c 和 \cL 。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符，等价于\x0a 和 \cM。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符，等价于 \x0d 和 \cj。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于 <code>[^ \f\n\r\t\v]</code>。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于 \x0b 和 \cK</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母、数字、下划线。等价于<code>&#39;[^A-Za-z0-9_]&#39;</code>。</td>
+</tr>
+<tr>
+<td>\xn</td>
+<td>匹配 n，其中 n 为十六进制转义值。</td>
+</tr>
+<tr>
+<td>\num</td>
+<td>匹配 num，其中 num 是一个正整数。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>标识一个八进制转义值或一个向后引用。</td>
+</tr>
+<tr>
+<td>\nm</td>
+<td>标识一个八进制转义值或一个向后引用</td>
+</tr>
+<tr>
+<td>\nml</td>
+<td>如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。</td>
+</tr>
+<tr>
+<td>\un</td>
+<td>匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -626,8 +907,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/10/JavaScript专题之数组去重/" rel="next" title="数组去重">
-                <i class="fa fa-chevron-left"></i> 数组去重
+              <a href="/2019/11/02/Grid布局/" rel="next" title="Grid布局">
+                <i class="fa fa-chevron-left"></i> Grid布局
               </a>
             
           </div>
@@ -635,10 +916,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/13/ES6系列之模板字符串/" rel="prev" title="模板字符串">
-                模板字符串 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -775,7 +1052,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let和const"><span class="nav-number">1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂时死区"><span class="nav-number">2.</span> <span class="nav-text">暂时死区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环中的块级作用域"><span class="nav-number">3.</span> <span class="nav-text">循环中的块级作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环中的let和const"><span class="nav-number">4.</span> <span class="nav-text">循环中的let和const</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符优先级"><span class="nav-number">2.</span> <span class="nav-text">运算符优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匹配规则"><span class="nav-number">3.</span> <span class="nav-text">匹配规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">4.</span> <span class="nav-text">元字符</span></a></li></ol></div>
             
 
           </div>
