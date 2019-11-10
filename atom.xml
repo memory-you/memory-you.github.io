@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-10T08:28:18.965Z</updated>
+  <updated>2019-11-10T14:50:18.130Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>谈谈CSS的选择器</title>
+    <link href="https://memory-you.github.io/2019/11/10/%E8%B0%88%E8%B0%88CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    <id>https://memory-you.github.io/2019/11/10/谈谈CSS的选择器/</id>
+    <published>2019-11-10T11:53:27.000Z</published>
+    <updated>2019-11-10T14:50:18.130Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+CSS选择器有哪些类型？
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈CSS的伪类与伪元素</title>
+    <link href="https://memory-you.github.io/2019/11/10/%E8%B0%88%E8%B0%88CSS%E7%9A%84%E4%BC%AA%E7%B1%BB%E4%B8%8E%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
+    <id>https://memory-you.github.io/2019/11/10/谈谈CSS的伪类与伪元素/</id>
+    <published>2019-11-10T10:18:55.000Z</published>
+    <updated>2019-11-10T11:52:48.847Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪类与伪元素之间的区别。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>fetch如何请求数据</title>
@@ -367,51 +401,6 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
 &lt;p&gt;翻译成中文：&lt;/p&gt;
 &lt;p&gt;在计算机科学中，局部应用是指固定一个函数的一些参数，然后产生另一个更小元的函数。&lt;/p&gt;
 &lt;p&gt;什么是元？元是指函数参数的个数，比如一个带有两个参数的函数被称为二元函数。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript专题之函数柯里化</title>
-    <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
-    <id>https://memory-you.github.io/2019/09/26/JavaScript专题之函数柯里化/</id>
-    <published>2019-09-26T05:47:20.000Z</published>
-    <updated>2019-09-28T16:08:59.359Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;维基百科中对柯里化 (Currying) 的定义为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In mathematics and computer science, currying is the technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;翻译成中文：&lt;/p&gt;
-&lt;p&gt;在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个参数的函数的技术。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript专题之数组扁平化</title>
-    <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/"/>
-    <id>https://memory-you.github.io/2019/09/26/JavaScript专题之数组扁平化/</id>
-    <published>2019-09-26T05:47:10.000Z</published>
-    <updated>2019-09-26T07:41:16.793Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;h2 id=&quot;扁平化&quot;&gt;&lt;a href=&quot;#扁平化&quot; class=&quot;headerlink&quot; title=&quot;扁平化&quot;&gt;&lt;/a&gt;扁平化&lt;/h2&gt;&lt;p&gt;数组的扁平化，就是将一个嵌套多层的数组array（嵌套可以是任何层数）转化为只有一层的数组。&lt;/p&gt;
-&lt;p&gt;举个例子，假如有个名为flatten的函数可以做到数组扁平化，效果就会如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;]]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(flatten(arr)) &lt;span class=&quot;comment&quot;&gt;// [1, 2, 3, 4]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;知道了效果是什么样的了，我们可以去尝试写这个flatten函数了。&lt;/p&gt;
     
     </summary>
     
