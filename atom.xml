@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-10T05:51:47.912Z</updated>
+  <updated>2019-11-10T08:28:18.965Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fetch如何请求数据</title>
+    <link href="https://memory-you.github.io/2019/11/10/fetch%E5%A6%82%E4%BD%95%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/"/>
+    <id>https://memory-you.github.io/2019/11/10/fetch如何请求数据/</id>
+    <published>2019-11-10T07:47:10.000Z</published>
+    <updated>2019-11-10T08:28:18.965Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。 &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax原理</title>
+    <link href="https://memory-you.github.io/2019/11/10/Ajax%E5%8E%9F%E7%90%86/"/>
+    <id>https://memory-you.github.io/2019/11/10/Ajax原理/</id>
+    <published>2019-11-10T07:45:31.000Z</published>
+    <updated>2019-11-10T08:10:39.257Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络冲浪体验变得更加顺畅。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>浏览器的缓存机制</title>
@@ -376,42 +412,6 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;]]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(flatten(arr)) &lt;span class=&quot;comment&quot;&gt;// [1, 2, 3, 4]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;知道了效果是什么样的了，我们可以去尝试写这个flatten函数了。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript专题之深浅拷贝</title>
-    <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/"/>
-    <id>https://memory-you.github.io/2019/09/26/JavaScript专题之深浅拷贝/</id>
-    <published>2019-09-26T05:29:02.000Z</published>
-    <updated>2019-09-26T07:10:44.398Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-## 数组的浅拷贝
-
-&lt;p&gt;如果是数组，我们可以利用数组的一些方法比如：slice、concat返回一个新数组的特性来实现拷贝。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript深入之继承的多种方式及其优缺点</title>
-    <link href="https://memory-you.github.io/2019/09/24/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E7%BB%A7%E6%89%BF%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9/"/>
-    <id>https://memory-you.github.io/2019/09/24/JavaScript深入之继承的多种方式及其优缺点/</id>
-    <published>2019-09-24T13:58:50.000Z</published>
-    <updated>2019-09-29T11:05:38.153Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-本文讲解JavaScript各种继承方式和优缺点.
     
     </summary>
     

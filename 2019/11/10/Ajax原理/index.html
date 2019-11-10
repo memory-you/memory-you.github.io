@@ -106,17 +106,20 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象（Variable object， VO） 作用域链（Scope Chain） this  今天重点讲讲创建变量对象的过程。">
+  <meta name="description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript深入之变量对象">
-<meta property="og:url" content="https://memory-you.github.io/2019/09/22/JavaScript深入之变量对象/index.html">
+<meta property="og:title" content="Ajax原理">
+<meta property="og:url" content="https://memory-you.github.io/2019/11/10/Ajax原理/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象（Variable object， VO） 作用域链（Scope Chain） this  今天重点讲讲创建变量对象的过程。">
+<meta property="og:description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-22T15:19:26.720Z">
+<meta property="og:image" content="https://camo.githubusercontent.com/f8a5dca0eda6c4c64fc37a02af3975de339389d0/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430313932343061343537623f773d35343826683d32343626663d706e6726733d3635373039">
+<meta property="og:image" content="https://camo.githubusercontent.com/8c44fcb913563be506704a3df529c50f1bbdab06/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430323338353563306266373f773d35363326683d32343026663d706e6726733d3733383234">
+<meta property="og:updated_time" content="2019-11-10T08:10:39.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript深入之变量对象">
-<meta name="twitter:description" content="在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象（Variable object， VO） 作用域链（Scope Chain） this  今天重点讲讲创建变量对象的过程。">
+<meta name="twitter:title" content="Ajax原理">
+<meta name="twitter:description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/f8a5dca0eda6c4c64fc37a02af3975de339389d0/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430313932343061343537623f773d35343826683d32343626663d706e6726733d3635373039">
 
 
 
@@ -126,7 +129,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/09/22/JavaScript深入之变量对象/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/11/10/Ajax原理/">
 
 
 
@@ -136,7 +139,7 @@
   };
 </script>
 
-  <title>JavaScript深入之变量对象 | zeroXP</title>
+  <title>Ajax原理 | zeroXP</title>
   
 
 
@@ -384,7 +387,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/22/JavaScript深入之变量对象/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/11/10/Ajax原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -401,7 +404,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript深入之变量对象
+          <h1 class="post-title" itemprop="name headline">Ajax原理
 
               
             
@@ -427,7 +430,7 @@
                 
               
 
-              <time title="创建时间：2019-09-22 22:29:43 / 修改时间：23:19:26" itemprop="dateCreated datePublished" datetime="2019-09-22T22:29:43+08:00">2019-09-22</time>
+              <time title="创建时间：2019-11-10 15:45:31 / 修改时间：16:10:39" itemprop="dateCreated datePublished" datetime="2019-11-10T15:45:31+08:00">2019-11-10</time>
             
 
             
@@ -460,7 +463,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.9k</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -474,7 +477,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -495,127 +498,66 @@
 
       
         <meta name="referrer" content="no-referrer">
-在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
 
-<p>对于每个执行上下文，都有三个重要属性：</p>
-<ul>
-<li>变量对象（Variable object， VO）</li>
-<li>作用域链（Scope Chain）</li>
-<li>this</li>
-</ul>
-<p>今天重点讲讲创建变量对象的过程。</p>
+<p>Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络冲浪体验变得更加顺畅。</p>
 <a id="more"></a>
 
 <hr>
-<h2 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a>变量对象</h2><p>变量对象是与执行上下文相关的数据作用域，存储了在上下文定义的变量和函数声明。</p>
-<p>因为不同执行上下文下的变量对象稍有不同，所以我们来聊聊全局上下文的全局变量与函数上下文的变量对象。</p>
+<h2 id="Ajax原理是什么"><a href="#Ajax原理是什么" class="headerlink" title="Ajax原理是什么"></a>Ajax原理是什么</h2><p>在解释Ajax原理之前，我们不妨先举个“领导想找小李汇报一下工作”例子，领导想找小李问点事，就委托秘书去叫小李，自己就接着做其他事情，直到秘书告诉他小李已经到了，最后小李跟领导汇报工作。</p>
+<p><img src="https://camo.githubusercontent.com/f8a5dca0eda6c4c64fc37a02af3975de339389d0/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430313932343061343537623f773d35343826683d32343626663d706e6726733d3635373039" alt></p>
+<p>Ajax请求数据流程与“领导想找小李汇报一下工作”类似。其中最核心的依赖是浏览器提供的XMLHttpRequest对象，它扮演的角色相当于秘书，使得浏览器可以发出HTTP请求与接收HTTP响应。浏览器接着做其他事情，等收到XHR返回来的数据再渲染页面。</p>
+<p><img src="https://camo.githubusercontent.com/8c44fcb913563be506704a3df529c50f1bbdab06/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430323338353563306266373f773d35363326683d32343026663d706e6726733d3733383234" alt></p>
+<p>理解了Ajax的工作原理后，接下来我们探讨下如何使用Ajax。</p>
 <hr>
-<h2 id="全局上下文"><a href="#全局上下文" class="headerlink" title="全局上下文"></a>全局上下文</h2><p>我们先了解一个概念，叫全局对象。在 <a href="http://www.w3school.com.cn/jsref/jsref_obj_global.asp" target="_blank" rel="noopener">W3School</a> 中也有介绍：</p>
-<blockquote>
-<p>全局对象是预定义的对象，作为 JavaScript 的全局函数和全局属性的占位符。通过使用全局对象，可以访问所有其他所有预定义的对象、函数和属性。</p>
-</blockquote>
-<blockquote>
-<p>在顶层 JavaScript 代码中，可以用关键字 this 引用全局对象。因为全局对象是作用域链的头，这意味着所有非限定性的变量和函数名都会作为该对象的属性来查询。</p>
-</blockquote>
-<blockquote>
-<p>例如，当JavaScript 代码引用 parseInt() 函数时，它引用的是全局对象的 parseInt 属性。全局对象是作用域链的头，还意味着在顶层 JavaScript 代码中声明的所有变量都将成为全局对象的属性。</p>
-</blockquote>
-<p>如果看的不是很懂的话，容我再来介绍下全局对象：</p>
-<ol>
-<li>可以通过this引用，在客户端JavaScript中，全局对象就是Window对象。</li>
+<h2 id="Ajax的使用"><a href="#Ajax的使用" class="headerlink" title="Ajax的使用"></a>Ajax的使用</h2><ol>
+<li>创建Ajax核心对象XMLHttpRequest</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">    <span class="comment">// 兼容 IE7+, Firefox, Chrome, Opera, Safari  </span></span><br><span class="line">    xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 兼容 IE6, IE5</span></span><br><span class="line">    xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>全局对象是由Object构造函数实例化的一个对象。</li>
+<li>向服务器发送请求</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(method, url, <span class="keyword">async</span>)</span><br><span class="line">send(string); <span class="comment">// post请求时才使用字符串参数，否则不用带参数</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>method：请求的类型：GET 或 POST。</li>
+<li>url：文件在服务器上的位置。</li>
+<li>async：true （异步）或 false （同步）</li>
+</ul>
+<p>注意：post请求一定要设置请求头的格式内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'test.html'</span>, <span class="literal">true</span>)</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">xhr.send(<span class="string">'fname=Henry&amp;lname=Ford'</span>) <span class="comment">// post请求参数放在send里面，即请求体</span></span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>预定义了一堆函数与属性</li>
+<li>服务器响应处理（区分同步跟异步两种情况）</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.random())</span><br><span class="line">cosole.log(<span class="keyword">this</span>.Math.random())</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>作为全局变量的宿主</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>客户端JavaScript中，全局对象由window属性指向自身。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.window.b =<span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.b)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="函数上下文"><a href="#函数上下文" class="headerlink" title="函数上下文"></a>函数上下文</h2><p>在函数上下文中，我们用活动对象(activation object, AO)来表示变量对象。</p>
-<p>活动对象和变量对象其实是一个东西，只是变量对象是规范上或者说是引擎实现上的，不可以在JavaScript环境中访问，只要到当进入一个执行上下文中，这个执行上下文的变量对象才会被激活，所以才叫activation object，而只要被激活的变量对象，也就是活动对象上的各种属性才能被访问。</p>
-<p>活动对象是在进入函数上下文时被创建的，它通过函数的arguments属性初始化。arguments属性值时Arguments对象。</p>
-<hr>
-<h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><p>执行上下文的代码会分成两个阶段进行处理，分析和执行，我们也可以叫做：</p>
-<ol>
-<li>进入执行上下文</li>
-<li>代码执行</li>
-</ol>
-<p>进入执行上下文</p>
-<p>当进入执行上下文时，这时候还没有执行代码，</p>
-<p>变量对象包括：</p>
-<ol>
-<li>函数的所有形参（如果是函数作用域）<ul>
-<li>由名称和对应值组成的一个变量对象的属性被创建</li>
-<li>没有实参，属性值设为undefined</li>
+<p>responseText 获得字符串形式的响应数据</p>
+<p>responseXML 获得XML形式的响应数据。</p>
+<ul>
+<li>同步处理</li>
 </ul>
-</li>
-<li>函数声明<ul>
-<li>由名称和对应值（函数对象(function-object)）组成一个变量对象的属性被创建</li>
-<li>如果变量对象已经存在相同名称的属性，则完全替换这个属性。</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'info.txt'</span>, <span class="literal">false</span>)</span><br><span class="line">xhr.send()</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xhr.responseText; <span class="comment">//获取数据直接显示在页面上</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>异步处理</li>
 </ul>
-</li>
-<li>变量声明<ul>
-<li>由名称和对应值（undefined）组成一个变量对象的属性被创建；</li>
-<li>如果变量名称跟已经声明的形式参数或函数相同，则变量声明不会干扰已经存在的这类属性</li>
+<p>相对来说比较复杂，要在请求状态改变事件中处理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xhr.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>什么是readyState？</p>
+<p>readyState是XMLHttpRequest对象的一个属性，用来标识当前XMLHttpRequest对象处于什么状态。readyState总共有5个状态值，分别为0-4，每个值代表了不同的含义。</p>
+<ul>
+<li>0：未初始化——尚未调用open()方法。</li>
+<li>1：启动——已经调用open()方法，但未调用send()方法。</li>
+<li>2：发送——已经调用send()方法，但尚未接收到响应。</li>
+<li>3：接收——已经接收到部分响应数据。</li>
+<li>4：完成——已经接收到全部响应数据，而且已经可以在客户端使用了。</li>
 </ul>
-</li>
-</ol>
-<p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">2</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> d = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    b = <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<p>进入执行上下文后，这个时候的AO是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">        <span class="number">0</span> : <span class="number">1</span>,</span><br><span class="line">        length: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="literal">undefined</span>,</span><br><span class="line">    c: reference to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">    d: <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>代码执行：</p>
-<p>在代码执行阶段，会顺序执行代码，根据代码，修改变量对象的值。</p>
-<p>还是上面的例子，当代码执行完后，这时候的AO是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">        <span class="number">0</span>: <span class="number">1</span>,</span><br><span class="line">        length: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">3</span>,</span><br><span class="line">    c: reference to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">    d: referenct to FunctionExpression <span class="string">'d'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>到这里变量对象的创建过程就介绍完了，让我们简洁的总结我们上述所说：</p>
-<ol>
-<li>全局上下文的变量对象初始化是全局对象。</li>
-<li>函数上下文的变量对象初始化只包括Arguments对象。</li>
-<li>在进入执行上下文时会给变量添加形参、函数声明、变量声明等初始的属性值。</li>
-<li>在代码执行阶段，会再次修改变量对象的属性。</li>
-</ol>
-<hr>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p>最后让我们看几个例子：</p>
-<ol>
-<li>第一题</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() <span class="comment">// ???</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// ???</span></span><br></pre></td></tr></table></figure>
-
-<p>第一段会报错，<code>Uncaught ReferenceError: a is not defined</code>。</p>
-<p>第二段会打印：<code>1</code>。</p>
-<p>这是因为函数中的’a‘并没有通过var关键字声明，所以不会被存放在AO中。</p>
-<p>第一段执行console的时候，AO的值是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">        length: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>没有a的值，然后就会到全局去找，全局也没有，所有会报错。</p>
-<p>当第二段执行console的时候，全局对象已经被赋予了a属性，这时候就可以从全局找到a的值，所有会打印1.</p>
-<ol start="2">
-<li>第二题</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(foo)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>会打印函数，而不是undefined。</p>
-<p>这是因为在进入执行上下文时，首先会处理函数声明，其次会处理变量声明，如果变量名称跟已经声明的形参或者函数相同，则变量声明不会干扰已经存在的这类属性。</p>
+<p>GET和POST请求数据区别</p>
+<ul>
+<li>使用GET请求时，参数在URL中显示，而使用POST方式，则放在send里面。</li>
+<li>使用GET请求发送数据量小，POST请求发送数据量大。</li>
+<li>使用GET安全性低，会被缓存，而POST请求反之。</li>
+</ul>
 
       
     </div>
@@ -646,8 +588,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/22/JavaScript深入之执行上下文/" rel="next" title="JavaScript深入之执行上下文">
-                <i class="fa fa-chevron-left"></i> JavaScript深入之执行上下文
+              <a href="/2019/11/10/浏览器的缓存机制/" rel="next" title="浏览器的缓存机制">
+                <i class="fa fa-chevron-left"></i> 浏览器的缓存机制
               </a>
             
           </div>
@@ -656,8 +598,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/22/JavaScript深入之作用域链/" rel="prev" title="JavaScript深入之作用域链">
-                JavaScript深入之作用域链 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/10/fetch如何请求数据/" rel="prev" title="fetch如何请求数据">
+                fetch如何请求数据 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -814,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量对象"><span class="nav-number">1.</span> <span class="nav-text">变量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局上下文"><span class="nav-number">2.</span> <span class="nav-text">全局上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数上下文"><span class="nav-number">3.</span> <span class="nav-text">函数上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行过程"><span class="nav-number">4.</span> <span class="nav-text">执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">5.</span> <span class="nav-text">思考题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax原理是什么"><span class="nav-number">1.</span> <span class="nav-text">Ajax原理是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax的使用"><span class="nav-number">2.</span> <span class="nav-text">Ajax的使用</span></a></li></ol></div>
             
 
           </div>

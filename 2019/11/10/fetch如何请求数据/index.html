@@ -106,17 +106,19 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象（Variable object， VO） 作用域链（Scope Chain） this  今天重点讲讲创建变量对象的过程。">
+  <meta name="description" content="在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript深入之变量对象">
-<meta property="og:url" content="https://memory-you.github.io/2019/09/22/JavaScript深入之变量对象/index.html">
+<meta property="og:title" content="fetch如何请求数据">
+<meta property="og:url" content="https://memory-you.github.io/2019/11/10/fetch如何请求数据/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象（Variable object， VO） 作用域链（Scope Chain） this  今天重点讲讲创建变量对象的过程。">
+<meta property="og:description" content="在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-22T15:19:26.720Z">
+<meta property="og:image" content="https://camo.githubusercontent.com/b775695cb64d804c667cf476b1e0d54fcf41e6b5/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f362f31322f313633656639633230363837346230613f773d39353026683d35333226663d706e6726733d3931393236">
+<meta property="og:updated_time" content="2019-11-10T08:28:18.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript深入之变量对象">
-<meta name="twitter:description" content="在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。  对于每个执行上下文，都有三个重要属性：  变量对象（Variable object， VO） 作用域链（Scope Chain） this  今天重点讲讲创建变量对象的过程。">
+<meta name="twitter:title" content="fetch如何请求数据">
+<meta name="twitter:description" content="在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/b775695cb64d804c667cf476b1e0d54fcf41e6b5/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f362f31322f313633656639633230363837346230613f773d39353026683d35333226663d706e6726733d3931393236">
 
 
 
@@ -126,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="https://memory-you.github.io/2019/09/22/JavaScript深入之变量对象/">
+  <link rel="canonical" href="https://memory-you.github.io/2019/11/10/fetch如何请求数据/">
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>JavaScript深入之变量对象 | zeroXP</title>
+  <title>fetch如何请求数据 | zeroXP</title>
   
 
 
@@ -384,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/09/22/JavaScript深入之变量对象/">
+    <link itemprop="mainEntityOfPage" href="https://memory-you.github.io/2019/11/10/fetch如何请求数据/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero XP">
@@ -401,7 +403,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript深入之变量对象
+          <h1 class="post-title" itemprop="name headline">fetch如何请求数据
 
               
             
@@ -427,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2019-09-22 22:29:43 / 修改时间：23:19:26" itemprop="dateCreated datePublished" datetime="2019-09-22T22:29:43+08:00">2019-09-22</time>
+              <time title="创建时间：2019-11-10 15:47:10 / 修改时间：16:28:18" itemprop="dateCreated datePublished" datetime="2019-11-10T15:47:10+08:00">2019-11-10</time>
             
 
             
@@ -460,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.9k</span>
+                <span title="本文字数">3.1k</span>
               
 
               
@@ -495,127 +497,47 @@
 
       
         <meta name="referrer" content="no-referrer">
-在上篇[《JavaScript深入之执行上下文栈》]()中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
 
-<p>对于每个执行上下文，都有三个重要属性：</p>
-<ul>
-<li>变量对象（Variable object， VO）</li>
-<li>作用域链（Scope Chain）</li>
-<li>this</li>
-</ul>
-<p>今天重点讲讲创建变量对象的过程。</p>
+<p>在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。 </p>
 <a id="more"></a>
 
-<hr>
-<h2 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a>变量对象</h2><p>变量对象是与执行上下文相关的数据作用域，存储了在上下文定义的变量和函数声明。</p>
-<p>因为不同执行上下文下的变量对象稍有不同，所以我们来聊聊全局上下文的全局变量与函数上下文的变量对象。</p>
-<hr>
-<h2 id="全局上下文"><a href="#全局上下文" class="headerlink" title="全局上下文"></a>全局上下文</h2><p>我们先了解一个概念，叫全局对象。在 <a href="http://www.w3school.com.cn/jsref/jsref_obj_global.asp" target="_blank" rel="noopener">W3School</a> 中也有介绍：</p>
-<blockquote>
-<p>全局对象是预定义的对象，作为 JavaScript 的全局函数和全局属性的占位符。通过使用全局对象，可以访问所有其他所有预定义的对象、函数和属性。</p>
-</blockquote>
-<blockquote>
-<p>在顶层 JavaScript 代码中，可以用关键字 this 引用全局对象。因为全局对象是作用域链的头，这意味着所有非限定性的变量和函数名都会作为该对象的属性来查询。</p>
-</blockquote>
-<blockquote>
-<p>例如，当JavaScript 代码引用 parseInt() 函数时，它引用的是全局对象的 parseInt 属性。全局对象是作用域链的头，还意味着在顶层 JavaScript 代码中声明的所有变量都将成为全局对象的属性。</p>
-</blockquote>
-<p>如果看的不是很懂的话，容我再来介绍下全局对象：</p>
+<h2 id="与Ajax对比"><a href="#与Ajax对比" class="headerlink" title="与Ajax对比"></a>与Ajax对比</h2><p>使用Ajax请求一个JSON数据一般是这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, url/file, <span class="literal">true</span>)</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> data = xhr.responseText</span><br><span class="line">            <span class="built_in">console</span>.log(data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Oh, error'</span>)</span><br><span class="line">&#125;</span><br><span class="line">xhr.send()</span><br></pre></td></tr></table></figure>
+
+<p>同样我们使用fetch请求JSON数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fetch(rul).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json) <span class="comment">// 解析为可读数据</span></span><br><span class="line">	.then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">console</span>.log(data)) <span class="comment">// 执行结果是 resolve 就调用then方法</span></span><br><span class="line">	.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Oh, error'</span>, err))<span class="comment">//执行结果是 reject就调用catch方法</span></span><br></pre></td></tr></table></figure>
+
+<p>这两者对比来看，fetch代码精简许多，业务逻辑更清晰明了，使得代码易于维护，可读性更高。总而言之，Fetch优点主要有：</p>
 <ol>
-<li>可以通过this引用，在客户端JavaScript中，全局对象就是Window对象。</li>
+<li>语法简洁，更加语义化，业务逻辑更清晰</li>
+<li>基于标准Promise实现，支持async / await</li>
+<li>同构方便</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Promise简介"><a href="#Promise简介" class="headerlink" title="Promise简介"></a>Promise简介</h2><p>由于 Fetch API 是基于 Promise 设计，接下来我们简单介绍下Promise工作流程，方便大家更好理解Fetch。<br><a href="https://camo.githubusercontent.com/b775695cb64d804c667cf476b1e0d54fcf41e6b5/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f362f31322f313633656639633230363837346230613f773d39353026683d35333226663d706e6726733d3931393236" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/b775695cb64d804c667cf476b1e0d54fcf41e6b5/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f362f31322f313633656639633230363837346230613f773d39353026683d35333226663d706e6726733d3931393236" alt="Promise工作原理"></a></p>
+<p>fetch方法返回一个Promise对象, 根据 Promise Api 的特性, fetch可以方便地使用then方法将各个处理逻辑串起来, 使用 Promise.resolve() 或 Promise.reject() 方法将分别返会肯定结果的Promise或否定结果的Promise, 从而调用下一个then 或者 catch。一旦then中的语句出现错误, 也将跳到catch中。</p>
+<hr>
+<h2 id="请求常见数据格式"><a href="#请求常见数据格式" class="headerlink" title="请求常见数据格式"></a>请求常见数据格式</h2><p>接下来将介绍如何使用fetch请求本地文本数据，请求本地JSON数据以及请求网络接口。其实操作相比于Ajax，简单很多。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//HTML部分</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Fetch Api sandbox<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button1"</span>&gt;</span>请求本地文本数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button2"</span>&gt;</span>请求本地json数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button3"</span>&gt;</span>请求网络接口<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"output"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"app.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>fetch请求本地文本数据</li>
+</ol>
+<p>本地有一个test.txt文档，通过以下代码就可以获取其中的数据，并且显示在页面上。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'button1'</span>).addEventListener(<span class="string">'click'</span>,getText);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getText</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fetch(<span class="string">'test.txt'</span>)</span><br><span class="line">    	.then(<span class="function">(<span class="params">res</span>) =&gt;</span> res.text()) <span class="comment">// 注意：此处是res.text()</span></span><br><span class="line">    	.then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(data)</span><br><span class="line">        	<span class="built_in">document</span>.getElementById(<span class="string">'output'</span>).innerHTML = data;</span><br><span class="line">    	&#125;)</span><br><span class="line">    	.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>全局对象是由Object构造函数实例化的一个对象。</li>
+<li>fetch请求本地JSON数据</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>)</span><br></pre></td></tr></table></figure>
+<p>本地有个post.json数据，与请求本地文本不同的是，得到数据后还要用forEach遍历，最后呈现在页面上。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'button2'</span>).addEventListener(<span class="string">'click'</span>,getJson);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getJson</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fetch(<span class="string">'post.json'</span>)</span><br><span class="line">    	.then(<span class="function">(<span class="params">res</span>) =&gt;</span> res.json())</span><br><span class="line">    	.tehn(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(data)</span><br><span class="line">        	<span class="keyword">let</span> output = <span class="string">''</span></span><br><span class="line">            data.forEach(<span class="function">(<span class="params">post</span>) =&gt;</span> &#123;</span><br><span class="line">                output += <span class="string">`&lt;li&gt;<span class="subst">$&#123;post.title&#125;</span>&lt;/li&gt;`</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">        	<span class="built_in">document</span>.getElementById(<span class="string">'output'</span>).innerHTML = output;</span><br><span class="line">    	&#125;)</span><br><span class="line">    	.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>预定义了一堆函数与属性</li>
+<li>fetch请求网络接口</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.random())</span><br><span class="line">cosole.log(<span class="keyword">this</span>.Math.random())</span><br></pre></td></tr></table></figure>
+<p>获取 <code>https://api.github.com/users</code>中的数据，做法与获取本地JSON的方法类似,得到数据后，同样要经过处理 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'button3'</span>).addEventListener(<span class="string">'click'</span>,getExternal);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getExternal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fetch(<span class="string">'https://api.github.com/users'</span>)</span><br><span class="line">    	.then(<span class="function">(<span class="params">res</span>) =&gt;</span> res.json())</span><br><span class="line">    	.then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(data)</span><br><span class="line">        	<span class="keyword">let</span> output = <span class="string">''</span></span><br><span class="line">            data.forEach(<span class="function">(<span class="params">user</span>) =&gt;</span> &#123;</span><br><span class="line">                output += <span class="string">`&lt;li&gt;<span class="subst">$&#123;user.login&#125;</span>&lt;/li&gt;`</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">        	<span class="built_in">document</span>.getElementById(<span class="string">'output'</span>).innerHTML = output;</span><br><span class="line">    	&#125;)</span><br><span class="line">    	.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ol start="4">
-<li>作为全局变量的宿主</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>客户端JavaScript中，全局对象由window属性指向自身。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.window.b =<span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.b)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="函数上下文"><a href="#函数上下文" class="headerlink" title="函数上下文"></a>函数上下文</h2><p>在函数上下文中，我们用活动对象(activation object, AO)来表示变量对象。</p>
-<p>活动对象和变量对象其实是一个东西，只是变量对象是规范上或者说是引擎实现上的，不可以在JavaScript环境中访问，只要到当进入一个执行上下文中，这个执行上下文的变量对象才会被激活，所以才叫activation object，而只要被激活的变量对象，也就是活动对象上的各种属性才能被访问。</p>
-<p>活动对象是在进入函数上下文时被创建的，它通过函数的arguments属性初始化。arguments属性值时Arguments对象。</p>
-<hr>
-<h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><p>执行上下文的代码会分成两个阶段进行处理，分析和执行，我们也可以叫做：</p>
-<ol>
-<li>进入执行上下文</li>
-<li>代码执行</li>
-</ol>
-<p>进入执行上下文</p>
-<p>当进入执行上下文时，这时候还没有执行代码，</p>
-<p>变量对象包括：</p>
-<ol>
-<li>函数的所有形参（如果是函数作用域）<ul>
-<li>由名称和对应值组成的一个变量对象的属性被创建</li>
-<li>没有实参，属性值设为undefined</li>
-</ul>
-</li>
-<li>函数声明<ul>
-<li>由名称和对应值（函数对象(function-object)）组成一个变量对象的属性被创建</li>
-<li>如果变量对象已经存在相同名称的属性，则完全替换这个属性。</li>
-</ul>
-</li>
-<li>变量声明<ul>
-<li>由名称和对应值（undefined）组成一个变量对象的属性被创建；</li>
-<li>如果变量名称跟已经声明的形式参数或函数相同，则变量声明不会干扰已经存在的这类属性</li>
-</ul>
-</li>
-</ol>
-<p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">2</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> d = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    b = <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<p>进入执行上下文后，这个时候的AO是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">        <span class="number">0</span> : <span class="number">1</span>,</span><br><span class="line">        length: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="literal">undefined</span>,</span><br><span class="line">    c: reference to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">    d: <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>代码执行：</p>
-<p>在代码执行阶段，会顺序执行代码，根据代码，修改变量对象的值。</p>
-<p>还是上面的例子，当代码执行完后，这时候的AO是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">        <span class="number">0</span>: <span class="number">1</span>,</span><br><span class="line">        length: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">3</span>,</span><br><span class="line">    c: reference to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">    d: referenct to FunctionExpression <span class="string">'d'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>到这里变量对象的创建过程就介绍完了，让我们简洁的总结我们上述所说：</p>
-<ol>
-<li>全局上下文的变量对象初始化是全局对象。</li>
-<li>函数上下文的变量对象初始化只包括Arguments对象。</li>
-<li>在进入执行上下文时会给变量添加形参、函数声明、变量声明等初始的属性值。</li>
-<li>在代码执行阶段，会再次修改变量对象的属性。</li>
-</ol>
-<hr>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p>最后让我们看几个例子：</p>
-<ol>
-<li>第一题</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() <span class="comment">// ???</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// ???</span></span><br></pre></td></tr></table></figure>
-
-<p>第一段会报错，<code>Uncaught ReferenceError: a is not defined</code>。</p>
-<p>第二段会打印：<code>1</code>。</p>
-<p>这是因为函数中的’a‘并没有通过var关键字声明，所以不会被存放在AO中。</p>
-<p>第一段执行console的时候，AO的值是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">        length: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>没有a的值，然后就会到全局去找，全局也没有，所有会报错。</p>
-<p>当第二段执行console的时候，全局对象已经被赋予了a属性，这时候就可以从全局找到a的值，所有会打印1.</p>
-<ol start="2">
-<li>第二题</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(foo)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>会打印函数，而不是undefined。</p>
-<p>这是因为在进入执行上下文时，首先会处理函数声明，其次会处理变量声明，如果变量名称跟已经声明的形参或者函数相同，则变量声明不会干扰已经存在的这类属性。</p>
 
       
     </div>
@@ -646,8 +568,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/22/JavaScript深入之执行上下文/" rel="next" title="JavaScript深入之执行上下文">
-                <i class="fa fa-chevron-left"></i> JavaScript深入之执行上下文
+              <a href="/2019/11/10/Ajax原理/" rel="next" title="Ajax原理">
+                <i class="fa fa-chevron-left"></i> Ajax原理
               </a>
             
           </div>
@@ -655,10 +577,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/22/JavaScript深入之作用域链/" rel="prev" title="JavaScript深入之作用域链">
-                JavaScript深入之作用域链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -814,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量对象"><span class="nav-number">1.</span> <span class="nav-text">变量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局上下文"><span class="nav-number">2.</span> <span class="nav-text">全局上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数上下文"><span class="nav-number">3.</span> <span class="nav-text">函数上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行过程"><span class="nav-number">4.</span> <span class="nav-text">执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">5.</span> <span class="nav-text">思考题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#与Ajax对比"><span class="nav-number">1.</span> <span class="nav-text">与Ajax对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise简介"><span class="nav-number">2.</span> <span class="nav-text">Promise简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求常见数据格式"><span class="nav-number">3.</span> <span class="nav-text">请求常见数据格式</span></a></li></ol></div>
             
 
           </div>
