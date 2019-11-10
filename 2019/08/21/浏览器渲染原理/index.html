@@ -106,12 +106,12 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。 本文我就以We">
+  <meta name="description" content="浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。 本文我就以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器渲染原理">
 <meta property="og:url" content="https://memory-you.github.io/2019/08/21/浏览器渲染原理/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。 本文我就以We">
+<meta property="og:description" content="浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。 本文我就以">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://camo.githubusercontent.com/df6a6a160f52f6c4a443729e2b32876ca189acee/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031392f342f312f313639643437636265303365303130333f773d36383426683d31363826663d706e6726733d3831343836">
 <meta property="og:image" content="https://camo.githubusercontent.com/2f8e4192ed63300d9c1d508c6936b8cda5f9fb3b/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f32372f313637663035373730346239346630383f773d37303526683d32323726663d706e6726733d313630323734">
@@ -128,10 +128,10 @@
 <meta property="og:image" content="https://camo.githubusercontent.com/893b42df58916e5f473947f19db42ce3931b4188/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031392f342f332f313639653364633063346134333866643f773d35373826683d31383826663d706e6726733d3431323633">
 <meta property="og:image" content="https://camo.githubusercontent.com/1a81ec348a720a4e1682432accc800e5a215106e/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f32382f313637663036386534646536633763653f773d37313326683d31393526663d706e6726733d313433383132">
 <meta property="og:image" content="https://camo.githubusercontent.com/3a47ae7448b98eb5bf0152af6c0816b1ff103bb6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031392f312f312f313638303964386536343832623831333f773d35353426683d32333526663d706e6726733d3132303735">
-<meta property="og:updated_time" content="2019-08-21T16:07:11.602Z">
+<meta property="og:updated_time" content="2019-11-09T16:26:41.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器渲染原理">
-<meta name="twitter:description" content="浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。 本文我就以We">
+<meta name="twitter:description" content="浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。 本文我就以">
 <meta name="twitter:image" content="https://camo.githubusercontent.com/df6a6a160f52f6c4a443729e2b32876ca189acee/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031392f342f312f313639643437636265303365303130333f773d36383426683d31363826663d706e6726733d3831343836">
 
 
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-22 00:07:11" itemprop="dateModified" datetime="2019-08-22T00:07:11+08:00">2019-08-22</time>
+                <time title="修改时间：2019-11-10 00:26:41" itemprop="dateModified" datetime="2019-11-10T00:26:41+08:00">2019-11-10</time>
               
             
           </span>
@@ -522,7 +522,9 @@
       
 
       
-        <p>浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。</p>
+        <meta name="referrer" content="no-referrer">
+
+<p>浏览器的内核是指支持浏览器运行的最核心的程序，分为两个部分的，一是渲染引擎，二是JS引擎。渲染引擎在不同的浏览器中也不是都相同的。目前市面上常见的柳然其内核可以分为这四种：Trident（IE）、Gecko（Firefox)、Blink（Chrome、Opera）、Webkit（Safari）。这里面大家最耳熟能详的应该是Webkit内核了，Webkit内核时当下浏览器最好的内核。</p>
 <p>本文我就以Webkit为例，对现代浏览器的渲染过程进行一个深度的剖析。</p>
 <a id="more"></a>
 
@@ -793,7 +795,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-count">72</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -812,12 +814,31 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -892,7 +913,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">366k</span>
+    <span title="站点总字数">380k</span>
   
 
   
@@ -901,7 +922,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">5:33</span>
+    <span title="站点阅读时长">5:46</span>
   
 </div>
 
