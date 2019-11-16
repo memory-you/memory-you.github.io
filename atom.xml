@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-10T14:50:18.130Z</updated>
+  <updated>2019-11-16T14:38:10.742Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML5新特性</title>
+    <link href="https://memory-you.github.io/2019/11/16/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    <id>https://memory-you.github.io/2019/11/16/HTML5新特性/</id>
+    <published>2019-11-16T13:51:12.000Z</published>
+    <updated>2019-11-16T14:38:10.742Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;HTML5作为HTML的代替者，成为了新的标准，而且时至今日，在前端开发中，已经被大家广泛应用，但是对于HTML5有哪些具体的功能和特性，就有不少人不太清楚。下面是我总结的一些HTML5新特性。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
+    
+    
+      <category term="HTML5" scheme="https://memory-you.github.io/tags/HTML5/"/>
+    
+  </entry>
   
   <entry>
     <title>谈谈CSS的选择器</title>
@@ -38,7 +60,7 @@ CSS选择器有哪些类型？
     <link href="https://memory-you.github.io/2019/11/10/%E8%B0%88%E8%B0%88CSS%E7%9A%84%E4%BC%AA%E7%B1%BB%E4%B8%8E%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     <id>https://memory-you.github.io/2019/11/10/谈谈CSS的伪类与伪元素/</id>
     <published>2019-11-10T10:18:55.000Z</published>
-    <updated>2019-11-10T11:52:48.847Z</updated>
+    <updated>2019-11-12T09:37:51.853Z</updated>
     
     <summary type="html">
     
@@ -47,6 +69,12 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     
     </summary>
     
+      <category term="CSS" scheme="https://memory-you.github.io/categories/CSS/"/>
+    
+    
+      <category term="选择器" scheme="https://memory-you.github.io/tags/%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    
+      <category term="伪类" scheme="https://memory-you.github.io/tags/%E4%BC%AA%E7%B1%BB/"/>
     
   </entry>
   
@@ -377,30 +405,6 @@ jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起�
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
 &lt;p&gt;我们现在需要写一个foo函数，这个函数返回首次调用时的Data对象，注意是首次。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript专题之偏函数</title>
-    <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E5%81%8F%E5%87%BD%E6%95%B0/"/>
-    <id>https://memory-you.github.io/2019/09/26/JavaScript专题之偏函数/</id>
-    <published>2019-09-26T05:47:28.000Z</published>
-    <updated>2019-09-29T06:57:25.513Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-维基百科中对偏函数 (Partial application) 的定义为：
-
-&lt;blockquote&gt;
-&lt;p&gt;In computer science, partial application (or partial function application) refers to the process of fixing a number of arguments to a function, producing another function of smaller arity.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;翻译成中文：&lt;/p&gt;
-&lt;p&gt;在计算机科学中，局部应用是指固定一个函数的一些参数，然后产生另一个更小元的函数。&lt;/p&gt;
-&lt;p&gt;什么是元？元是指函数参数的个数，比如一个带有两个参数的函数被称为二元函数。&lt;/p&gt;
     
     </summary>
     
