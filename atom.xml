@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-17T13:41:39.588Z</updated>
+  <updated>2019-11-18T11:18:37.120Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,9 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML5新特性之视频与音频</title>
+    <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E8%A7%86%E9%A2%91%E4%B8%8E%E9%9F%B3%E9%A2%91/"/>
+    <id>https://memory-you.github.io/2019/11/18/HTML5新特性之视频与音频/</id>
+    <published>2019-11-18T10:42:32.000Z</published>
+    <updated>2019-11-18T11:18:37.120Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;HTML5提供了一个新标签&lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt;，用于播放视频。该标签默认是一个300*150的inline-block。使用方法如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.mp4&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 或&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.mp4&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.ogg&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.webm&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>HTML5表单新特性</title>
-    <link href="https://memory-you.github.io/2019/11/17/HTML5%E8%A1%A8%E5%8D%95%E6%96%B0%E7%89%B9%E6%80%A7/"/>
-    <id>https://memory-you.github.io/2019/11/17/HTML5表单新特性/</id>
+    <link href="https://memory-you.github.io/2019/11/17/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E8%A1%A8%E5%8D%95/"/>
+    <id>https://memory-you.github.io/2019/11/17/HTML5新特性之表单/</id>
     <published>2019-11-17T12:42:40.000Z</published>
     <updated>2019-11-17T13:41:39.588Z</updated>
     
@@ -395,26 +416,6 @@ jQuery的each方法，作为一个通用遍历方法，可用于遍历对象和�
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 jQuery的extend是jQuery中应用非常多的一个函数，今天我们一起看jQuery的extend特性，一边实现一个extend。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript专题之递归</title>
-    <link href="https://memory-you.github.io/2019/09/26/JavaScript%E4%B8%93%E9%A2%98%E4%B9%8B%E9%80%92%E5%BD%92/"/>
-    <id>https://memory-you.github.io/2019/09/26/JavaScript专题之递归/</id>
-    <published>2019-09-26T05:47:56.000Z</published>
-    <updated>2019-09-29T11:04:46.177Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-程序调用自身的编程技巧称为递归（recursion）。
-
-&lt;h2 id=&quot;阶乘&quot;&gt;&lt;a href=&quot;#阶乘&quot; class=&quot;headerlink&quot; title=&quot;阶乘&quot;&gt;&lt;/a&gt;阶乘&lt;/h2&gt;&lt;p&gt;以阶乘为例：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;factorial&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;n&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; n&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; n * factorial(n &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(factorial(&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)) &lt;span class=&quot;comment&quot;&gt;// 5 * 4 * 3 * 2 * 1 = 120&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
