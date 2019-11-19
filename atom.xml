@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-19T11:51:37.012Z</updated>
+  <updated>2019-11-19T12:51:01.775Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS定位详解</title>
+    <link href="https://memory-you.github.io/2019/11/19/CSS%E5%AE%9A%E4%BD%8D%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://memory-you.github.io/2019/11/19/CSS定位详解/</id>
+    <published>2019-11-19T12:12:19.000Z</published>
+    <updated>2019-11-19T12:51:01.775Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+CSS 有两个重要的基本属性，前端开发必须掌握：`display` 和 `position`。
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://memory-you.github.io/categories/CSS/"/>
+    
+    
+      <category term="定位" scheme="https://memory-you.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML5新特性之拖放</title>
     <link href="https://memory-you.github.io/2019/11/19/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E6%8B%96%E6%94%BE/"/>
     <id>https://memory-you.github.io/2019/11/19/HTML5新特性之拖放/</id>
     <published>2019-11-19T11:30:17.000Z</published>
-    <updated>2019-11-19T11:51:37.012Z</updated>
+    <updated>2019-11-19T12:50:42.785Z</updated>
     
     <summary type="html">
     
@@ -35,6 +56,8 @@
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
   </entry>
   
   <entry>
@@ -42,7 +65,7 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BSSE/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之SSE/</id>
     <published>2019-11-18T14:13:10.000Z</published>
-    <updated>2019-11-19T11:16:07.261Z</updated>
+    <updated>2019-11-19T12:51:10.021Z</updated>
     
     <summary type="html">
     
@@ -56,6 +79,8 @@
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
   </entry>
   
   <entry>
@@ -63,7 +88,7 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BWebWorker/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之WebWorker/</id>
     <published>2019-11-18T13:56:42.000Z</published>
-    <updated>2019-11-18T14:12:56.358Z</updated>
+    <updated>2019-11-19T12:51:13.914Z</updated>
     
     <summary type="html">
     
@@ -77,6 +102,8 @@
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
   </entry>
   
   <entry>
@@ -84,18 +111,19 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BWebSocket/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之WebSocket/</id>
     <published>2019-11-18T13:14:33.000Z</published>
-    <updated>2019-11-18T13:52:41.323Z</updated>
+    <updated>2019-11-19T12:51:16.883Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;作为新一代的web标准，HTML5为我们提供了很多有用的东西，比如canvas，本地存储（已经分离出去了），多媒体编程接口，当然还有我们的WebSocket。WebSocket是HTML5开始提供的一种浏览器与服务器间进行全双工通讯（full-duplex）的网络技术，可以传输基于信息的文本和二进制的数据。它于2011年被IETF定为标准 RFC 6455，同时WebSocket API也被W3C定为标准。&lt;/p&gt;
+作为新一代的web标准，HTML5为我们提供了很多有用的东西，比如canvas，本地存储（已经分离出去了），多媒体编程接口，当然还有我们的WebSocket。WebSocket是HTML5开始提供的一种浏览器与服务器间进行全双工通讯（full-duplex）的网络技术，可以传输基于信息的文本和二进制的数据。它于2011年被IETF定为标准 RFC 6455，同时WebSocket API也被W3C定为标准。
     
     </summary>
     
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
+    
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -104,13 +132,13 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%BC%93%E5%AD%98/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之应用程序缓存/</id>
     <published>2019-11-18T12:36:59.000Z</published>
-    <updated>2019-11-18T12:51:53.463Z</updated>
+    <updated>2019-11-19T12:51:19.663Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存， 并可在没有因特网连接时进行访问。
 
-&lt;p&gt;HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存， 并可在没有因特网连接时进行访问。&lt;/p&gt;
 &lt;p&gt;应用程序缓存为应用带来三个优势：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线浏览 - 用户可以在应用离线时使用它们。&lt;/li&gt;
@@ -123,20 +151,22 @@
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
   </entry>
   
   <entry>
-    <title>Storage</title>
+    <title>HTML5新特性之WebStorage</title>
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BWebStorage/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之WebStorage/</id>
     <published>2019-11-18T12:16:53.000Z</published>
-    <updated>2019-11-18T12:36:05.571Z</updated>
+    <updated>2019-11-19T12:53:24.987Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+在HTML4中可以使用Cookie，在客户端保存诸如用户名等简单的用户消息，但是通过长期的使用，人们发现使用Cookie存储数据存在以下几个问题：
 
-&lt;p&gt;在HTML4中可以使用Cookie，在客户端保存诸如用户名等简单的用户消息，但是通过长期的使用，人们发现使用Cookie存储数据存在以下几个问题：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;大小： Cookie的大小被限制在4kb。&lt;/p&gt;
 &lt;/li&gt;
@@ -158,6 +188,8 @@
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
   </entry>
   
   <entry>
@@ -165,7 +197,7 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之地理位置/</id>
     <published>2019-11-18T11:47:08.000Z</published>
-    <updated>2019-11-18T11:54:38.193Z</updated>
+    <updated>2019-11-19T12:51:29.104Z</updated>
     
     <summary type="html">
     
@@ -174,10 +206,11 @@
         
         
           &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+地理位置（Geolocation）是 HTML5 的重要特性之一，提供了确定用户位置的功能，借助这个特性能够开发基于位置信息的应用。
 
-&lt;p&gt;地理位置（Geolocation）是 HTML5 的重要特性之一，提供了确定用户位置的功能，借助这个特性能够开发基于位置信息的应用。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;检测浏览器是否支持&lt;/
+&lt;li&gt;检测浏览器是否支持&lt;/li&gt;
+&lt;/o
         
       
     
@@ -185,6 +218,8 @@
     
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
+    
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -193,7 +228,7 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BCanvas%E4%B8%8ESVG/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之Canvas与SVG/</id>
     <published>2019-11-18T11:27:22.000Z</published>
-    <updated>2019-11-18T11:40:42.169Z</updated>
+    <updated>2019-11-19T12:51:45.895Z</updated>
     
     <summary type="html">
     
@@ -202,8 +237,9 @@
         
         
           &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+## Canvas
 
-&lt;h2 id=&quot;Canvas&quot;&gt;&lt;a href=&quot;#Canvas&quot; class=&quot;headerlink&quot; title=&quot;Canvas&quot;&gt;&lt;/a&gt;Canvas&lt;/h2&gt;&lt;p&gt;HTML5&lt;co
+&lt;p&gt;HTML5&lt;code&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt;元素用于图形的绘制，通过脚本来完成。&lt;code&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt;标签只是
         
       
     
@@ -212,6 +248,8 @@
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
   </entry>
   
   <entry>
@@ -219,19 +257,21 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E8%A7%86%E9%A2%91%E4%B8%8E%E9%9F%B3%E9%A2%91/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之视频与音频/</id>
     <published>2019-11-18T10:42:32.000Z</published>
-    <updated>2019-11-18T11:18:37.120Z</updated>
+    <updated>2019-11-19T12:51:58.366Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+HTML5提供了一个新标签`&lt;video&gt;`，用于播放视频。该标签默认是一个300*150的inline-block。使用方法如下：
 
-&lt;p&gt;HTML5提供了一个新标签&lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt;，用于播放视频。该标签默认是一个300*150的inline-block。使用方法如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.mp4&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 或&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.mp4&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.ogg&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;x.webm&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;video&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
+    
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -240,13 +280,13 @@
     <link href="https://memory-you.github.io/2019/11/17/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E8%A1%A8%E5%8D%95/"/>
     <id>https://memory-you.github.io/2019/11/17/HTML5新特性之表单/</id>
     <published>2019-11-17T12:42:40.000Z</published>
-    <updated>2019-11-17T13:41:39.588Z</updated>
+    <updated>2019-11-19T12:51:34.742Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+HTML5给表单带来了许多新特性，总结为：
 
-&lt;p&gt;HTML5给表单带来了许多新特性，总结为：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;新的input type&lt;/li&gt;
 &lt;li&gt;新的表单标签&lt;/li&gt;
@@ -258,7 +298,7 @@
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
-      <category term="表单" scheme="https://memory-you.github.io/tags/%E8%A1%A8%E5%8D%95/"/>
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -288,7 +328,7 @@
     <link href="https://memory-you.github.io/2019/11/16/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     <id>https://memory-you.github.io/2019/11/16/HTML5新特性/</id>
     <published>2019-11-16T13:51:12.000Z</published>
-    <updated>2019-11-18T13:59:27.529Z</updated>
+    <updated>2019-11-19T12:50:34.053Z</updated>
     
     <summary type="html">
     
@@ -300,7 +340,7 @@ HTML5作为HTML的代替者，成为了新的标准，而且时至今日，在�
       <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
     
     
-      <category term="HTML5" scheme="https://memory-you.github.io/tags/HTML5/"/>
+      <category term="HTML5新特性" scheme="https://memory-you.github.io/tags/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -309,7 +349,7 @@ HTML5作为HTML的代替者，成为了新的标准，而且时至今日，在�
     <link href="https://memory-you.github.io/2019/11/10/%E8%B0%88%E8%B0%88CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     <id>https://memory-you.github.io/2019/11/10/谈谈CSS的选择器/</id>
     <published>2019-11-10T11:53:27.000Z</published>
-    <updated>2019-11-10T14:50:18.130Z</updated>
+    <updated>2019-11-19T12:58:46.576Z</updated>
     
     <summary type="html">
     
@@ -318,6 +358,10 @@ CSS选择器有哪些类型？
     
     </summary>
     
+      <category term="CSS" scheme="https://memory-you.github.io/categories/CSS/"/>
+    
+    
+      <category term="选择器" scheme="https://memory-you.github.io/tags/%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     
   </entry>
   
@@ -326,7 +370,7 @@ CSS选择器有哪些类型？
     <link href="https://memory-you.github.io/2019/11/10/%E8%B0%88%E8%B0%88CSS%E7%9A%84%E4%BC%AA%E7%B1%BB%E4%B8%8E%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     <id>https://memory-you.github.io/2019/11/10/谈谈CSS的伪类与伪元素/</id>
     <published>2019-11-10T10:18:55.000Z</published>
-    <updated>2019-11-12T09:37:51.853Z</updated>
+    <updated>2019-11-19T12:52:23.975Z</updated>
     
     <summary type="html">
     
@@ -349,15 +393,16 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     <link href="https://memory-you.github.io/2019/11/10/fetch%E5%A6%82%E4%BD%95%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/"/>
     <id>https://memory-you.github.io/2019/11/10/fetch如何请求数据/</id>
     <published>2019-11-10T07:47:10.000Z</published>
-    <updated>2019-11-10T08:28:18.965Z</updated>
+    <updated>2019-11-19T13:07:26.147Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。 &lt;/p&gt;
+在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。
     
     </summary>
+    
+      <category term="HTTP" scheme="https://memory-you.github.io/categories/HTTP/"/>
     
     
   </entry>
@@ -367,15 +412,16 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     <link href="https://memory-you.github.io/2019/11/10/Ajax%E5%8E%9F%E7%90%86/"/>
     <id>https://memory-you.github.io/2019/11/10/Ajax原理/</id>
     <published>2019-11-10T07:45:31.000Z</published>
-    <updated>2019-11-10T08:10:39.257Z</updated>
+    <updated>2019-11-19T13:09:48.639Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络冲浪体验变得更加顺畅。&lt;/p&gt;
+Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络冲浪体验变得更加顺畅。
     
     </summary>
+    
+      <category term="HTTP" scheme="https://memory-you.github.io/categories/HTTP/"/>
     
     
   </entry>
@@ -385,7 +431,7 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     <link href="https://memory-you.github.io/2019/11/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
     <id>https://memory-you.github.io/2019/11/10/浏览器的缓存机制/</id>
     <published>2019-11-09T16:28:53.000Z</published>
-    <updated>2019-11-10T05:51:47.912Z</updated>
+    <updated>2019-11-19T12:57:01.931Z</updated>
     
     <summary type="html">
     
@@ -396,6 +442,10 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     
     </summary>
     
+      <category term="浏览器" scheme="https://memory-you.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    
+      <category term="缓存" scheme="https://memory-you.github.io/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
@@ -404,16 +454,19 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     <link href="https://memory-you.github.io/2019/11/09/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8/"/>
     <id>https://memory-you.github.io/2019/11/09/浏览器存储/</id>
     <published>2019-11-09T13:14:31.000Z</published>
-    <updated>2019-11-09T16:24:17.378Z</updated>
+    <updated>2019-11-19T12:56:44.492Z</updated>
     
     <summary type="html">
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;随着移动网络的发展与演化，我们手机现在除了有原生APP，还能跑“WebApp”——它即开即用，用完即走。一个优秀的WebApp甚至用于和原生App媲美的功能和体验。WebApp优异的性能表现，有一部分原因要归功于浏览器存储技术的提升。cookie存储数据的功能已经很难满足开发所需，逐渐被WebStorage、IndexedDB所取代，本文将介绍这几种存储方式的差异和优缺点。&lt;/p&gt;
+随着移动网络的发展与演化，我们手机现在除了有原生APP，还能跑“WebApp”——它即开即用，用完即走。一个优秀的WebApp甚至用于和原生App媲美的功能和体验。WebApp优异的性能表现，有一部分原因要归功于浏览器存储技术的提升。cookie存储数据的功能已经很难满足开发所需，逐渐被WebStorage、IndexedDB所取代，本文将介绍这几种存储方式的差异和优缺点。
     
     </summary>
     
+      <category term="浏览器" scheme="https://memory-you.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    
+      <category term="存储" scheme="https://memory-you.github.io/tags/%E5%AD%98%E5%82%A8/"/>
     
   </entry>
   
@@ -422,7 +475,7 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     <link href="https://memory-you.github.io/2019/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>https://memory-you.github.io/2019/11/08/正则表达式/</id>
     <published>2019-11-08T15:09:05.000Z</published>
-    <updated>2019-11-09T10:36:09.912Z</updated>
+    <updated>2019-11-19T13:00:18.568Z</updated>
     
     <summary type="html">
     
@@ -431,30 +484,7 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     
     </summary>
     
-      <category term="CSS" scheme="https://memory-you.github.io/categories/CSS/"/>
-    
-    
-      <category term="css" scheme="https://memory-you.github.io/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Grid布局</title>
-    <link href="https://memory-you.github.io/2019/11/02/Grid%E5%B8%83%E5%B1%80/"/>
-    <id>https://memory-you.github.io/2019/11/02/Grid布局/</id>
-    <published>2019-11-02T14:52:56.000Z</published>
-    <updated>2019-11-02T17:18:45.202Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-网格布局（Grid）是最强大的CSS布局方案。
-
-&lt;p&gt;它将网页划分为一个个网格，可以任意组合不同的网格，作出各种各样的布局。以前，只能通过复杂的CSS框架达到的效果，现在浏览器内置了。&lt;/p&gt;
-&lt;p&gt;Flex布局与Grid布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。&lt;/p&gt;
-&lt;p&gt;Flex布局是轴线布局，只能指定“项目”针对轴线的位置，可以看作一维布局。Grid布局则是将容器划分成“行”和“列”，产生单元格，然后指定“项目所在”的单元格，可以看作是二维布局。Grid布局远比FLex布局强大。&lt;/p&gt;
-    
-    </summary>
+      <category term="正则表达式" scheme="https://memory-you.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
     
   </entry>

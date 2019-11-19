@@ -107,6 +107,7 @@
 
 
   <meta name="description" content="缓存可以说是性能优化中简单高效的一种优化方式了，一个优秀的缓存策略可以缩短网页请求资源的距离，减少延迟，并且由于缓存文件可以重复利用，还可以减少带宽，降低网络负荷。  对于一个数据请求来说，可以分为发起网络请求、后端处理、浏览器响应三个步骤。浏览器缓存可以帮助我们在第一和第三步骤中优化性能。比如说直接使用缓存而不发起请求，或者发起了请求但后端存储的数据和前端一致，那么就没有必要再将数据回传回来，">
+<meta name="keywords" content="缓存">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器的缓存机制">
 <meta property="og:url" content="https://memory-you.github.io/2019/11/10/浏览器的缓存机制/index.html">
@@ -122,7 +123,7 @@
 <meta property="og:image" content="https://camo.githubusercontent.com/238c93e3fdb443b84d7454aac9d6e8d4907367e1/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031392f312f342f313638313437383262356533343637303f773d34333826683d33383026663d706e6726733d3539363438">
 <meta property="og:image" content="https://camo.githubusercontent.com/084e1ed3e9b2a34b24da9b3b945ced05c5898e72/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031392f312f342f313638313936626536663262393433383f773d35343626683d32353626663d706e6726733d3131393137">
 <meta property="og:image" content="https://camo.githubusercontent.com/9c1f83c84574d5f1b22a18591784c8fbe3e8634f/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031392f312f342f313638313936346439363363356138363f773d35313926683d34363226663d706e6726733d313630373937">
-<meta property="og:updated_time" content="2019-11-10T05:51:47.912Z">
+<meta property="og:updated_time" content="2019-11-19T12:57:01.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器的缓存机制">
 <meta name="twitter:description" content="缓存可以说是性能优化中简单高效的一种优化方式了，一个优秀的缓存策略可以缩短网页请求资源的距离，减少延迟，并且由于缓存文件可以重复利用，还可以减少带宽，降低网络负荷。  对于一个数据请求来说，可以分为发起网络请求、后端处理、浏览器响应三个步骤。浏览器缓存可以帮助我们在第一和第三步骤中优化性能。比如说直接使用缓存而不发起请求，或者发起了请求但后端存储的数据和前端一致，那么就没有必要再将数据回传回来，">
@@ -437,16 +438,46 @@
                 
               
 
-              <time title="创建时间：2019-11-10 00:28:53 / 修改时间：13:51:47" itemprop="dateCreated datePublished" datetime="2019-11-10T00:28:53+08:00">2019-11-10</time>
+              <time title="创建时间：2019-11-10 00:28:53" itemprop="dateCreated datePublished" datetime="2019-11-10T00:28:53+08:00">2019-11-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-19 20:57:01" itemprop="dateModified" datetime="2019-11-19T20:57:01+08:00">2019-11-19</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/浏览器/" itemprop="url" rel="index"><span itemprop="name">浏览器</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -681,6 +712,15 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/缓存/" rel="tag"><i class="fa fa-tag"></i># 缓存</a>
+          
+        </div>
+      
 
       
       
@@ -773,7 +813,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">89</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -796,7 +836,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -825,7 +877,29 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -903,7 +977,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">409k</span>
+    <span title="站点总字数">411k</span>
   
 
   
@@ -912,7 +986,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">6:11</span>
+    <span title="站点阅读时长">6:14</span>
   
 </div>
 

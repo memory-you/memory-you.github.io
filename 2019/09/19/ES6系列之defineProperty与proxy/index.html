@@ -106,17 +106,18 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：var obj = { value: 1 }，我们该怎么知道obj发生了改变呢？">
+  <meta name="description" content="我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：`var obj = { value: 1 }`，我们该怎么知道obj发生了改变呢？">
+<meta name="keywords" content="ES6系列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6系列之defineProperty与proxy">
 <meta property="og:url" content="https://memory-you.github.io/2019/09/19/ES6系列之defineProperty与proxy/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：var obj = { value: 1 }，我们该怎么知道obj发生了改变呢？">
+<meta property="og:description" content="我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：`var obj = { value: 1 }`，我们该怎么知道obj发生了改变呢？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-19T15:14:47.986Z">
+<meta property="og:updated_time" content="2019-11-19T13:15:13.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6系列之defineProperty与proxy">
-<meta name="twitter:description" content="我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：var obj = { value: 1 }，我们该怎么知道obj发生了改变呢？">
+<meta name="twitter:description" content="我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：`var obj = { value: 1 }`，我们该怎么知道obj发生了改变呢？">
 
 
 
@@ -427,16 +428,46 @@
                 
               
 
-              <time title="创建时间：2019-09-19 20:39:10 / 修改时间：23:14:47" itemprop="dateCreated datePublished" datetime="2019-09-19T20:39:10+08:00">2019-09-19</time>
+              <time title="创建时间：2019-09-19 20:39:10" itemprop="dateCreated datePublished" datetime="2019-09-19T20:39:10+08:00">2019-09-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-19 21:15:13" itemprop="dateModified" datetime="2019-11-19T21:15:13+08:00">2019-11-19</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -495,8 +526,8 @@
 
       
         <meta name="referrer" content="no-referrer">
+我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：`var obj = { value: 1 }`，我们该怎么知道obj发生了改变呢？
 
-<p>我们或多或少都听过数据绑定这个词，数据绑定的关键在于监听数据的变化，可是对于这样一个对象：<code>var obj = { value: 1 }</code>，我们该怎么知道obj发生了改变呢？</p>
 <a id="more"></a>
 
 <h2 id="defineProperty"><a href="#defineProperty" class="headerlink" title="defineProperty"></a>defineProperty</h2><p>ES5提供Object.defineProperty方法，该方法可以在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回这个对象。</p>
@@ -609,6 +640,15 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/ES6系列/" rel="tag"><i class="fa fa-tag"></i># ES6系列</a>
+          
+        </div>
+      
 
       
       
@@ -701,7 +741,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">89</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -724,7 +764,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -753,7 +805,29 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -831,7 +905,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">409k</span>
+    <span title="站点总字数">411k</span>
   
 
   
@@ -840,7 +914,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">6:11</span>
+    <span title="站点阅读时长">6:14</span>
   
 </div>
 

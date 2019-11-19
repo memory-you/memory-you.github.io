@@ -106,19 +106,19 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网">
+  <meta name="description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax原理">
 <meta property="og:url" content="https://memory-you.github.io/2019/11/10/Ajax原理/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网">
+<meta property="og:description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://camo.githubusercontent.com/f8a5dca0eda6c4c64fc37a02af3975de339389d0/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430313932343061343537623f773d35343826683d32343626663d706e6726733d3635373039">
 <meta property="og:image" content="https://camo.githubusercontent.com/8c44fcb913563be506704a3df529c50f1bbdab06/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430323338353563306266373f773d35363326683d32343026663d706e6726733d3733383234">
-<meta property="og:updated_time" content="2019-11-10T08:10:39.257Z">
+<meta property="og:updated_time" content="2019-11-19T13:09:48.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax原理">
-<meta name="twitter:description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网">
+<meta name="twitter:description" content="Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络">
 <meta name="twitter:image" content="https://camo.githubusercontent.com/f8a5dca0eda6c4c64fc37a02af3975de339389d0/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31322f31382f313637626430313932343061343537623f773d35343826683d32343626663d706e6726733d3635373039">
 
 
@@ -430,16 +430,46 @@
                 
               
 
-              <time title="创建时间：2019-11-10 15:45:31 / 修改时间：16:10:39" itemprop="dateCreated datePublished" datetime="2019-11-10T15:45:31+08:00">2019-11-10</time>
+              <time title="创建时间：2019-11-10 15:45:31" itemprop="dateCreated datePublished" datetime="2019-11-10T15:45:31+08:00">2019-11-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-19 21:09:48" itemprop="dateModified" datetime="2019-11-19T21:09:48+08:00">2019-11-19</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -498,8 +528,8 @@
 
       
         <meta name="referrer" content="no-referrer">
+Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络冲浪体验变得更加顺畅。
 
-<p>Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络冲浪体验变得更加顺畅。</p>
 <a id="more"></a>
 
 <hr>
@@ -671,7 +701,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">89</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -694,7 +724,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -723,7 +765,29 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -801,7 +865,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">409k</span>
+    <span title="站点总字数">411k</span>
   
 
   
@@ -810,7 +874,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">6:11</span>
+    <span title="站点阅读时长">6:14</span>
   
 </div>
 

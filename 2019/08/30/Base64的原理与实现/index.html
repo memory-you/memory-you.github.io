@@ -106,19 +106,19 @@
 <!-- 添加DaoVioce -->
 
 
-  <meta name="description" content="我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的">
+  <meta name="description" content="我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的字">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Base64的原理与实现">
 <meta property="og:url" content="https://memory-you.github.io/2019/08/30/Base64的原理与实现/index.html">
 <meta property="og:site_name" content="zeroXP">
-<meta property="og:description" content="我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的">
+<meta property="og:description" content="我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的字">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3864133-8d3ca5104cdb32a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/332/format/webp">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/22/1656180d4f070bcb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2019-08-30T14:59:12.603Z">
+<meta property="og:updated_time" content="2019-11-19T13:09:08.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Base64的原理与实现">
-<meta name="twitter:description" content="我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的">
+<meta name="twitter:description" content="我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的字">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3864133-8d3ca5104cdb32a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/332/format/webp">
 
 
@@ -430,16 +430,46 @@
                 
               
 
-              <time title="创建时间：2019-08-30 21:26:51 / 修改时间：22:59:12" itemprop="dateCreated datePublished" datetime="2019-08-30T21:26:51+08:00">2019-08-30</time>
+              <time title="创建时间：2019-08-30 21:26:51" itemprop="dateCreated datePublished" datetime="2019-08-30T21:26:51+08:00">2019-08-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-19 21:09:08" itemprop="dateModified" datetime="2019-11-19T21:09:08+08:00">2019-11-19</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编码/" itemprop="url" rel="index"><span itemprop="name">编码</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -498,8 +528,8 @@
 
       
         <meta name="referrer" content="no-referrer">
+我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的字符用可见字符来表示。Base64编码应运而生。
 
-<p>我们知道在计算机中一个字节有256种组合，对应的就是ASCII码。而ASCII码的128~255之间的值属于不可见字符。有些网络传送渠道并不支持所有的字节，例如传统的邮件只支持可见字符的传送，而ASCII码的控制字符就不能通过邮件传送。图片二进制流的每一个字节也都不可能都是可见字符，因此它们也不能传送。对此最好的办法就是在不改变传统协议的情况下，做一种拓展方案来支持二进制文件的传送，将不可见的字符用可见字符来表示。Base64编码应运而生。</p>
 <a id="more"></a>
 
 <h2 id="Base64编码原理"><a href="#Base64编码原理" class="headerlink" title="Base64编码原理"></a>Base64编码原理</h2><p>Base64编码是基于64个可见字符“A-Z、a-z、0-9、+、/”的编码方式，因为Base64的码表只有64个字符，想要完全表达这些字符，只需要6bit即可（2的6次方为64）。</p>
@@ -556,8 +586,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/31/JavaScript之工厂模式/" rel="prev" title="JavaScript之工厂模式">
-                JavaScript之工厂模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/31/JavaScript专题之工厂模式/" rel="prev" title="JavaScript专题之工厂模式">
+                JavaScript专题之工厂模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -629,7 +659,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">89</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -652,7 +682,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -681,7 +723,29 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -759,7 +823,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">409k</span>
+    <span title="站点总字数">411k</span>
   
 
   
@@ -768,7 +832,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">6:11</span>
+    <span title="站点阅读时长">6:14</span>
   
 </div>
 

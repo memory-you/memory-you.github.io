@@ -107,13 +107,14 @@
 
 
   <meta name="description" content="apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。">
+<meta name="keywords" content="前端基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="手写实现call()、apply()、bind()">
 <meta property="og:url" content="https://memory-you.github.io/2019/08/31/手写实现call()、apply()、bind()/index.html">
 <meta property="og:site_name" content="zeroXP">
 <meta property="og:description" content="apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-02T07:30:11.271Z">
+<meta property="og:updated_time" content="2019-11-19T13:18:15.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手写实现call()、apply()、bind()">
 <meta name="twitter:description" content="apply()和call()这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。bind()方法会创建一个函数的实例，其this值会被绑定到传来的参数。总的来说是用来改变函数运行时this的指向。">
@@ -444,11 +445,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-02 15:30:11" itemprop="dateModified" datetime="2019-09-02T15:30:11+08:00">2019-09-02</time>
+                <time title="修改时间：2019-11-19 21:18:15" itemprop="dateModified" datetime="2019-11-19T21:18:15+08:00">2019-11-19</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -580,6 +599,15 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/前端基础/" rel="tag"><i class="fa fa-tag"></i># 前端基础</a>
+          
+        </div>
+      
 
       
       
@@ -589,8 +617,8 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/31/JavaScript之工厂模式/" rel="next" title="JavaScript之工厂模式">
-                <i class="fa fa-chevron-left"></i> JavaScript之工厂模式
+              <a href="/2019/08/31/JavaScript专题之工厂模式/" rel="next" title="JavaScript专题之工厂模式">
+                <i class="fa fa-chevron-left"></i> JavaScript专题之工厂模式
               </a>
             
           </div>
@@ -672,7 +700,7 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">89</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -695,7 +723,19 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -724,7 +764,29 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -802,7 +864,7 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">409k</span>
+    <span title="站点总字数">411k</span>
   
 
   
@@ -811,7 +873,7 @@ apply()和call()这两个方法的用途都是在特定的作用域中调用函�
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">6:11</span>
+    <span title="站点阅读时长">6:14</span>
   
 </div>
 
