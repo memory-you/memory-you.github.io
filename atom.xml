@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-19T11:16:07.261Z</updated>
+  <updated>2019-11-19T11:51:37.012Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML5新特性之拖放</title>
+    <link href="https://memory-you.github.io/2019/11/19/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8B%E6%8B%96%E6%94%BE/"/>
+    <id>https://memory-you.github.io/2019/11/19/HTML5新特性之拖放/</id>
+    <published>2019-11-19T11:30:17.000Z</published>
+    <updated>2019-11-19T11:51:37.012Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+拖拉（drag）指的是，用户在某个对象上按下鼠标键不放，拖动它到另一个位置，然后释放鼠标键，将该对象放在那里。
+
+&lt;p&gt;拖放的对象有好几种，包括元素节点、图片、链接、选中的文字等等。在网页中，除了元素节点默认不可以拖放，其他（图片、链接、选中的文字）都是可以直接拖拉的。为了让元素节点可拖拉，可以将该节点的&lt;code&gt;draggable&lt;/code&gt;属性设为&lt;code&gt;true&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="HTML" scheme="https://memory-you.github.io/categories/HTML/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>HTML5新特性之SSE</title>
@@ -432,25 +453,6 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
 &lt;p&gt;它将网页划分为一个个网格，可以任意组合不同的网格，作出各种各样的布局。以前，只能通过复杂的CSS框架达到的效果，现在浏览器内置了。&lt;/p&gt;
 &lt;p&gt;Flex布局与Grid布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。&lt;/p&gt;
 &lt;p&gt;Flex布局是轴线布局，只能指定“项目”针对轴线的位置，可以看作一维布局。Grid布局则是将容器划分成“行”和“列”，产生单元格，然后指定“项目所在”的单元格，可以看作是二维布局。Grid布局远比FLex布局强大。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Flex布局</title>
-    <link href="https://memory-you.github.io/2019/11/02/Flex%E5%B8%83%E5%B1%80/"/>
-    <id>https://memory-you.github.io/2019/11/02/Flex布局/</id>
-    <published>2019-11-02T12:02:39.000Z</published>
-    <updated>2019-11-02T17:19:10.854Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;网页布局（layout）是CSS的一个重点应用。&lt;/p&gt;
-&lt;p&gt;传统的布局解决方案，基于盒状模式，依赖display属性+position属性+float属性。它对于那些特殊布局非常不方便，比如垂直居中就很不容易实现。&lt;/p&gt;
     
     </summary>
     
