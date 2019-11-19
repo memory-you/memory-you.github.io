@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-18T14:18:40.336Z</updated>
+  <updated>2019-11-19T11:16:07.261Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -21,19 +21,14 @@
     <link href="https://memory-you.github.io/2019/11/18/HTML5%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BSSE/"/>
     <id>https://memory-you.github.io/2019/11/18/HTML5新特性之SSE/</id>
     <published>2019-11-18T14:13:10.000Z</published>
-    <updated>2019-11-18T14:18:40.336Z</updated>
+    <updated>2019-11-19T11:16:07.261Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+服务器向浏览器推送信息，除了WebSocket，还有一种方法：Server-Sent Events。本文介绍它的用法：
 
-&lt;p&gt; SSE技术是基于单工通信模式，只是单纯的客户端向服务端发送请求，服务端不会主动发送给客户端。服务端采取的策略是抓住这个请求不放，等数据更新的时候才返回给客户端，当客户端接收到消息后
-        
-      
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2017/bg2017052701.png&quot; alt&gt;&lt;/p&gt;
     
     </summary>
     
