@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-23T14:33:21.377Z</updated>
+  <updated>2019-11-23T15:24:27.170Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML、XMl、XHTML和HTML5</title>
+    <link href="https://memory-you.github.io/2019/11/23/HTML%E3%80%81XMl%E3%80%81XHTML%E5%92%8CHTML5/"/>
+    <id>https://memory-you.github.io/2019/11/23/HTML、XMl、XHTML和HTML5/</id>
+    <published>2019-11-23T14:57:06.000Z</published>
+    <updated>2019-11-23T15:24:27.170Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;在HTML的早期发展中，W3C成立之前，很多标准都是在浏览器的开发者们互相讨论的情况下完成的， 比如HTML 1.0~2.0, HTML 3，这些标准大部分都是所谓的retro-spec，即先有实现后有标准。在这种情况下，HTML标准不是很规范，浏览器也对HTML页面中的错误相当宽容。这反过来又导致了HTML作者写出了大量的含有错误的HTML页面。据说，时至今日web上99%的页面都含有HTML错误。 &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="浏览器" scheme="https://memory-you.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>浏览器标准模式和怪异模式的区别</title>
@@ -470,25 +490,6 @@ CSS中伪类与伪元素的概念是很容易混淆的，今天就来谈谈伪�
     
       &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 在传统Ajax时代，进行API等网络请求都是通过XMLHttpRequest或者封装后的框架进行网络请求，然而配置和调用方式非常混乱， 对于刚入门的新手并不友好。今天我们介绍的Fetch提供了一个更好的替代方法，它不仅提供了一种简单，合乎逻辑的方式来跨网络异步获取资源，而且可以很容易地被其他技术使用，例如 Service Workers。
-    
-    </summary>
-    
-      <category term="HTTP" scheme="https://memory-you.github.io/categories/HTTP/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Ajax原理</title>
-    <link href="https://memory-you.github.io/2019/11/10/Ajax%E5%8E%9F%E7%90%86/"/>
-    <id>https://memory-you.github.io/2019/11/10/Ajax原理/</id>
-    <published>2019-11-10T07:45:31.000Z</published>
-    <updated>2019-11-19T13:09:48.639Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验和页面性能很有帮助。简单的说，在不需要重新刷新页面的情况下，Ajax通过异步请求加载后台数据，并在网页上呈现出来。常见运用场景有表单验证是否登入成功、百度搜索下拉框提示和快递单号查询等等。Ajax的目的是提高用户体验，较少网络数据的传输量。同时，由于Ajax请求获取的是数据而不是HTML文档，因此它也节省了网络带宽，让互联网用户的网络冲浪体验变得更加顺畅。
     
     </summary>
     
