@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memory-you.github.io/"/>
-  <updated>2019-11-19T12:51:01.775Z</updated>
+  <updated>2019-11-23T12:28:03.225Z</updated>
   <id>https://memory-you.github.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>谈谈BFC</title>
+    <link href="https://memory-you.github.io/2019/11/19/%E8%B0%88%E8%B0%88BFC/"/>
+    <id>https://memory-you.github.io/2019/11/19/谈谈BFC/</id>
+    <published>2019-11-19T15:32:09.000Z</published>
+    <updated>2019-11-23T12:28:03.225Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+BFC（Block Formatting Context）是Web页面中盒模型布局的CSS渲染模式，在W3C文档中：
+
+&lt;blockquote&gt;
+&lt;p&gt; 浮动，绝对定位元素，&lt;code&gt;inline-blocks&lt;/code&gt;, &lt;code&gt;table-cells&lt;/code&gt;, &lt;code&gt;table-captions&lt;/code&gt;,和&lt;code&gt;overflow&lt;/code&gt;的值不为&lt;code&gt;visible&lt;/code&gt;的元素，（除了这个值已经被传到了视口的时候）将创建一个新的&lt;code&gt;块级格式化上下文&lt;/code&gt;。著作权归作者所有。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://memory-you.github.io/categories/CSS/"/>
+    
+    
+      <category term="布局" scheme="https://memory-you.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS清除浮动</title>
+    <link href="https://memory-you.github.io/2019/11/19/CSS%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/"/>
+    <id>https://memory-you.github.io/2019/11/19/CSS清除浮动/</id>
+    <published>2019-11-19T14:26:18.000Z</published>
+    <updated>2019-11-23T12:28:09.301Z</updated>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+在了解如何清除浮动之前，先介绍为什么需要清除浮动：
+
+&lt;p&gt;浮动虽然便于页面布局，但是会同时产生一些问题，也就是我们常说的副作用。当一个元素设置了浮动后，常见的缺陷有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;影响它的兄弟元素的位置。&lt;/li&gt;
+&lt;li&gt;它的父元素会产生高度塌陷。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://memory-you.github.io/categories/CSS/"/>
+    
+    
+      <category term="布局" scheme="https://memory-you.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS定位详解</title>
     <link href="https://memory-you.github.io/2019/11/19/CSS%E5%AE%9A%E4%BD%8D%E8%AF%A6%E8%A7%A3/"/>
     <id>https://memory-you.github.io/2019/11/19/CSS定位详解/</id>
     <published>2019-11-19T12:12:19.000Z</published>
-    <updated>2019-11-19T12:51:01.775Z</updated>
+    <updated>2019-11-23T12:27:49.556Z</updated>
     
     <summary type="html">
     
@@ -33,7 +85,7 @@ CSS 有两个重要的基本属性，前端开发必须掌握：`display` 和 `p
       <category term="CSS" scheme="https://memory-you.github.io/categories/CSS/"/>
     
     
-      <category term="定位" scheme="https://memory-you.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
+      <category term="布局" scheme="https://memory-you.github.io/tags/%E5%B8%83%E5%B1%80/"/>
     
   </entry>
   
@@ -446,46 +498,6 @@ Ajax是一种异步请求数据的Web开发技术，对于改善用户的体验�
     
     
       <category term="缓存" scheme="https://memory-you.github.io/tags/%E7%BC%93%E5%AD%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浏览器存储</title>
-    <link href="https://memory-you.github.io/2019/11/09/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8/"/>
-    <id>https://memory-you.github.io/2019/11/09/浏览器存储/</id>
-    <published>2019-11-09T13:14:31.000Z</published>
-    <updated>2019-11-19T12:56:44.492Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-随着移动网络的发展与演化，我们手机现在除了有原生APP，还能跑“WebApp”——它即开即用，用完即走。一个优秀的WebApp甚至用于和原生App媲美的功能和体验。WebApp优异的性能表现，有一部分原因要归功于浏览器存储技术的提升。cookie存储数据的功能已经很难满足开发所需，逐渐被WebStorage、IndexedDB所取代，本文将介绍这几种存储方式的差异和优缺点。
-    
-    </summary>
-    
-      <category term="浏览器" scheme="https://memory-you.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-    
-      <category term="存储" scheme="https://memory-you.github.io/tags/%E5%AD%98%E5%82%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式</title>
-    <link href="https://memory-you.github.io/2019/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>https://memory-you.github.io/2019/11/08/正则表达式/</id>
-    <published>2019-11-08T15:09:05.000Z</published>
-    <updated>2019-11-19T13:00:18.568Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a到z之间的字母）和特殊字符（称为元字符）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。
-    
-    </summary>
-    
-      <category term="正则表达式" scheme="https://memory-you.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
     
   </entry>
   
